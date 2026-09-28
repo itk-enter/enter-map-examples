@@ -1,0 +1,18 @@
+version: '3'
+
+tasks:
+  serve:
+    desc: Serve the demo page on http://localhost:8088
+    cmd: bin/serve.py 8088
+
+  open:
+    desc: Open the demo page in a browser
+    cmd: open 'http://localhost:8088/'
+
+  route:key:
+    desc: Write the Septima routing key from .env into public/config/key.json
+    cmd: bin/route-key.sh
+
+  data:fetch:
+    desc: Refresh the data snapshot from the Enter instance configured in .env
+    cmd: bin/fetch-data.sh

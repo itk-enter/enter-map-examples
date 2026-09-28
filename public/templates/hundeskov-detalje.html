@@ -1,0 +1,22 @@
+<div class="detalje">
+  <div class="detalje__photo">
+    <span class="detalje__photo-note">Foto ikke tilgængeligt endnu</span>
+  </div>
+
+  <div class="detalje__body">
+    <h3 class="detalje__title">Hundeskov</h3>
+
+    <div class="detalje__address">
+      <p><%= navn %></p>
+    </div>
+
+    <div class="detalje__section">
+      <h4>Hegning</h4>
+      <p><%= typeof hegnet !== 'undefined' && hegnet ? hegnet : 'Ikke registreret endnu' %></p>
+    </div>
+    <div class="detalje__section">
+      <h4>Ejer</h4>
+      <p><%= typeof ejer !== 'undefined' && ejer ? ejer : 'Ikke registreret endnu' %></p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tilgængelighed i byen — ren Septima</title>
+    <link rel="stylesheet" href="./css/page.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#kort">Spring til kort og liste</a>
+
+    <main>
+      <div class="page-intro">
+        <p class="page-intro__link"><a href="./index.html">Oversigt</a></p>
+        <h1>Ren Septima Widget</h1>
+        <p class="page-intro__text">
+          Samme data og samme funktioner som forsiden, men udelukkende sat op
+          gennem widgetens egen konfiguration: ingen stylesheet, ingen
+          JavaScript, ingen overskrivning af widgetens markup. Siden findes for
+          at vise, hvad widgeten selv leverer.
+        </p>
+      </div>
+
+      <div
+        id="kort"
+        data-widget-url="./config/plain.json"
+        data-widget-locale="da-DK"
+      ></div>
+      <script src="https://widget.cdn.septima.dk/3.23.0/widgetconfig.js"></script>
+    </main>
+  </body>
+</html>

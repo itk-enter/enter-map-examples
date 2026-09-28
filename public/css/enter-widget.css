@@ -1,0 +1,591 @@
+/* Styling for the Enter accessibility widget.
+ *
+ * The `--aak-*` values are copied from the aarhus.dk design system
+ * (aarhus-design-system, dist/tokens.css). That package is not published, so
+ * the subset in use is declared here and has to be kept in sync by hand.
+ *
+ * The widget's `--sw-*` variables are overridden here rather than through
+ * `cssProperties` in the configuration: some widget variables are composites
+ * declared at :root, and those resolve against the :root value, not an
+ * override further down the tree.
+ *
+ * Layout and type follow the workspace prototype (concepts/enter-tilgaengelighed). */
+
+:root {
+  --aak-color-primary: #3661d8;
+  --aak-color-link: #0648ff;
+  --aak-color-text: #1a1a1a;
+  --aak-color-muted: #595959;
+  --aak-color-border: #d9d9d9;
+  --aak-color-surface: #f5f5f5;
+  --aak-shadow-focus: 0 0 0 3px rgba(54, 97, 216, 0.35);
+  --aak-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+
+  --sw-primary: var(--aak-color-primary);
+  --sw-font-family: var(--aak-font-family);
+  --sw-font-size: 15px;
+  --sw-border-radius: 4px;
+  --sw-border-color: var(--aak-color-border);
+  --sw-text-color: var(--aak-color-text);
+  --sw-link-color: var(--aak-color-link);
+
+  /* The widget runs the full width of the page, so the map is sized against
+   * the viewport rather than a fixed height. */
+  --sw-map-height: min(80vh, 900px);
+
+  /* The panel's width and its gutter. The same gutter is used on every side,
+   * and the detail overlay has to cover exactly that area. */
+  --panel-width: 420px;
+  --panel-gutter: 20px;
+}
+
+/* On a phone the map leaves room for the panel navigation below it, and for
+ * enough page around it to scroll past the map without dragging inside it. */
+@media (max-width: 820px) {
+  :root {
+    --sw-map-height: 50vh;
+  }
+}
+
+/* Panel ------------------------------------------------------------------
+ *
+ * 410-420px, white, one hairline against the map. Spacing separates the
+ * blocks inside it — the prototype has no boxes or dividers around controls. */
+
+/* `layout.leftWidth` and `slots.left.header` in the configuration are both
+ * ignored by the widget, so the panel width and the header bar are handled
+ * here: 420px as in the prototype, and no header bar — the panel is the page's
+ * primary content, not a dialog. */
+.sw-slot-grid {
+  --sw-slot-left-width: var(--panel-width);
+  --sw-slot-left-max-width: var(--panel-width);
+}
+
+.sw-slot-header {
+  display: none;
+}
+
+.sw-slot.sw-slot-left {
+  border-right: 1px solid var(--aak-color-border);
+}
+
+.sw-slot-body {
+  overflow-y: auto;
+  padding: var(--panel-gutter) var(--panel-gutter) 48px;
+}
+
+.sw-slot-body > .sw-slot-group-item + .sw-slot-group-item {
+  margin-top: 20px;
+}
+
+/* The widget puts a rule under every control. The prototype has one divider,
+ * under the filters, and hairlines between rows. */
+.sw-slot-body > .sw-slot-group-item {
+  border-bottom: 0;
+}
+
+/* The panel has no header bar, so the button that opens it is only needed in
+ * app mode; it is labelled rather than a bare 30px icon. */
+.widget-map-buttoncontainer .panel-button.sw-slot-activate-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: auto;
+  padding: 0 12px;
+  overflow: visible;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.widget-map-buttoncontainer .panel-button.sw-slot-activate-btn[aria-pressed="true"] {
+  display: none;
+}
+
+/* Detail overlay ---------------------------------------------------------
+ *
+ * The widget renders the selected feature either into the map or into an
+ * element of ours (`detach`); the prototype opens it over the list, so the
+ * detached element is laid over the panel.
+ *
+ * Two quirks: the widget only renders into the element while it is displayed,
+ * so an empty host is collapsed rather than hidden; and closing sets an inline
+ * `display: none` on the widget's own box but leaves the markup, so the
+ * overlay keys off that. `:has()` needs Chrome 105+, Safari 15.4+, FF 121+. */
+
+.kort {
+  position: relative;
+}
+
+.detalje-host {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* Above the widget's own stacking: its search sits at 5001 and the layer
+   * switcher at 10000, both of which otherwise paint over the overlay. */
+  z-index: 10001;
+  width: var(--panel-width);
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.detalje-host:has(.widget-info:not([style*="none"])) {
+  height: var(--sw-map-height);
+  overflow-y: auto;
+  background: #fff;
+  border-right: 1px solid var(--aak-color-border);
+  pointer-events: auto;
+}
+
+@media (max-width: 820px) {
+  .detalje-host:has(.widget-info:not([style*="none"])) {
+    position: fixed;
+    inset: 0;
+    width: auto;
+    height: auto;
+    border-right: 0;
+  }
+}
+
+/* Search ------------------------------------------------------------------
+ *
+ * The widget renders a bare input. The prototype's field is a bordered box
+ * with the magnifier inside it, which is what makes it read as somewhere to
+ * type. */
+
+.septimasearch .ssSearchBackground {
+  padding: 2px 10px;
+  border: 1px solid var(--aak-color-border);
+  border-radius: 4px;
+  background: #fff
+    url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23595959' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.8-3.8'/%3E%3C/svg%3E")
+    no-repeat 12px center / 17px 17px;
+}
+
+.septimasearch .ssSearchBackground:focus-within {
+  border-color: var(--aak-color-primary);
+  box-shadow: var(--aak-shadow-focus);
+}
+
+/* The widget writes the field's width into the element as an inline style and
+ * pads the input on all four sides from one variable, which is why the field
+ * arrives too tall and too narrow. Both are overridden here; the widths need
+ * `!important` to beat the inline style. */
+.sw-slot-body .widget-search-input.septimasearch,
+.sw-slot-body .septimasearch .ssSearchHeader,
+.sw-slot-body .septimasearch .ssSearchBackground {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.sw-slot-body .septimasearch .ssSearchBackground input.ssInput {
+  box-sizing: border-box;
+  width: 100% !important;
+  height: 40px;
+  padding: 0 0 0 26px;
+  font-size: 15px;
+}
+
+/* Categories --------------------------------------------------------------
+ *
+ * Rendered as the prototype's filter block: a quiet legend and plain checkbox
+ * rows, without the control's card, hover fills or collapse button.
+ *
+ * Scoped to .sw-slot-body: widget.css loads after this file. */
+
+.sw-slot-body .sw-layerswitch,
+.sw-slot-body .sw-layerswitch-group,
+.sw-slot-body .sw-layerswitch-group-list,
+.sw-slot-body .sw-layerswitch-layer {
+  border: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.sw-slot-body .sw-layerswitch {
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--aak-color-border);
+}
+
+.sw-slot-body .sw-layerswitch-header {
+  padding: 0;
+  background: none;
+  border: 0;
+}
+
+.sw-slot-body .sw-layerswitch-header-icon,
+.sw-slot-body .sw-layerswitch-expand {
+  display: none;
+}
+
+.sw-slot-body .sw-layerswitch-header-title {
+  padding: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--aak-color-muted);
+}
+
+.sw-slot-body .sw-layerswitch-body {
+  padding: 0;
+}
+
+.sw-slot-body .sw-layerswitch-group-list {
+  padding: 6px 0 0;
+}
+
+.sw-slot-body .sw-layerswitch-layer {
+  min-height: 0;
+  padding: 0;
+}
+
+.sw-slot-body .sw-layerswitch-layer:hover {
+  background: none;
+}
+
+.sw-slot-body .sw-layerswitch-layer-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 0;
+}
+
+.sw-slot-body .sw-layerswitch-layer-toggle {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--aak-color-primary);
+}
+
+.sw-slot-body .sw-layerswitch-layer-title span {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--aak-color-text);
+}
+
+/* List --------------------------------------------------------------------
+ *
+ * Title, address, then the fact that decides whether the place is useful,
+ * with the photo slot on the right — the prototype's row. */
+
+.widget-table {
+  margin: 0;
+}
+
+/* One heading for the whole list, not one per layer: a row says which kind of
+ * place it is, and the list is the same list either way. The widget writes the
+ * number of places in the current view into `#resultatantal` on every map move
+ * and every search (`table.countSelector`). */
+.liste-hoved {
+  margin: 20px 0 0;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--aak-color-border);
+}
+
+.liste-hoved h2 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.liste-antal {
+  margin: 2px 0 0;
+  font-size: 14px;
+  color: var(--aak-color-muted);
+}
+
+.widget-table ul {
+  border: 0;
+}
+
+.widget-table ul li {
+  padding: 0;
+  border-bottom: 1px solid var(--aak-color-border);
+}
+
+.widget-table ul li:hover,
+.widget-table ul li.widget-table-row-active {
+  background: var(--aak-color-surface);
+}
+
+.widget-table ul li:focus-visible {
+  outline: none;
+  box-shadow: inset var(--aak-shadow-focus);
+}
+
+.result {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 16px 4px;
+}
+
+.result__text {
+  flex: 1;
+  min-width: 0;
+}
+
+.result__title {
+  margin: 0 0 2px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.result__address {
+  margin: 0;
+}
+
+.result__fact {
+  margin: 8px 0 0;
+}
+
+/* No photos in the data yet; the slot is kept so the row keeps its shape when
+ * they arrive. */
+.thumb {
+  flex: none;
+  width: 104px;
+  height: 74px;
+  border-radius: 3px;
+  background: linear-gradient(135deg, #dfe4e8, #c3ccd3);
+}
+
+/* Detail ------------------------------------------------------------------ */
+
+.detalje__photo {
+  position: relative;
+  height: 280px;
+  background: linear-gradient(160deg, #cfd8dd, #9fb0b9 60%, #8a9aa4);
+}
+
+.detalje__photo-note {
+  position: absolute;
+  left: 20px;
+  bottom: 16px;
+  padding: 6px 10px;
+  border-radius: 3px;
+  font-size: 13px;
+  color: #fff;
+  background: rgba(26, 26, 26, 0.65);
+}
+
+.detalje__body {
+  padding: 20px 20px 48px;
+}
+
+.detalje__title {
+  margin: 0 0 18px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.detalje__address {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.detalje__address p {
+  margin: 0;
+  font-weight: 600;
+}
+
+.detalje__route {
+  display: inline-flex;
+  flex: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font-size: 13px;
+}
+
+.detalje__route svg {
+  width: 22px;
+  height: 22px;
+}
+
+.detalje__spots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 8px;
+  font-weight: 600;
+}
+
+.detalje__spots svg {
+  width: 20px;
+  height: 20px;
+  color: var(--aak-color-primary);
+}
+
+/* Distance to the nearest other place, with a link that opens it. */
+.detalje__nabo {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0;
+  color: var(--aak-color-muted);
+}
+
+.detalje__nabo-vis {
+  flex: none;
+  padding: 0;
+  font: inherit;
+  color: var(--aak-color-link);
+  text-decoration: underline;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.detalje__nabo-vis:focus-visible {
+  outline: 2px solid var(--aak-color-primary);
+  outline-offset: 2px;
+}
+
+.detalje__section {
+  margin-top: 16px;
+}
+
+.detalje__section h4 {
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.detalje__section p {
+  margin: 0;
+}
+
+/* The close button sits over the photo, so it needs its own background. */
+.detalje-host .widget-hoverbox-closebutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.detalje-host .widget-hoverbox-closebutton .mdi {
+  display: block;
+  line-height: 1;
+}
+
+/* Find nearest ------------------------------------------------------------ */
+
+.route__title {
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--aak-color-muted);
+}
+
+.widget-contains-map .widget-routebox .widget-route {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0 12px;
+  padding: 10px 0;
+  list-style: none;
+  border-bottom: 1px solid var(--aak-color-border);
+  cursor: pointer;
+}
+
+.widget-contains-map .widget-routebox .widget-route:hover {
+  background: var(--aak-color-surface);
+}
+
+.route__name {
+  font-weight: 600;
+}
+
+.route__spots,
+.widget-route-routeresult {
+  color: var(--aak-color-muted);
+}
+
+.widget-route-routeresult {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  white-space: nowrap;
+}
+
+/* A short note in the panel about what the data does not contain yet. */
+.data-gap {
+  padding: 12px 14px;
+  border-radius: 4px;
+  background: var(--aak-color-surface);
+}
+
+.data-gap__title {
+  margin: 0 0 4px;
+  font-weight: 600;
+}
+
+.data-gap p {
+  margin: 0;
+  color: var(--aak-color-text);
+}
+
+/* Zoom gate ---------------------------------------------------------------
+ *
+ * The layers carry `maxResolution`, so zoomed out the map has no markers and
+ * the list is empty. The card says why, and the bar shows how much zoom is
+ * left; `js/widget-host.js` toggles both. */
+
+.zoomgate {
+  padding: 16px 18px;
+  border: 1px solid var(--aak-color-border);
+  border-radius: 4px;
+  background: #fff;
+}
+
+.zoomgate__title {
+  margin: 0 0 8px;
+  font-size: 17px;
+}
+
+.zoomgate__text {
+  margin: 0 0 16px;
+}
+
+.zoomgate__label {
+  margin: 0 0 6px;
+  font-size: 14px;
+  color: var(--aak-color-muted);
+}
+
+.zoomgate__bar {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--aak-color-surface);
+  overflow: hidden;
+}
+
+.zoomgate__fill {
+  display: block;
+  width: calc(var(--zoomgate-progress, 0) * 100%);
+  height: 100%;
+  background: var(--aak-color-primary);
+  transition: width 120ms linear;
+}
+
+/* While the gate is up there is no list to head, and the table's own empty text
+ * reads as a failed search. The card carries the message instead. */
+.is-zoomgated .liste-hoved,
+.is-zoomgated .widget-table-emptytext {
+  display: none;
+}
+
+/* The map credits are links in a line of text, told apart from it by colour
+ * alone (axe: `link-in-text-block`). The widget does not underline them. */
+.widget-map-copyright a {
+  text-decoration: underline;
+}

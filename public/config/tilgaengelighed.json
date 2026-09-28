@@ -1,0 +1,201 @@
+{
+  "locale": "da-DK",
+  "map": {
+    "title": "Kort over tilgængelige steder i Aarhus",
+    "css": [
+      "../css/enter-widget.css"
+    ],
+    "view": {
+      "zoomLevel": 10,
+      "x": 575432,
+      "y": 6223833
+    },
+    "mapActivation": false,
+    "mapcontrols": {
+      "mouseWheelZoom": false,
+      "keyboard": true,
+      "scaleline": true
+    },
+    "layout": {
+      "appBreakpoint": 820,
+      "leftWidth": "420px",
+      "slots": {
+        "left": {
+          "title": "Søg og filtrér",
+          "icon": "search",
+          "expanded": true,
+          "activateButton": {
+            "icon": "search",
+            "title": "Åbn søgning, filtre og liste",
+            "html": "<span class=\"mdi mdi-magnify\" aria-hidden=\"true\"></span><span>Søg og filtrér</span>",
+            "className": "panel-button"
+          },
+          "controls": [
+            "search",
+            "layerswitch2",
+            "html",
+            "table"
+          ],
+          "header": false
+        }
+      },
+      "appMapFlexible": true
+    },
+    "layer": [
+      {
+        "namedlayer": "#septima_light"
+      },
+      {
+        "id": "handicapparkering",
+        "name": "Handicapparkering",
+        "type": "geojson",
+        "features": true,
+        "selectable": true,
+        "features_host": "../data/handicapparkering.geojson",
+        "features_dataType": "json",
+        "features_type": "Point",
+        "srs": "EPSG:4326",
+        "maxResolution": 3.2,
+        "copyright": "Aarhus Kommune",
+        "computedProperties": [
+          {
+            "column": "adresse",
+            "template": "<%= vejnavn %> <%= typeof husnnr === 'undefined' ? '' : husnnr %>",
+            "type": "string"
+          },
+          {
+            "column": "pladser",
+            "template": "<%= typeof invalidepladser === 'undefined' ? 0 : invalidepladser %>",
+            "type": "number"
+          }
+        ],
+        "orderBy": [
+          {
+            "column": "adresse"
+          }
+        ],
+        "features_style": {
+          "svg": "<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><rect x='1' y='1' width='28' height='28' rx='5' fill='#3661d8' stroke='#ffffff' stroke-width='2'/><g transform='translate(3 3)' fill='#ffffff'><path d='M12 4a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm-1 5.5h2l.6 3H17v2h-3.9l-.4-2H11a4.5 4.5 0 1 0 4.4 5.5h2A6.5 6.5 0 1 1 11 9.5Z'/></g></svg>",
+          "svg_selected": "<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><rect x='1' y='1' width='28' height='28' rx='5' fill='#12285e' stroke='#ffffff' stroke-width='2'/><g transform='translate(3 3)' fill='#ffffff'><path d='M12 4a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm-1 5.5h2l.6 3H17v2h-3.9l-.4-2H11a4.5 4.5 0 1 0 4.4 5.5h2A6.5 6.5 0 1 1 11 9.5Z'/></g></svg>",
+          "scale": 1,
+          "scale_selected": 1.3
+        },
+        "template_search_title": "<%= adresse %>",
+        "template_search_description": "Handicapparkering · <%= pladser %> pladser",
+        "template_table": {
+          "url": "../templates/parkering-row.html"
+        },
+        "template_info": {
+          "url": "../templates/parkering-detalje.html"
+        },
+        "legend": [
+          {
+            "label": "Handicapparkering"
+          }
+        ]
+      },
+      {
+        "id": "hundeskov",
+        "name": "Hundeskove",
+        "type": "geojson",
+        "features": true,
+        "selectable": true,
+        "features_host": "../data/hundeskov.geojson",
+        "features_dataType": "json",
+        "srs": "EPSG:4326",
+        "maxResolution": 3.2,
+        "copyright": "Aarhus Kommune",
+        "orderBy": [
+          {
+            "column": "navn"
+          }
+        ],
+        "features_style": {
+          "fillcolor": "rgba(39, 118, 70, 0.25)",
+          "strokecolor": "#277646",
+          "strokewidth": 2,
+          "fillcolor_selected": "rgba(39, 118, 70, 0.45)"
+        },
+        "legend": [
+          {
+            "label": "Hundeskov"
+          }
+        ],
+        "template_search_title": "<%= navn %>",
+        "template_search_description": "Hundeskov · <%= typeof hegnet !== 'undefined' && hegnet ? hegnet : 'hegning ikke registreret' %>",
+        "template_table": {
+          "url": "../templates/hundeskov-row.html"
+        },
+        "template_info": {
+          "url": "../templates/hundeskov-detalje.html"
+        }
+      }
+    ],
+    "controls": [
+      {
+        "search": {
+          "displaytext": "Søg efter sted eller adresse",
+          "minResolution": 0.4,
+          "driver": [
+            {
+              "type": "local",
+              "options": {
+                "minimumShowCount": 5
+              }
+            },
+            {
+              "type": "address",
+              "options": {
+                "kommunekode": "751"
+              }
+            }
+          ]
+        },
+        "html": {
+          "template": "<div class=\"zoomgate\" hidden><h2 class=\"zoomgate__title\">Se tilgængelige steder på kortet</h2><p class=\"zoomgate__text\">Skriv en adresse for at søge på et sted, eller zoom ind for at se stederne på kortet.</p><p class=\"zoomgate__label\" id=\"zoomgate-label\">Zoom ind for at se steder</p><div class=\"zoomgate__bar\" role=\"progressbar\" aria-labelledby=\"zoomgate-label\" aria-valuemin=\"0\" aria-valuemax=\"100\" aria-valuenow=\"0\"><span class=\"zoomgate__fill\"></span></div></div><div class=\"liste-hoved\"><h2>Resultater</h2><p class=\"liste-antal\"><span id=\"resultatantal\">…</span> i kortudsnittet</p></div>"
+        },
+        "layerswitch2": {
+          "translations": {
+            "da-DK": {
+              "header": "Vis på kortet"
+            }
+          },
+          "hideOpacityOption": true,
+          "showlegend": true,
+          "groups": [
+            {
+              "type": "checkbox",
+              "expanded": true,
+              "showCount": false,
+              "layers": [
+                "handicapparkering",
+                "hundeskov"
+              ]
+            }
+          ]
+        },
+        "table": {
+          "title": "Liste over tilgængelige steder",
+          "showheader": false,
+          "tabindex": true,
+          "zoomOnClick": true,
+          "mapFilter": true,
+          "emptyText": "Ingen steder i dette kortudsnit. Flyt kortet, zoom ud eller søg bredere.",
+          "zoomOptions": {
+            "minResolution": 0.4
+          },
+          "countSelector": "#resultatantal"
+        },
+        "info": {
+          "eventtype": [
+            "click",
+            "featureselected"
+          ],
+          "detach": "detalje",
+          "closeButton": true,
+          "type": "popup"
+        }
+      }
+    ]
+  }
+}

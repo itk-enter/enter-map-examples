@@ -1,0 +1,56 @@
+<div class="detalje">
+  <div class="detalje__photo">
+    <span class="detalje__photo-note">Foto ikke tilgængeligt endnu</span>
+  </div>
+
+  <div class="detalje__body">
+    <h3 class="detalje__title">Handicapparkering</h3>
+
+    <div class="detalje__address">
+      <p><%= adresse %><br />8000 Aarhus</p>
+      <a class="detalje__route" href="https://www.google.com/maps/dir/?api=1&destination=<%= location.coordinates[1] %>,<%= location.coordinates[0] %>" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h6a3 3 0 0 0 0-6H10a3 3 0 0 1 0-6h6"/></svg>
+        <span>Vis rute</span>
+      </a>
+    </div>
+
+    <p class="detalje__spots">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm-1 5.5h2l.6 3H17v2h-3.9l-.4-2H11a4.5 4.5 0 1 0 4.4 5.5h2A6.5 6.5 0 1 1 11 9.5Z"/></svg>
+      <span><%= pladser ? pladser + (pladser === 1 ? ' plads' : ' pladser') : 'Antal pladser ikke registreret' %></span>
+    </p>
+
+    <p class="detalje__nabo">
+      <% if (typeof nabo_prinx !== 'undefined' && nabo_prinx !== null) { %>
+        <span><%= nabo_afstand_m >= 1000 ? (nabo_afstand_m / 1000).toFixed(1).replace('.', ',') + ' km' : (nabo_afstand_m >= 10 ? nabo_afstand_m + ' m' : 'Under 10 m') %> til nærmeste anden plads</span>
+        <button type="button" class="detalje__nabo-vis" data-nabo="<%= nabo_prinx %>" data-nabo-layer="handicapparkering">Vis</button>
+      <% } else { %>
+        <span>Afstanden til nærmeste anden plads er ikke beregnet</span>
+      <% } %>
+    </p>
+
+    <div class="detalje__section">
+      <h4>Pladsforhold</h4>
+      <p><%= typeof bemrk !== 'undefined' && bemrk ? bemrk : 'Ikke registreret endnu' %></p>
+    </div>
+    <div class="detalje__section">
+      <h4>Betaling</h4>
+      <p>Ikke registreret endnu</p>
+    </div>
+    <div class="detalje__section">
+      <h4>Belægning</h4>
+      <p>Ikke registreret endnu</p>
+    </div>
+    <div class="detalje__section">
+      <h4>Ladestander</h4>
+      <p>Ikke registreret endnu</p>
+    </div>
+    <div class="detalje__section">
+      <h4>Køretøjstype</h4>
+      <p>Ikke registreret endnu</p>
+    </div>
+    <div class="detalje__section">
+      <h4>Vurdering</h4>
+      <p>Ikke registreret endnu</p>
+    </div>
+  </div>
+</div>

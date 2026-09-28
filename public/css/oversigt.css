@@ -1,0 +1,150 @@
+/* Overview page: the four builds and what separates them. Text, not map, so it
+ * keeps a readable column rather than running the full width. */
+
+:root {
+  --aak-color-primary: #3661d8;
+  --aak-color-text: #1a1a1a;
+  --aak-color-muted: #595959;
+  --aak-color-border: #d9d9d9;
+  --aak-color-surface: #f5f5f5;
+  --aak-color-danger: #ad1f3c;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.oversigt {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+.oversigt h1 {
+  margin: 0 0 12px;
+  font-size: 2rem;
+}
+
+.oversigt h2 {
+  margin: 48px 0 16px;
+  font-size: 1.25rem;
+}
+
+.oversigt__manchet {
+  max-width: 62ch;
+  margin: 0;
+  font-size: 1.0625rem;
+}
+
+/* The four builds -------------------------------------------------------- */
+
+.udgaver {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.udgave {
+  padding: 20px;
+  border: 1px solid var(--aak-color-border);
+  border-radius: 6px;
+}
+
+.udgave h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.udgave__hvad {
+  margin: 0 0 16px;
+  color: var(--aak-color-muted);
+}
+
+.noegletal {
+  margin: 0;
+  font-size: 0.9375rem;
+}
+
+.noegletal > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 0;
+  border-top: 1px solid var(--aak-color-border);
+}
+
+.noegletal dt {
+  color: var(--aak-color-muted);
+}
+
+.noegletal dd {
+  margin: 0;
+  font-weight: 600;
+  text-align: right;
+}
+
+/* Comparison ------------------------------------------------------------- */
+
+.tabel-wrap {
+  overflow-x: auto;
+}
+
+.sammenligning {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.sammenligning th,
+.sammenligning td {
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--aak-color-border);
+}
+
+.sammenligning thead th {
+  border-bottom: 2px solid var(--aak-color-text);
+  white-space: nowrap;
+}
+
+.sammenligning tbody th {
+  font-weight: 400;
+  color: var(--aak-color-muted);
+}
+
+/* Only where a value is a genuine drawback, so the colour carries meaning
+ * rather than decoration. The wording says the same thing without it. */
+.sammenligning .daarlig {
+  color: var(--aak-color-danger);
+}
+
+/* Findings and documentation --------------------------------------------- */
+
+.fund,
+.dok {
+  max-width: 68ch;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.fund li,
+.dok li {
+  margin-bottom: 12px;
+}
+
+.fund code,
+.dok code {
+  padding: 1px 4px;
+  font-size: 0.875em;
+  background: var(--aak-color-surface);
+  border-radius: 3px;
+}

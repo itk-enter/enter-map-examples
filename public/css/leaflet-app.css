@@ -1,0 +1,487 @@
+/* Tilgængelighed i byen — Leaflet build.
+ *
+ * Same visual language as the widget build, but nothing here fights another
+ * stylesheet: every selector below styles markup written in this repository.
+ * Values follow the workspace prototype. */
+
+:root {
+  --aak-color-primary: #3661d8;
+  --aak-color-link: #0648ff;
+  --aak-color-text: #1a1a1a;
+  --aak-color-muted: #595959;
+  --aak-color-border: #d9d9d9;
+  --aak-color-surface: #f5f5f5;
+  --aak-shadow-focus: 0 0 0 3px rgba(54, 97, 216, 0.35);
+
+  --panel-width: 420px;
+  --panel-gutter: 20px;
+  --map-height: min(80vh, 900px);
+}
+
+/* Layout ------------------------------------------------------------------ */
+
+.kort {
+  display: flex;
+  align-items: stretch;
+  height: var(--map-height);
+  border-top: 1px solid var(--aak-color-border);
+}
+
+.panel {
+  position: relative;
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  width: var(--panel-width);
+  /* The panel never scrolls itself: the list scrolls inside it and the detail
+   * covers it. Otherwise a wheel past the end of the detail drags the list —
+   * and the detail with it — out of view. */
+  overflow: hidden;
+  border-right: 1px solid var(--aak-color-border);
+  background: #fff;
+}
+
+.kort__map {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 820px) {
+  .kort {
+    flex-direction: column;
+    height: auto;
+  }
+
+  /* Map first, list under it. `flex: none` because in a column the basis,
+   * not the height, decides the size. */
+  .kort__map {
+    order: -1;
+    flex: none;
+    height: 50vh;
+  }
+
+  /* The page scrolls at this width, so the panel is a plain block again and
+   * the list grows instead of scrolling inside itself. */
+  .panel {
+    display: block;
+    width: auto;
+    overflow: visible;
+    border-right: 0;
+  }
+}
+
+/* Search ------------------------------------------------------------------ */
+
+.panel__search {
+  position: relative;
+  padding: var(--panel-gutter) var(--panel-gutter) 0;
+}
+
+.soeg {
+  box-sizing: border-box;
+  width: 100%;
+  height: 44px;
+  padding: 0 12px 0 38px;
+  font: inherit;
+  color: var(--aak-color-text);
+  border: 1px solid var(--aak-color-border);
+  border-radius: 4px;
+  background: #fff
+    url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23595959' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.8-3.8'/%3E%3C/svg%3E")
+    no-repeat 12px center / 17px 17px;
+}
+
+.soeg:focus-visible {
+  outline: none;
+  border-color: var(--aak-color-primary);
+  box-shadow: var(--aak-shadow-focus);
+}
+
+.forslag {
+  position: absolute;
+  z-index: 500;
+  left: var(--panel-gutter);
+  right: var(--panel-gutter);
+  margin: 2px 0 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid var(--aak-color-border);
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.forslag__item {
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+.forslag__item:hover,
+.forslag__item--aktiv {
+  background: var(--aak-color-surface);
+}
+
+.forslag__note {
+  display: block;
+  font-size: 13px;
+  color: var(--aak-color-muted);
+}
+
+.soeg__fejl {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: var(--aak-color-muted);
+}
+
+/* Categories -------------------------------------------------------------- */
+
+.panel__kategorier {
+  margin: 20px var(--panel-gutter) 0;
+  padding: 0 0 14px;
+  border: 0;
+  border-bottom: 1px solid var(--aak-color-border);
+}
+
+.panel__kategorier legend {
+  padding: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--aak-color-muted);
+}
+
+.panel__kategorier label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 0;
+}
+
+.panel__kategorier input {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--aak-color-primary);
+}
+
+.kategori-ikon {
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+}
+
+.kategori-ikon--parkering {
+  background: var(--aak-color-primary);
+}
+
+.kategori-ikon--hundeskov {
+  background: #277646;
+}
+
+/* List -------------------------------------------------------------------- */
+
+.panel__liste {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  /* A wheel that runs off the end of the list stops here instead of taking
+   * the page with it. */
+  overscroll-behavior: contain;
+  padding: 0 var(--panel-gutter);
+}
+
+@media (max-width: 820px) {
+  /* The page scrolls at this width, so the list grows instead of scrolling
+   * inside itself. */
+  .panel__liste {
+    flex: none;
+    overflow-y: visible;
+    padding-bottom: var(--panel-gutter);
+  }
+}
+
+/* The header sticks while the list scrolls, and carries the number of places
+ * in the current map view. */
+.panel__hoved {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 20px 0 12px;
+  background: #fff;
+  border-bottom: 1px solid var(--aak-color-border);
+}
+
+.panel__overskrift {
+  margin: 0;
+  font-size: 15px;
+}
+
+.panel__antal {
+  margin: 2px 0 0;
+  font-size: 14px;
+  color: var(--aak-color-muted);
+}
+
+.liste {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.liste li {
+  border-bottom: 1px solid var(--aak-color-border);
+}
+
+.resultat {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  width: 100%;
+  padding: 16px 4px;
+  font: inherit;
+  text-align: left;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.resultat:hover,
+.resultat[aria-pressed="true"] {
+  background: var(--aak-color-surface);
+}
+
+.resultat:focus-visible {
+  outline: none;
+  box-shadow: inset var(--aak-shadow-focus);
+}
+
+.resultat__tekst {
+  flex: 1;
+  min-width: 0;
+}
+
+.resultat__titel {
+  display: block;
+  font-weight: 700;
+}
+
+.resultat__adresse {
+  display: block;
+  margin-top: 2px;
+}
+
+.resultat__fakta {
+  display: block;
+  margin-top: 8px;
+}
+
+.resultat__afstand {
+  flex: none;
+  color: var(--aak-color-muted);
+}
+
+.thumb {
+  flex: none;
+  width: 104px;
+  height: 74px;
+  border-radius: 3px;
+  background: linear-gradient(135deg, #dfe4e8, #c3ccd3);
+}
+
+.liste__tom {
+  margin: 16px 0 0;
+  color: var(--aak-color-muted);
+}
+
+/* Detail ------------------------------------------------------------------ */
+
+.detalje-host {
+  position: absolute;
+  inset: 0;
+  z-index: 600;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: #fff;
+}
+
+@media (max-width: 820px) {
+  /* A sheet over the viewport rather than an overlay on a page-tall panel:
+   * while it is open, it is the only thing that scrolls. */
+  .detalje-host {
+    position: fixed;
+    z-index: 1000;
+  }
+
+  body.detalje-aaben {
+    overflow: hidden;
+  }
+}
+
+.detalje__photo {
+  position: relative;
+  height: 280px;
+  background: linear-gradient(160deg, #cfd8dd, #9fb0b9 60%, #8a9aa4);
+}
+
+.detalje__photo-note {
+  position: absolute;
+  left: 20px;
+  bottom: 16px;
+  padding: 6px 10px;
+  border-radius: 3px;
+  font-size: 13px;
+  color: #fff;
+  background: rgba(26, 26, 26, 0.65);
+}
+
+.detalje__luk {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--aak-color-text);
+  background: #fff;
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.detalje__luk:focus-visible {
+  outline: none;
+  box-shadow: var(--aak-shadow-focus);
+}
+
+.detalje__body {
+  padding: 20px;
+}
+
+.detalje__title {
+  margin: 0 0 18px;
+  font-size: 20px;
+}
+
+.detalje__address {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.detalje__address p {
+  margin: 0;
+  font-weight: 600;
+}
+
+.detalje__route {
+  flex: none;
+}
+
+.detalje__spots {
+  margin: 0 0 8px;
+  font-weight: 600;
+}
+
+.detalje__nabo {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0;
+  color: var(--aak-color-muted);
+}
+
+.detalje__nabo-vis {
+  flex: none;
+  padding: 0;
+  font: inherit;
+  color: var(--aak-color-link);
+  text-decoration: underline;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.detalje__nabo-vis:focus-visible {
+  outline: 2px solid var(--aak-color-primary);
+  outline-offset: 2px;
+}
+
+.detalje__section {
+  margin-top: 16px;
+}
+
+.detalje__section h4 {
+  margin: 0 0 4px;
+  font-size: 15px;
+}
+
+.detalje__section p {
+  margin: 0;
+}
+
+/* Markers ----------------------------------------------------------------- */
+
+.pin {
+  background: none;
+  border: 0;
+}
+
+/* Zoom gate ---------------------------------------------------------------
+ *
+ * Zoomed out, the map holds the places back — the same scale the widget
+ * builds gate at — and this says how to get to them. */
+
+.zoomgate {
+  margin: 20px var(--panel-gutter) 0;
+  padding: 16px 18px;
+  border: 1px solid var(--aak-color-border);
+  border-radius: 4px;
+}
+
+.zoomgate__title {
+  margin: 0 0 8px;
+  font-size: 17px;
+}
+
+.zoomgate__text {
+  margin: 0 0 16px;
+}
+
+.zoomgate__label {
+  margin: 0 0 6px;
+  font-size: 14px;
+  color: var(--aak-color-muted);
+}
+
+.zoomgate__bar {
+  height: 6px;
+  overflow: hidden;
+  border-radius: 3px;
+  background: var(--aak-color-surface);
+}
+
+.zoomgate__fill {
+  display: block;
+  width: calc(var(--zoomgate-progress, 0) * 100%);
+  height: 100%;
+  background: var(--aak-color-primary);
+  transition: width 120ms linear;
+}
+
+/* Gated, the count would read "Viser 0 steder", which is not what happened. */
+.is-zoomgated .page-intro__count {
+  display: none;
+}
+
+/* Leaflet's credits are links in a line of text with no underline, told apart
+ * from it by colour alone (axe: `link-in-text-block`). */
+.leaflet-control-attribution a {
+  text-decoration: underline;
+}

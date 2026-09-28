@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Handicapparkering — Enter</title>
+    <link rel="stylesheet" href="./css/page.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#kort">Spring til kort og liste</a>
+
+    <main>
+      <div class="page-intro">
+        <p class="page-intro__link"><a href="./index.html">Oversigt</a></p>
+        <h1>Handicapparkering</h1>
+        <p class="page-intro__text">
+          Alle registrerede handicapparkeringspladser i Aarhus. Denne side
+          svarer til prototypen fra workspace: samme opbygning, samme
+          oplysninger om det enkelte sted. Det, kildedata ikke indeholder, står
+          som ikke registreret.
+        </p>
+
+        <!-- Announces the zoom gate. The card in the panel is hidden when the
+             places are on the map, and a hidden live region says nothing. -->
+        <p id="kort-status" class="visually-hidden" role="status"></p>
+      </div>
+
+      <div class="kort">
+        <div
+          id="kort"
+          data-widget-url="./config/parkering.json"
+          data-widget-locale="da-DK"
+        ></div>
+
+        <!-- The selected place is rendered here (info `detach`) and laid
+             over the panel, the way the prototype opens a place. -->
+        <div class="detalje-host" data-widget-detach="detalje"></div>
+      </div>
+      <script type="module" src="./js/widget-host.js"></script>
+      <script src="./js/a11y-fixes.js"></script>
+    </main>
+  </body>
+</html>
