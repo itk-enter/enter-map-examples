@@ -155,9 +155,9 @@ The line count covers every file a build needs that we wrote: page, widget
 configuration, templates, stylesheet and script, but not the shared page frame
 or the 115-line snapshot enrichment both builds read. The two builds are within
 two percent of each other, and the zoom gate and the nearest-place field
-cost them roughly the same. They are still not the same kind of line: in the
-widget build about a fifth — 39 of the 79 rules in `enter-widget.css`, roughly
-250 of its 591 lines — exists to defeat `widget.css`; in the Leaflet build every
+cost them roughly the same. They are still not the same kind of line: about a
+fifth of the widget build (~250 of 1375 lines; 39 of the 79 rules in
+`enter-widget.css`) exists to defeat `widget.css`; in the Leaflet build every
 line styles or drives markup from this repository.
 
 The counts are `wc -l` over each build's files, run from `public/`:

@@ -48,9 +48,8 @@ are resolved against the page, not the configuration file, so they start with
 `./`.
 
 Published, the pages run without the routing key: `key.json` is git-ignored, so
-"find nærmeste" is left out of `parkering.html`. Everything else works as it
-does locally. Pages caches files for ten minutes, so a deploy can take that long
-to show.
+"find nærmeste" is left out of `parkering.html`. Pages caches files for ten
+minutes, so a deploy can take that long to show.
 
 ## The data
 
