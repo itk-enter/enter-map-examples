@@ -33,6 +33,9 @@ All notable changes to this project are documented here, following
   credentials for the Enter instance.
 - Documentation of the configuration, the accessibility decisions, what the
   widget styling costs and how the three builds compare.
+- Publishing to GitHub Pages on every push to `main`, and `task pages:preview` to
+  check the site locally under the same subpath first. The published pages run
+  without the Septima routing key.
 
 ### Changed
 
@@ -49,6 +52,9 @@ All notable changes to this project are documented here, following
   the number of places in view and follows every pan, zoom and search.
 - README rewritten around what someone picking the repository up needs: how to
   run it, where the data comes from, and what each build is worth.
+- The front page is now a plain list of the examples. The comparison, the
+  measurements and the findings moved to `docs/variants.md`, with the line
+  counts corrected where the documents disagreed.
 
 ### Removed
 
@@ -76,3 +82,6 @@ All notable changes to this project are documented here, following
   places.
 - `aria-expanded` is stripped from the list header, where selecting a place puts
   it and where the attribute is not allowed.
+- Widget configuration paths are relative to the page rather than climbing out
+  of `config/`, so the styled and plain builds load their data, templates and
+  stylesheet when served from a subpath such as GitHub Pages.

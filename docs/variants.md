@@ -2,11 +2,11 @@
 
 The repository carries three builds of the same content, so the choice of stack
 can be made from something other than impressions. Same data, same city, same
-two categories.
+two categories. This page is the comparison; the site itself only lists the
+examples.
 
 | Page | Stack |
 | --- | --- |
-| `index.html` | Overview of all four, with these measurements |
 | `septima.html`, `parkering.html` | Septima Widget, styled to match the workspace prototype |
 | `plain.html` | Septima Widget, configuration only — no stylesheet, no JavaScript |
 | `leaflet.html` | Leaflet and OpenStreetMap, list and detail written here |
@@ -156,8 +156,40 @@ configuration, templates, stylesheet and script, but not the shared page frame
 or the 115-line snapshot enrichment both builds read. The two builds are within
 two percent of each other, and the zoom gate and the nearest-place field
 cost them roughly the same. They are still not the same kind of line: in the
-widget build about a quarter exists to defeat `widget.css`; in the Leaflet build
-every line styles or drives markup from this repository.
+widget build about a fifth — 39 of the 79 rules in `enter-widget.css`, roughly
+250 of its 591 lines — exists to defeat `widget.css`; in the Leaflet build every
+line styles or drives markup from this repository.
+
+The counts are `wc -l` over each build's files, run from `public/`:
+
+```shell
+wc -l septima.html parkering.html config/tilgaengelighed.json config/parkering.json \
+  templates/*.html css/enter-widget.css js/widget-host.js js/a11y-fixes.js
+wc -l plain.html config/plain.json
+wc -l leaflet.html css/leaflet-app.css js/leaflet-app.js
+```
+
+## Found along the way
+
+- **The plain widget does not pass an accessibility check.** Of its three axe
+  violations only the heading level can be reached from configuration, so even
+  the "no hacks" option needs a patch or a Septima release.
+- **Half of the styled stylesheet overrides the widget** rather than styling
+  content. None of it is a supported extension point, so a minor widget release
+  can change the layout without warning.
+- **Three documented options do not work:** `layout.leftWidth`,
+  `slots.left.header`, and the substitution of `fill="currentColor"` in SVG
+  markers. Details in [septima-overrides.md](septima-overrides.md#defects).
+- **Filters can empty the map silently.** A `range` filter without `min`, `max`
+  and `limit`, or a `selectlist` without `values`, matches nothing and says
+  nothing.
+- **The Leaflet build removes two contract dependencies.** Address search comes
+  from Klimadatastyrelsen's Adressevælger and distances are computed in the
+  browser, so neither a licence nor an API key is on the critical path to
+  publishing.
+- **Data is still missing.** Photo, rating, payment, surface, charging and
+  vehicle type are not in the source. Every build shows them as not registered
+  rather than hiding them.
 
 ## What each option is good for
 

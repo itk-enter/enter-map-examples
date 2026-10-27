@@ -9,6 +9,10 @@ tasks:
     desc: Open the demo page in a browser
     cmd: open 'http://localhost:8088/'
 
+  pages:preview:
+    desc: Serve public/ as GitHub Pages will publish it, on http://localhost:8089/enter-map-examples/
+    cmd: bin/pages-preview.sh 8089
+
   route:key:
     desc: Write the Septima routing key from .env into public/config/key.json
     cmd: bin/route-key.sh

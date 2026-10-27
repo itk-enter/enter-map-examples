@@ -3,212 +3,64 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tilgængelighed i byen — fire udgaver</title>
+    <title>Tilgængelighed i byen — korteksempler</title>
     <link rel="stylesheet" href="./css/page.css" />
     <link rel="stylesheet" href="./css/oversigt.css" />
   </head>
   <body>
-    <a class="skip-link" href="#udgaver">Spring til udgaverne</a>
+    <a class="skip-link" href="#eksempler">Spring til eksemplerne</a>
 
     <main class="oversigt">
       <header class="oversigt__intro">
         <h1>Tilgængelighed i byen</h1>
         <p class="oversigt__manchet">
-          Samme data fra Enter, samme indhold, bygget fire gange. Siderne findes
-          for at gøre valget af kortstak til et spørgsmål om målinger frem for
-          fornemmelser.
+          Handicapparkering og hundeskove fra Enter, vist som en liste og et
+          kort der følges ad. Samme indhold bygget på tre måder. Data er et
+          øjebliksbillede, ikke en direkte forbindelse til Enter.
         </p>
       </header>
 
-      <h2 id="udgaver">Udgaverne</h2>
+      <h2 id="eksempler">Eksemplerne</h2>
 
       <ul class="udgaver">
         <li class="udgave">
           <h3><a href="./septima.html">Septima Widget, tilpasset prototypen</a></h3>
           <p class="udgave__hvad">
-            Begge kategorier, kategorivælger, detaljevisning hen over listen.
-            Sådan ser prototypen ud, bygget på widgeten.
+            Begge kategorier med kategorivælger og detaljevisning hen over
+            listen, stylet som prototypen.
           </p>
-          <dl class="noegletal">
-            <div><dt>Linjer vi vedligeholder</dt><dd>1375</dd></div>
-            <div><dt>Heraf mod widgetens eget stylesheet</dt><dd>~250</dd></div>
-            <div><dt>axe-core</dt><dd>Ingen fejl</dd></div>
-            <div><dt>Licens og API-nøgle</dt><dd>Begge dele</dd></div>
-          </dl>
         </li>
 
         <li class="udgave">
           <h3><a href="./parkering.html">Septima Widget, kun parkering</a></h3>
           <p class="udgave__hvad">
-            Handicapparkering alene, med "find nærmeste" fra en adresse. Samme
-            stak som ovenfor, samme omkostning.
+            Handicapparkering alene, med afstand til nærmeste anden plads.
           </p>
-          <dl class="noegletal">
-            <div><dt>Ekstra</dt><dd>Find nærmeste, rute på kortet, nærmeste anden plads</dd></div>
-            <div><dt>axe-core</dt><dd>Ingen fejl</dd></div>
-            <div><dt>API-nøgle</dt><dd>Ligger i .env, ikke i repoet</dd></div>
-          </dl>
         </li>
 
         <li class="udgave">
           <h3><a href="./plain.html">Ren Septima Widget</a></h3>
           <p class="udgave__hvad">
-            Kun konfiguration: intet stylesheet, ingen JavaScript, ingen
-            overskrivning af widgetens markup.
+            Samme indhold på widgetens egen konfiguration: intet eget
+            stylesheet og ingen JavaScript.
           </p>
-          <dl class="noegletal">
-            <div><dt>Linjer vi vedligeholder</dt><dd>175</dd></div>
-            <div><dt>Heraf mod widgetens eget stylesheet</dt><dd>0</dd></div>
-            <div><dt>axe-core</dt><dd>3 fejl, heraf én kritisk</dd></div>
-            <div><dt>Licens og API-nøgle</dt><dd>Begge dele</dd></div>
-          </dl>
         </li>
 
         <li class="udgave">
           <h3><a href="./leaflet.html">Leaflet og OpenStreetMap</a></h3>
           <p class="udgave__hvad">
-            Liste, detaljevisning og kort skrevet her. Adressesøgning fra
-            Klimadatastyrelsens Adressevælger, afstande regnet i browseren.
+            Liste, detaljevisning og kort skrevet her, med adressesøgning og
+            find nærmeste.
           </p>
-          <dl class="noegletal">
-            <div><dt>Linjer vi vedligeholder</dt><dd>1352</dd></div>
-            <div><dt>Heraf mod fremmed markup</dt><dd>0</dd></div>
-            <div><dt>axe-core</dt><dd>Ingen fejl</dd></div>
-            <div><dt>Licens og API-nøgle</dt><dd>Ingen af delene</dd></div>
-          </dl>
         </li>
       </ul>
 
-      <h2>Sådan står de ved siden af hinanden</h2>
-
-      <div class="tabel-wrap">
-        <table class="sammenligning">
-          <caption class="visually-hidden">
-            Sammenligning af de fire udgaver
-          </caption>
-          <thead>
-            <tr>
-              <th scope="col">Forhold</th>
-              <th scope="col">Widget, tilpasset</th>
-              <th scope="col">Widget, ren</th>
-              <th scope="col">Leaflet</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">Linjer vi vedligeholder</th>
-              <td>1375</td>
-              <td>175</td>
-              <td>1352</td>
-            </tr>
-            <tr>
-              <th scope="row">Heraf kamp mod andres stylesheet</th>
-              <td>~250</td>
-              <td>0</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <th scope="row">Lapper på fremmed markup</th>
-              <td>59 linjer</td>
-              <td>0</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <th scope="row">axe-core</th>
-              <td>Ingen fejl</td>
-              <td class="daarlig">aria-allowed-attr, link-in-text-block, heading-order</td>
-              <td>Ingen fejl</td>
-            </tr>
-            <tr>
-              <th scope="row">Svarer til prototypen</th>
-              <td>Ja</td>
-              <td class="daarlig">Nej</td>
-              <td>Ja</td>
-            </tr>
-            <tr>
-              <th scope="row">Kræver Septima-licens</th>
-              <td class="daarlig">Ja</td>
-              <td class="daarlig">Ja</td>
-              <td>Nej</td>
-            </tr>
-            <tr>
-              <th scope="row">Kræver API-nøgle</th>
-              <td class="daarlig">Ja</td>
-              <td class="daarlig">Ja</td>
-              <td>Nej</td>
-            </tr>
-            <tr>
-              <th scope="row">Overlever en widget-opdatering</th>
-              <td class="daarlig">Næppe</td>
-              <td>Ja</td>
-              <td>Ikke relevant</td>
-            </tr>
-            <tr>
-              <th scope="row">Hvem kan vedligeholde den</th>
-              <td>Én der kender widgetens indre</td>
-              <td>Alle der kan læse JSON</td>
-              <td>Enhver frontend-udvikler</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h2>Det vi fandt undervejs</h2>
-
-      <ul class="fund">
-        <li>
-          <strong>Den rene widget består ikke et tilgængelighedstjek.</strong>
-          <code>layerswitch2</code> sætter <code>aria-expanded</code> på en
-          <code>&lt;div&gt;</code>, kortets kreditlinje har links uden
-          understregning, og overskriftsniveauerne springer. Kun det sidste kan
-          nås fra konfigurationen — også "uden hacks" kræver altså en lap eller
-          en rettelse fra Septima.
-        </li>
-        <li>
-          <strong>Halvdelen af vores stylesheet overskriver widgeten</strong>
-          frem for at style indhold. Intet af det er et understøttet
-          udvidelsespunkt, så en mindre opdatering kan ændre layoutet uden
-          varsel.
-        </li>
-        <li>
-          <strong>Tre dokumenterede muligheder virker ikke:</strong>
-          <code>layout.leftWidth</code>, <code>slots.left.header</code> og
-          substitutionen af <code>fill="currentColor"</code> i SVG-markører.
-        </li>
-        <li>
-          <strong>Filtre kan tømme kortet i stilhed.</strong> Et
-          <code>range</code>-filter uden <code>min</code>, <code>max</code> og
-          <code>limit</code> matcher ingenting — uden fejlbesked.
-        </li>
-        <li>
-          <strong>Leaflet-udgaven fjerner to kontraktbindinger.</strong>
-          Adressesøgningen kommer fra Klimadatastyrelsens Adressevælger, og
-          afstande regnes i browseren, så hverken licens eller API-nøgle er på
-          den kritiske vej til at udgive.
-        </li>
-        <li>
-          <strong>Data mangler stadig.</strong> Hverken foto, vurdering,
-          betaling, belægning, ladestander eller køretøjstype findes i kilden.
-          Alle udgaver skriver det som ikke registreret frem for at skjule det.
-        </li>
-      </ul>
-
-      <h2>Dokumentation</h2>
-
-      <ul class="dok">
-        <li>
-          <a href="https://github.com/itk-dev/enter">Enter</a> leverer data via
-          NGSI-LD. Dette er et demoprojekt oven på et øjebliksbillede af dem.
-        </li>
-        <li>
-          <code>docs/septima-overrides.md</code> — hver enkelt overskrivning,
-          hvorfor den er der, og hvad der ville fjerne den.
-        </li>
-        <li>
-          <code>docs/variants.md</code> — hvad den rene widget mangler, og
-          målingerne bag tabellen ovenfor.
-        </li>
-      </ul>
+      <p class="oversigt__dok">
+        Sammenligningen af udgaverne — målinger, tilgængelighedstjek og hvad
+        hver af dem koster — står i
+        <a href="https://github.com/itk-enter/enter-map-examples/blob/main/docs/variants.md">docs/variants.md</a>
+        på GitHub (på engelsk).
+      </p>
     </main>
   </body>
 </html>

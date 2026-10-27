@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Static server for the demo.
 
+Usage: serve.py [PORT] [ROOT]. ROOT defaults to public/.
+
 Plain `http.server` sends no cache headers, so browsers apply their own
 heuristic and keep serving yesterday's configuration, templates and CSS — the
 widget fetches those itself, so a normal reload does not clear them. Everything
@@ -21,7 +23,9 @@ class NoStoreHandler(http.server.SimpleHTTPRequestHandler):
 
 def main() -> None:
     port = int(sys.argv[1]) if len(sys.argv) > 1 else 8088
-    root = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "public")
+    root = sys.argv[2] if len(sys.argv) > 2 else os.path.join(
+        os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "public"
+    )
     handler = functools.partial(NoStoreHandler, directory=root)
 
     with http.server.ThreadingHTTPServer(("127.0.0.1", port), handler) as httpd:

@@ -3,7 +3,7 @@
   "map": {
     "title": "Kort over handicapparkering i Aarhus",
     "css": [
-      "../css/enter-widget.css"
+      "./css/enter-widget.css"
     ],
     "view": {
       "zoomLevel": 10,
@@ -51,7 +51,7 @@
         "type": "geojson",
         "features": true,
         "selectable": true,
-        "features_host": "../data/handicapparkering.geojson",
+        "features_host": "./data/handicapparkering.geojson",
         "features_dataType": "json",
         "features_type": "Point",
         "srs": "EPSG:4326",
@@ -83,13 +83,13 @@
         "template_search_title": "<%= adresse %>",
         "template_search_description": "Handicapparkering",
         "template_table": {
-          "url": "../templates/parkering-row.html"
+          "url": "./templates/parkering-row.html"
         },
         "template_info": {
-          "url": "../templates/parkering-detalje.html"
+          "url": "./templates/parkering-detalje.html"
         },
         "template_route": {
-          "url": "../templates/parkering-rute.html"
+          "url": "./templates/parkering-rute.html"
         },
         "legend": [
           {

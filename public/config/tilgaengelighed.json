@@ -3,7 +3,7 @@
   "map": {
     "title": "Kort over tilgængelige steder i Aarhus",
     "css": [
-      "../css/enter-widget.css"
+      "./css/enter-widget.css"
     ],
     "view": {
       "zoomLevel": 10,
@@ -51,7 +51,7 @@
         "type": "geojson",
         "features": true,
         "selectable": true,
-        "features_host": "../data/handicapparkering.geojson",
+        "features_host": "./data/handicapparkering.geojson",
         "features_dataType": "json",
         "features_type": "Point",
         "srs": "EPSG:4326",
@@ -83,10 +83,10 @@
         "template_search_title": "<%= adresse %>",
         "template_search_description": "Handicapparkering · <%= pladser %> pladser",
         "template_table": {
-          "url": "../templates/parkering-row.html"
+          "url": "./templates/parkering-row.html"
         },
         "template_info": {
-          "url": "../templates/parkering-detalje.html"
+          "url": "./templates/parkering-detalje.html"
         },
         "legend": [
           {
@@ -100,7 +100,7 @@
         "type": "geojson",
         "features": true,
         "selectable": true,
-        "features_host": "../data/hundeskov.geojson",
+        "features_host": "./data/hundeskov.geojson",
         "features_dataType": "json",
         "srs": "EPSG:4326",
         "maxResolution": 3.2,
@@ -124,10 +124,10 @@
         "template_search_title": "<%= navn %>",
         "template_search_description": "Hundeskov · <%= typeof hegnet !== 'undefined' && hegnet ? hegnet : 'hegning ikke registreret' %>",
         "template_table": {
-          "url": "../templates/hundeskov-row.html"
+          "url": "./templates/hundeskov-row.html"
         },
         "template_info": {
-          "url": "../templates/hundeskov-detalje.html"
+          "url": "./templates/hundeskov-detalje.html"
         }
       }
     ],
