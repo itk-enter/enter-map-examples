@@ -33,9 +33,9 @@ All notable changes to this project are documented here, following
   credentials for the Enter instance.
 - Documentation of the configuration, the accessibility decisions, what the
   widget styling costs and how the three builds compare.
-- Publishing to GitHub Pages on every push to `main`, and `task pages:preview` to
-  check the site locally under the same subpath first. The published pages run
-  without the Septima routing key.
+- Publishing to GitHub Pages on every push to `main`. `task serve` now serves
+  the site under the same subpath, so paths that would break once published
+  break locally too. The published pages run without the Septima routing key.
 
 ### Changed
 

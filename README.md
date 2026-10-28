@@ -17,11 +17,13 @@ All of them start at Dokk1.
 ## Running it
 
 ```shell
-task serve      # http://localhost:8088
+task serve      # http://localhost:8088/enter-map-examples/
 ```
 
 That is all it takes. The data is in the repository, and nothing here needs a
-build step, a package manager or an Enter instance.
+build step, a package manager or an Enter instance. The site is served under
+the same path as on GitHub Pages, and anything outside it answers 404, so a
+path that would break once published breaks locally too.
 
 Two optional things need `.env` (copy `.env.example`):
 
@@ -37,15 +39,10 @@ The examples are published at
 `main`; there is no build step. The repository's Pages source has to be set to
 "GitHub Actions" once.
 
-```shell
-task pages:preview   # http://localhost:8089/enter-map-examples/
-```
-
-serves exactly what Pages will publish — the files Git would commit, under the
-repository subpath — so a path that only works at the server root breaks here
-too. Paths in the widget configuration (`css`, `features_host`, template `url`)
-are resolved against the page, not the configuration file, so they start with
-`./`.
+Paths in the widget configuration (`css`, `features_host`, template `url`) are
+resolved against the page, not the configuration file, so they start with `./`.
+A `../` climbs out of the site and fails under `task serve` as it would on
+Pages.
 
 Published, the pages run without the routing key: `key.json` is git-ignored, so
 "find nærmeste" is left out of `parkering.html`. Pages caches files for ten
