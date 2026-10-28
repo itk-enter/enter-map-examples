@@ -2,12 +2,12 @@ version: '3'
 
 tasks:
   serve:
-    desc: Serve the demo page on http://localhost:8088
+    desc: Serve the demo on http://localhost:8088/enter-map-examples/, the same path as on GitHub Pages
     cmd: bin/serve.py 8088
 
   open:
     desc: Open the demo page in a browser
-    cmd: open 'http://localhost:8088/'
+    cmd: open 'http://localhost:8088/enter-map-examples/'
 
   route:key:
     desc: Write the Septima routing key from .env into public/config/key.json

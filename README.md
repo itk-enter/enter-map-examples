@@ -6,7 +6,7 @@ they exist to show what the same page costs on three different stacks.
 
 | Page             | Shows                                                       |
 | ---------------- | ----------------------------------------------------------- |
-| `index.html`     | Overview of the four builds and the measurements behind them |
+| `index.html`     | List of the examples                                        |
 | `septima.html`   | Handicapparkering and hundeskove on Septima Widget, styled to the prototype |
 | `parkering.html` | Handicapparkering alone, with "find nærmeste"               |
 | `plain.html`     | Same content on widget configuration only                    |
@@ -17,17 +17,36 @@ All of them start at Dokk1.
 ## Running it
 
 ```shell
-task serve      # http://localhost:8088
+task serve      # http://localhost:8088/enter-map-examples/
 ```
 
 That is all it takes. The data is in the repository, and nothing here needs a
-build step, a package manager or an Enter instance.
+build step, a package manager or an Enter instance. The site is served under
+the same path as on GitHub Pages, and anything outside it answers 404, so a
+path that would break once published breaks locally too.
 
 Two optional things need `.env` (copy `.env.example`):
 
 - `task data:fetch` refreshes the data from Enter. Needs credentials.
 - `task route:key` turns on "find nærmeste" on `parkering.html`. Needs a Septima
   routing key.
+
+## GitHub Pages
+
+The examples are published at
+<https://itk-enter.github.io/enter-map-examples/> for sharing with stakeholders.
+`.github/workflows/pages.yaml` publishes `public/` as it is on every push to
+`main`; there is no build step. The repository's Pages source has to be set to
+"GitHub Actions" once.
+
+Paths in the widget configuration (`css`, `features_host`, template `url`) are
+resolved against the page, not the configuration file, so they start with `./`.
+A `../` climbs out of the site and fails under `task serve` as it would on
+Pages.
+
+Published, the pages run without the routing key: `key.json` is git-ignored, so
+"find nærmeste" is left out of `parkering.html`. Pages caches files for ten
+minutes, so a deploy can take that long to show.
 
 ## The data
 
@@ -88,9 +107,8 @@ in their own example configurations, which is enough to see the feature work
 locally, but it is theirs and not something to ship on.
 
 Worth being clear about: the browser sends this key, so it can be kept out of
-the repository but not kept secret. If the demo is ever published to GitHub
-Pages with routing switched on, the key is public. The Leaflet build needs no
-key at all.
+the repository but not kept secret. That is why the GitHub Pages site runs
+without it. The Leaflet build needs no key at all.
 
 ## How a page is built
 
@@ -197,20 +215,10 @@ it.
 
 ## Which build to go on with
 
-Not decided. [docs/variants.md](docs/variants.md) has the measurements and
-[docs/septima-overrides.md](docs/septima-overrides.md) the full inventory of
-what the styled build overrides. Short version:
-
-- **Leaflet** matches the prototype, passes axe-core, and needs neither a
-  licence nor an API key. It is the most code (~900 lines) and gives up
-  Septima's map features: road routing, print, oblique imagery, layer
-  catalogues.
-- **Styled widget** also matches the prototype, but a quarter of its CSS exists
-  to defeat `widget.css`, and none of what it overrides is a supported
-  extension point. A minor widget release can undo the layout without warning.
-- **Plain widget** is by far the cheapest to own and upgrades safely, but it
-  does not match the prototype and does not pass an accessibility check as it
-  stands.
+Not decided. [docs/variants.md](docs/variants.md) compares the three builds with
+the measurements behind them, and
+[docs/septima-overrides.md](docs/septima-overrides.md) is the full inventory of
+what the styled build overrides.
 
 ## Moving it into Enter
 
