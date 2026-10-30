@@ -8,6 +8,8 @@ they exist to show what the same page costs on three different stacks.
 | ----------------- | ----------------------------------------------------------- |
 | `index.html`      | List of the Leaflet examples                                |
 | `baenke.html`     | Benches from OpenStreetMap, source `test:osm-bench`         |
+| `aarhus-dk-baenke.html` | `baenke-embed.html` in an iframe on a mock aarhus.dk article page |
+| `baenke-embed.html` | The bench map with no heading or intro, filling its frame    |
 | `toiletter.html`  | Toilets from three sources on one map: `test:osm-public-toilet`, `test:mtm_spatialmaps-toilet-city`, `test:mtm_spatialmaps-toilet-other` |
 | `septima.html`    | Handicapparkering and hundeskove on Septima Widget, styled to the prototype |
 | `parkering.html`  | Handicapparkering alone, with "find nærmeste"               |
@@ -19,6 +21,22 @@ Enter sources (`baenke.html`, `toiletter.html`); new examples are added there
 the same way. The last four pages compared the builds for handicapparkering
 and hundeskove. They are still published at their own address, linked from
 nowhere, and the comparison is in `docs/variants.md`.
+
+### Embedding in aarhus.dk
+
+`aarhus-dk-baenke.html` shows how a map sits on aarhus.dk: an article page
+with the site's header, breadcrumb, text column and footer, and the map in an
+`<iframe>` the width of the page container. The page is a mock-up and says so
+in a banner at the top. Its stylesheet, `css/aarhus-dk.css`, carries the
+design tokens from aarhus.dk's `identity-aarhus.css` (Arial, text `#333`,
+links `#3661d8`, footer `#333`), copied rather than linked so the demo does not
+change with the live site. The two logos in `public/img/` are Aarhus Kommune's,
+from the same site.
+
+The framed page, `baenke-embed.html`, is `baenke.html` without the heading and
+intro (the heading stays for screen readers) and with `css/embed.css`, which
+makes the map fill the frame. The host page sets the frame's height. Below
+820px the map and list stack inside the frame and the frame scrolls.
 
 ### Adding a Leaflet example
 

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bænke i byen — eksempel i aarhus.dk-design</title>
+    <link rel="stylesheet" href="./css/aarhus-dk.css" />
+  </head>
+  <body>
+    <a class="bypass-block" href="#main-content">Gå til hovedindhold</a>
+
+    <!-- Says plainly that this is a mock-up, so a screenshot of it is not
+         taken for a page on aarhus.dk. -->
+    <p class="demo-banner">
+      Eksempel: sådan kan bænkekortet se ud indlejret på en side på aarhus.dk.
+      Siden er ikke en del af aarhus.dk.
+      <a href="./index.html">Til oversigten</a>
+    </p>
+
+    <header class="header">
+      <div class="container header__container">
+        <a class="header__brand" href="https://aarhus.dk/">
+          <img src="./img/aak-logo.svg" alt="Aarhus Kommunes logo" width="66" height="33" />
+        </a>
+
+        <nav class="header__nav" aria-label="Hovedmenu">
+          <ul class="header__secondary">
+            <li><a href="https://aarhus.dk/english">English</a></li>
+            <li><a href="https://aarhus.dk/nyt">Nyt</a></li>
+            <li><a href="https://aarhus.dk/job">Job</a></li>
+            <li><a href="https://aarhus.dk/abonnementsside">Abonnementsside</a></li>
+          </ul>
+          <ul class="header__primary">
+            <li><a href="https://aarhus.dk/borger" aria-current="true">Borger</a></li>
+            <li><a href="https://aarhus.dk/virksomhed">Virksomhed</a></li>
+            <li><a href="https://aarhus.dk/demokrati">Demokrati</a></li>
+            <li><a href="https://aarhus.dk/forening">Forening</a></li>
+            <li><a href="https://aarhus.dk/om-kommunen">Om kommunen</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Brødkrumme">
+          <ol>
+            <li><a href="https://aarhus.dk/">Aarhus.dk</a></li>
+            <li><a href="https://aarhus.dk/borger">Borger</a></li>
+            <li aria-current="page">Bænke i byen</li>
+          </ol>
+        </nav>
+
+        <div class="article">
+          <h1>Bænke i byen</h1>
+          <p class="article__manchet">
+            Find en bænk i nærheden. Kortet viser bænke i Aarhus Kommune, og du
+            kan se om en bænk har ryglæn og armlæn, hvad den er lavet af, og hvor
+            mange den har plads til.
+          </p>
+
+          <h2>Sådan bruger du kortet</h2>
+          <p>
+            Skriv en adresse i søgefeltet for at se de nærmeste bænke, eller zoom
+            ind på kortet. Vælg en bænk i listen eller på kortet for at se mere om
+            den.
+          </p>
+        </div>
+      </div>
+
+      <!-- The map runs the width of the container, as the map on the parking
+           page does, rather than the narrow text column. -->
+      <div class="container">
+        <div class="map-frame">
+          <iframe
+            src="./baenke-embed.html"
+            title="Kort over bænke i Aarhus Kommune"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="article">
+          <h2>Om data</h2>
+          <p>
+            Bænkene kommer fra OpenStreetMap via Enter, Aarhus Kommunes platform
+            for åbne data. Oplysningerne er indtastet af frivillige og kan være
+            ufuldstændige.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__grid">
+        <div>
+          <img
+            class="footer__logo"
+            src="./img/aak-logo-footer.svg"
+            alt="Aarhus Kommunes logo i footer"
+            width="139"
+            height="70"
+          />
+        </div>
+        <section>
+          <h2>Aarhus Kommune</h2>
+          <p>
+            Rådhuset<br />
+            Rådhuspladsen 2<br />
+            8000 Aarhus C<br />
+            Tlf. 89 40 20 00
+          </p>
+          <p><a href="https://was.digst.dk/aarhus-dk">Tilgængelighedserklæring</a></p>
+        </section>
+        <section>
+          <h2>Borgerservice</h2>
+          <p>
+            Hack Kampmanns Plads 2<br />
+            8000 Aarhus C<br />
+            Tlf. 89 40 22 22
+          </p>
+          <p><a href="https://aarhus.dk/kontakt-borgerservice">Kontakt Borgerservice</a></p>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>
