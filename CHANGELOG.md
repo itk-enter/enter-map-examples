@@ -7,6 +7,9 @@ All notable changes to this project are documented here, following
 
 ### Added
 
+- `toiletter-samlet.html`: Enter's merged toilet source,
+  `test:merged-public-toilets`, with each toilet once and the sources it was
+  merged from in the detail view. Third on the front page.
 - `baenke.html` and `toiletter.html`: Leaflet examples of sources on Enter,
   benches from `test:osm-bench`, and toilets from `test:osm-public-toilet`,
   `test:mtm_spatialmaps-toilet-city` and `test:mtm_spatialmaps-toilet-other` on
