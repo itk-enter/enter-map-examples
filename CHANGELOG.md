@@ -7,6 +7,11 @@ All notable changes to this project are documented here, following
 
 ### Added
 
+- `aarhus-dk-baenke-sidebar.html` and `aarhus-dk-baenke-fuld.html`: the bench
+  map embedded with an iframe on a mock aarhus.dk article page styled with
+  aarhus.dk's design tokens: the frame in the text column next to the
+  sidebar, and at full width without it; `baenke-embed.html` is
+  the framed page, without heading or intro.
 - `toiletter-samlet.html`: Enter's merged toilet source,
   `test:merged-public-toilets`, with each toilet once and the sources it was
   merged from in the detail view. Third on the front page.

@@ -1,0 +1,10 @@
+/* A Leaflet page made to sit in an iframe: no page around it, and the map
+ * fills the frame. The host page decides the height. */
+
+:root {
+  --map-height: 100vh;
+}
+
+.kort {
+  border-top: 0;
+}

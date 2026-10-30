@@ -8,6 +8,9 @@ they exist to show what the same page costs on three different stacks.
 | ----------------- | ----------------------------------------------------------- |
 | `index.html`      | List of the Leaflet examples                                |
 | `baenke.html`     | Benches from OpenStreetMap, source `test:osm-bench`         |
+| `aarhus-dk-baenke-sidebar.html` | `baenke-embed.html` in an iframe in the text column of a mock aarhus.dk article, next to the sidebar |
+| `aarhus-dk-baenke-fuld.html` | The same article and iframe without the sidebar, the frame full container width |
+| `baenke-embed.html` | The bench map with no heading or intro, filling its frame    |
 | `toiletter.html`  | Toilets from three sources on one map: `test:osm-public-toilet`, `test:mtm_spatialmaps-toilet-city`, `test:mtm_spatialmaps-toilet-other` |
 | `toiletter-samlet.html` | Toilets from Enter's merged source `test:merged-public-toilets`, each toilet once |
 | `septima.html`    | Handicapparkering and hundeskove on Septima Widget, styled to the prototype |
@@ -20,6 +23,35 @@ Enter sources (`baenke.html`, `toiletter.html`, `toiletter-samlet.html`); new ex
 the same way. The last four pages compared the builds for handicapparkering
 and hundeskove. They are still published at their own address, linked from
 nowhere, and the comparison is in `docs/variants.md`.
+
+### Embedding in aarhus.dk
+
+Two pages show how the map sits on aarhus.dk when it is embedded with an
+`<iframe>`, the way an editor would add it to an article: the site's header,
+breadcrumb, text column and footer around `baenke-embed.html` in a frame. The
+columns follow aarhus.dk's grid: text in `col-lg-7 offset-xl-1`, sidebar in
+`col-lg-4 offset-lg-1 col-xl-3`. The pages differ only in how wide the frame
+gets:
+
+- `aarhus-dk-baenke-sidebar.html` has the sidebar, so the frame stays in the
+  text column. That is the safe assumption: the article wrapper on aarhus.dk
+  is not known to allow full-width content. The sidebar holds a placeholder for
+  the contact box, with no contact details.
+- `aarhus-dk-baenke-fuld.html` has no sidebar, and the frame runs the width of
+  the container.
+
+Both are mock-ups and say so in a banner at the top. Its stylesheet, `css/aarhus-dk.css`, carries the
+design tokens from aarhus.dk's `identity-aarhus.css` (Arial, text `#333`,
+links `#3661d8`, footer `#333`), copied rather than linked so the demo does not
+change with the live site. The two logos in `public/img/` are Aarhus Kommune's,
+from the same site.
+
+The framed page, `baenke-embed.html`, is `baenke.html` without the heading and
+intro (the heading stays for screen readers) and with `css/embed.css`, which
+makes the map fill the frame. The host page sets the frame's height. In the
+text column the frame is about 800px wide at most, under the Leaflet build's
+820px breakpoint, so the map and list are stacked and the frame scrolls. At
+full width they sit side by side, as on the stand-alone page.
 
 ### Adding a Leaflet example
 
