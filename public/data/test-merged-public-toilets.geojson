@@ -1,0 +1,4236 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-city-23",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.213266951391805,
+            56.153275675849564
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "yes",
+        "address": {
+          "addressLocality": "Aarhus",
+          "streetAddress": "Hack Kampmanns Plads 2"
+        },
+        "name": "Den nye havneplads v. Toldboden",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-city-23",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-4278761899"
+        ],
+        "additionalInformation": {
+          "registeredAt": "2022-06-17 10:56:16.8",
+          "updatedAt": "2022-10-10 11:10:20.17",
+          "status": "Aktiv"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-city-21",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.164011374170004,
+            56.21218429940243
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "yes",
+        "address": {
+          "addressLocality": "Lisbjerg",
+          "streetAddress": "Klokhøjen 30A"
+        },
+        "name": "Lisbjerg/Skejby station",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-city-21",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-11046340561"
+        ],
+        "additionalInformation": {
+          "registeredAt": "2022-06-17 10:25:14.85",
+          "updatedAt": "2022-06-17 10:30:23.48",
+          "status": "Aktiv"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-city-10",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.20728969153797,
+          56.139516799221184
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "yes",
+        "address": {
+          "addressLocality": "Århus C",
+          "postalCode": "8000",
+          "streetAddress": "Strandvejen 17"
+        },
+        "name": "Fintenborg Plads",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-city-10",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-way-344112405"
+        ],
+        "additionalInformation": {
+          "jcdNumber": "AAR0011SA",
+          "placement": "Tangkrogen",
+          "registeredAt": "2018-10-01 13:12:00.333",
+          "updatedAt": "2018-12-03 11:47:37.783",
+          "status": "Aktiv"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-10218259509",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2045287,
+          56.1494398
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "babyChange": true,
+        "disposal": "flush",
+        "isAccessibleForFree": false,
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-10218259509",
+        "additionalInformation": {
+          "level": "0;1"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-10201807748",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.211735164268967,
+            56.138730321805795
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Multi Handicaptoilet",
+        "accessNote": "Adgang kræver visitation (Via DHF)",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Marselisborg Havnevej"
+        },
+        "name": "Tangkrogen",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-10201807748",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-40"
+        ],
+        "additionalInformation": {
+          "access": "permit",
+          "registeredAt": "2022-06-03 09:53:00.383",
+          "season": "Hele året",
+          "updatedAt": "2022-06-03 09:56:42.597"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-city-9",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.19964796000854,
+            56.15563567067499
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "babyChange": true,
+        "disposal": "flush",
+        "drinkingWater": false,
+        "genderCategory": "unisex",
+        "isAccessibleForFree": true,
+        "toiletPosition": "seated",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "addressLocality": "Århus C",
+          "postalCode": "8000",
+          "streetAddress": "Vester Alle 14E"
+        },
+        "name": "v/Mølleparken",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-city-9",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-4747788467"
+        ],
+        "additionalInformation": {
+          "jcdNumber": "AAR0010SA",
+          "registeredAt": "2018-10-01 13:12:00.333",
+          "updatedAt": "2022-06-17 13:48:04.49",
+          "status": "Aktiv"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-city-25",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.13604414905273,
+            56.096235255174875
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "disposal": "flush",
+        "drinkingWater": false,
+        "isAccessibleForFree": true,
+        "openingHours": "24/7",
+        "staffed": false,
+        "toiletPosition": "seated",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "addressLocality": "Tranbjerg",
+          "streetAddress": "Tranbjerg Stationsvej 2B"
+        },
+        "name": "Ved stationen",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-city-25",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-10095807265"
+        ],
+        "additionalInformation": {
+          "otherTags": {
+            "capacity": "1"
+          },
+          "registeredAt": "2022-06-17 11:19:55.1",
+          "updatedAt": "2022-06-17 11:19:55.1",
+          "status": "Aktiv"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-10915707966",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2042457,
+          56.1712327
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-10915707966",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-10915707968",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.199361,
+          56.1704583
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "isAccessibleForFree": true,
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-10915707968",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-10201820947",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.21587,
+          56.138432
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "customers",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-10201820947",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-10201836866",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2138041,
+          56.1393621
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "key needed",
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-10201836866",
+        "additionalInformation": {
+          "access": "permit"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-city-3",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.20497284143227,
+          56.150893318903954
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "address": {
+          "addressLocality": "Århus C",
+          "postalCode": "8000",
+          "streetAddress": "Banegårdspladsen 4A"
+        },
+        "name": "Banegårdspladsen 4A",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-city-3",
+        "additionalInformation": {
+          "jcdNumber": "AAR0004SA",
+          "registeredAt": "2018-10-01 13:12:00.333",
+          "updatedAt": "2018-12-03 11:47:37.597",
+          "status": "Aktiv"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-city-5",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.213067008583105,
+            56.15666655876932
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "address": {
+          "addressLocality": "Århus C",
+          "postalCode": "8000",
+          "streetAddress": "Skolebakken 6H"
+        },
+        "name": "v/Skolebakken v/Havnens P-Plads",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-city-5",
+        "additionalInformation": {
+          "jcdNumber": "AAR0006SA",
+          "registeredAt": "2018-10-01 13:12:00.333",
+          "updatedAt": "2022-06-17 13:32:24.01",
+          "status": "Aktiv"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-city-6",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.20674224857685,
+            56.15540061589463
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "yes",
+        "address": {
+          "addressLocality": "Århus C",
+          "postalCode": "8000",
+          "streetAddress": "Telefontorvet 5"
+        },
+        "name": "Telefontorvet 5",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-city-6",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-1233080347"
+        ],
+        "additionalInformation": {
+          "jcdNumber": "AAR0007SA",
+          "registeredAt": "2018-10-01 13:12:00.333",
+          "updatedAt": "2022-06-17 10:38:50.307",
+          "status": "Aktiv"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-city-7",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.200051289824236,
+          56.15129741023839
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "babyChange": true,
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "yes",
+        "address": {
+          "addressLocality": "Århus C",
+          "postalCode": "8000",
+          "streetAddress": "Frederiks Alle 20A"
+        },
+        "name": "v/Føtex",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-city-7",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-1602608965"
+        ],
+        "additionalInformation": {
+          "jcdNumber": "AAR0008SA",
+          "registeredAt": "2018-10-01 13:12:00.333",
+          "updatedAt": "2018-12-03 11:47:37.69",
+          "status": "Aktiv"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-city-11",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.198774350775414,
+          56.14495064131971
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Toilet",
+        "accessType": "public",
+        "babyChange": true,
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "yes",
+        "address": {
+          "addressLocality": "Århus C",
+          "postalCode": "8000",
+          "streetAddress": "Ingerslevs Boulevard 2G"
+        },
+        "name": "Ingerslevs Plads",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-city-11",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-828208358",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-33"
+        ],
+        "additionalInformation": {
+          "jcdNumber": "AAR0012SA",
+          "registeredAt": "2018-10-01 13:12:00.333",
+          "season": "Åbent torvedage, markeder",
+          "updatedAt": "2018-12-03 11:47:37.817",
+          "status": "Aktiv"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-city-13",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.21957108990398,
+            56.17726863790624
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "disposal": "flush",
+        "genderCategory": "unisex",
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "yes",
+        "address": {
+          "addressLocality": "Århus N",
+          "postalCode": "8200",
+          "streetAddress": "Grenåvej 120"
+        },
+        "name": "Marienlund",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-city-13",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-8220382636"
+        ],
+        "additionalInformation": {
+          "jcdNumber": "AAR0014SA",
+          "registeredAt": "2018-10-01 13:12:00.333",
+          "updatedAt": "2022-06-17 11:59:16.97",
+          "status": "Aktiv"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-city-14",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.199320291532757,
+          56.158243825923556
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "address": {
+          "addressLocality": "Århus C",
+          "postalCode": "8000",
+          "streetAddress": "Vesterbro Torv 13A"
+        },
+        "name": "Vesterbro Torv 13A",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-city-14",
+        "additionalInformation": {
+          "jcdNumber": "AAR0015SA",
+          "registeredAt": "2018-10-01 13:12:00.333",
+          "updatedAt": "2018-12-03 11:47:37.93",
+          "status": "Aktiv"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-10943621286",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1941695,
+          56.1540354
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "disposal": "flush",
+        "level": 0.0,
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-10943621286",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-city-15",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.190118851942975,
+            56.14375470289197
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "yes",
+        "address": {
+          "addressLocality": "Århus C",
+          "postalCode": "8000",
+          "streetAddress": "Harald Jensens Plads 8"
+        },
+        "name": "Harald Jensens Plads 8",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-city-15",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-1240225789"
+        ],
+        "additionalInformation": {
+          "jcdNumber": "AAR0016SA",
+          "registeredAt": "2018-10-01 13:12:00.333",
+          "updatedAt": "2022-06-17 12:04:42.987",
+          "status": "Aktiv"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-10082497998",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.265895942633305,
+            56.05324400629912
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Primitivt skovtoilet",
+        "accessType": "public",
+        "disposal": "pitLatrine",
+        "drinkingWater": false,
+        "isAccessibleForFree": true,
+        "address": {
+          "streetAddress": "Ørnevænget"
+        },
+        "name": "Mariendal Strand",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-10082497998",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-2"
+        ],
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 08:28:48.76"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-10201837161",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2128268,
+          56.1376913
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "QR code access",
+        "accessType": "public",
+        "isAccessibleForFree": true,
+        "openingHours": "08:00-20:00",
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-10201837161",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-10020433268",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2083077,
+          56.1625154
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "genderCategory": "unisex",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-10020433268",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-city-16",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.169308322621069,
+            56.155640299729384
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "disposal": "flush",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "addressLocality": "Århus C",
+          "postalCode": "8000",
+          "streetAddress": "Vølundsvej 1B"
+        },
+        "name": "Åbyhøj Torv",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-city-16",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-way-1180734343"
+        ],
+        "additionalInformation": {
+          "jcdNumber": "AAR0017SA",
+          "registeredAt": "2018-10-01 13:12:00.333",
+          "updatedAt": "2022-06-17 12:08:34.003",
+          "status": "Aktiv"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-city-17",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.206070772435375,
+          56.15649594953135
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "disposal": "flush",
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "yes",
+        "address": {
+          "addressLocality": "Århus C",
+          "postalCode": "8000",
+          "streetAddress": "Åboulevarden 43A"
+        },
+        "name": "Åboulevarden 43A",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-city-17",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-6796418152"
+        ],
+        "additionalInformation": {
+          "jcdNumber": "AAR0018SA",
+          "otherTags": {
+            "opening_hours:signed": "no"
+          },
+          "registeredAt": "2018-10-01 13:12:00.333",
+          "updatedAt": "2018-12-03 11:47:38.027",
+          "status": "Aktiv"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-city-18",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.235527385689892,
+            56.231182202700666
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "babyChange": false,
+        "disposal": "flush",
+        "genderCategory": "unisex",
+        "isAccessibleForFree": true,
+        "openingHours": "24/7",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "addressLocality": "Lystrup",
+          "streetAddress": "Lystrup Stationvej 15A"
+        },
+        "name": "Lystrup Stationvej 15A",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-city-18",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-way-1324193177"
+        ],
+        "additionalInformation": {
+          "registeredAt": "2022-06-17 10:07:48.807",
+          "updatedAt": "2022-06-17 10:28:11.847",
+          "status": "Aktiv"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-10814643677",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2141792,
+          56.1393238
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "disposal": "flush",
+        "isAccessibleForFree": true,
+        "openingHours": "08:00-20:00",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-10814643677",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-10909135075",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.3413447,
+          56.2445314
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "permissive",
+        "disposal": "flush",
+        "drinkingWater": true,
+        "genderCategory": [
+          "female",
+          "male"
+        ],
+        "toiletPosition": [
+          "seated",
+          "urinal"
+        ],
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-10909135075",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-10593457734",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2231062,
+          56.1650964
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-10593457734",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-12473585601",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2229678,
+          56.1642615
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "customers",
+        "disposal": "flush",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-12473585601",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-14006067998",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2141116,
+          56.1534006
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "disposal": "flush",
+        "isAccessibleForFree": true,
+        "level": 1.0,
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-14006067998",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-10957841056",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1676789,
+          56.1274168
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "disposal": "flush",
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-10957841056",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-12364357270",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2314434,
+          56.1761287
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "babyChange": false,
+        "disposal": "flush",
+        "genderCategory": "unisex",
+        "toiletPosition": "seated",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-12364357270",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-13017550717",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2153232,
+          56.1520324
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-13017550717",
+        "additionalInformation": {
+          "seasonal": "yes"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-1240047337",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2055153,
+          56.1586154
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "no",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-1240047337",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-13047832902",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2334426,
+          56.1094143
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "genderCategory": "male",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-13047832902",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-13047832901",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.233386,
+          56.1095439
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "genderCategory": "female",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-13047832901",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-11816305116",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2128468,
+          56.1376699
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "disposal": "flush",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-11816305116",
+        "additionalInformation": {
+          "access": "private"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-14026474051",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2051564,
+          56.1668782
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "disposal": "flush",
+        "level": 0.0,
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-14026474051",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-11769205789",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1965307,
+          56.1525384
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "disposal": "flush",
+        "isAccessibleForFree": true,
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-11769205789",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-14026474053",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2052503,
+          56.1668837
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "disposal": "flush",
+        "genderCategory": "male",
+        "level": 0.0,
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-14026474053",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-14026474052",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2050934,
+          56.1668417
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "disposal": "flush",
+        "genderCategory": "female",
+        "level": 0.0,
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-14026474052",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-11005587642",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2613021,
+          56.0238558
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "disposal": "flush",
+        "genderCategory": [
+          "female",
+          "male"
+        ],
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "no",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-11005587642",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-11940234827",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1349568,
+          56.0912815
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "disposal": "flush",
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-11940234827",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-13928342530",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2228234,
+          56.1403698
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "disposal": "flush",
+        "genderCategory": "unisex",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-13928342530",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-10991531119",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1936753,
+          56.1604041
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "babyChange": true,
+        "disposal": "flush",
+        "isAccessibleForFree": true,
+        "level": 0.0,
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-10991531119",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-13273826764",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2146037,
+          56.3014531
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "babyChange": false,
+        "disposal": "flush",
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-13273826764",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-10943621287",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1943057,
+          56.153497
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "babyChange": true,
+        "disposal": "flush",
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-10943621287",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-1339905906",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2201598,
+          56.2133292
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-1339905906",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-13096962857",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2011507,
+          56.1707917
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "isAccessibleForFree": true,
+        "level": -1.0,
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-13096962857",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-14016966745",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1940249,
+          56.1539315
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "level": 0.0,
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-14016966745",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-12260527395",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2351787,
+          56.0842848
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "customers",
+        "disposal": "flush",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-12260527395",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-12007325587",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.096759,
+          56.0634259
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "disposal": "flush",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-12007325587",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-13096962859",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2011183,
+          56.171381
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "level": 1.0,
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-13096962859",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-10977186743",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2647541,
+          56.2162091
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "disposal": "flush",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-10977186743",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-14005353550",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2146154,
+          56.1534635
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "disposal": "flush",
+        "isAccessibleForFree": true,
+        "level": 1.0,
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-14005353550",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-12174947636",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2885822,
+          56.2101977
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "disposal": "flush",
+        "isAccessibleForFree": true,
+        "openingHours": "06:00-21:00",
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-12174947636",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-12843752670",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2084371,
+          56.1517202
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "babyChange": true,
+        "disposal": "flush",
+        "isAccessibleForFree": false,
+        "openingHours": "10:00-18:00",
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-12843752670",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-12180180901",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2322755,
+          56.1770059
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "babyChange": false,
+        "openingHours": "Mo-Su 07:00-18:00",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-12180180901",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-14006102011",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2140573,
+          56.1535065
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "disposal": "flush",
+        "isAccessibleForFree": true,
+        "level": 1.0,
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-14006102011",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-12174967077",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.288382,
+          56.2101886
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "disposal": "flush",
+        "isAccessibleForFree": true,
+        "openingHours": "06:00-21:00",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-12174967077",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-11033273357",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2576331,
+          56.0625552
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-11033273357",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-11773510169",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2184364,
+          56.1629558
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "isAccessibleForFree": true,
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-11773510169",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-11083849838",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2660046,
+          56.2524102
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "disposal": "flush",
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-11083849838",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-14024293880",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.139466,
+          56.1767838
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "customers",
+        "disposal": "flush",
+        "level": 0.0,
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-14024293880",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-11038599252",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1998476,
+          56.1665116
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "isAccessibleForFree": true,
+        "level": 0.0,
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-11038599252",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-11007776290",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2529677,
+          56.1511344
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "disposal": "flush",
+        "isAccessibleForFree": true,
+        "level": 2.0,
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-11007776290",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-11001952959",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.103559,
+          56.1521172
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "disposal": "flush",
+        "isAccessibleForFree": true,
+        "openingHours": "09:00-16:00",
+        "wheelchairAccessible": "limited",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-11001952959",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-11003197774",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1682321,
+          56.2215563
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "disposal": "flush",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-11003197774",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-11815613946",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2174453,
+          56.1392067
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "For havnens kunder",
+        "accessType": "customers",
+        "disposal": "flush",
+        "openingHours": "24/7",
+        "wheelchairAccessible": "no",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-11815613946",
+        "additionalInformation": {
+          "otherTags": {
+            "description:en": "For customers of harbour and/or caravan site."
+          }
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-10959881161",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1785498,
+          56.1599086
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "disposal": "flush",
+        "openingHours": "08:00-20:00",
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-10959881161",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-11035608054",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2169055,
+          56.0598305
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "disposal": "flush",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-11035608054",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-13877360392",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1957522,
+          56.1370754
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "customers",
+        "disposal": "flush",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-13877360392",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-13288044069",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2155576,
+          56.1891193
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "babyChange": true,
+        "disposal": "flush",
+        "isAccessibleForFree": true,
+        "level": 0.0,
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-13288044069",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-11929193622",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2214437,
+          56.1628786
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Kun åbent i de tidsrum, hvor Cykeløen er bemandet.",
+        "accessType": "public",
+        "disposal": "flush",
+        "isAccessibleForFree": true,
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-11929193622",
+        "additionalInformation": {
+          "otherTags": {
+            "description:en": "Only open during the hours when the Bike Island is staffed."
+          }
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-11885668275",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.191204,
+          56.1590266
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "customers",
+        "babyChange": true,
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-11885668275",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-11885668277",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1927269,
+          56.1588274
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "customers",
+        "babyChange": true,
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-11885668277",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-10958912052",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2365543,
+          56.1881584
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "disposal": "flush",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-10958912052",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-12001044615",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1565538,
+          56.2528771
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "disposal": "flush",
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-12001044615",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-13857347646",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1994371,
+          56.1583172
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "disposal": "flush",
+        "isAccessibleForFree": true,
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-13857347646",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-12063162007",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1563108,
+          56.1572986
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "openingHours": "Mo-Su 08:00-16:00",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-12063162007",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-10974232236",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2114011,
+          56.1954303
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "disposal": "flush",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-10974232236",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-11885668283",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1931659,
+          56.1581013
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "customers",
+        "babyChange": false,
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-11885668283",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-11885668284",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1934121,
+          56.1585038
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "customers",
+        "babyChange": false,
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-11885668284",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-11885668285",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.193359,
+          56.1579887
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "customers",
+        "babyChange": true,
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-11885668285",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-11290280157",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.0784172,
+          56.171054
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "babyChange": false,
+        "disposal": "pitLatrine",
+        "genderCategory": "unisex",
+        "handwashing": false,
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-11290280157",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-10946834648",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1620537,
+          56.1298953
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "isAccessibleForFree": true,
+        "level": 0.0,
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-10946834648",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-11035651610",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1610672,
+          56.0675448
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "babyChange": true,
+        "disposal": "flush",
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-11035651610",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-14028884057",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2067389,
+          56.1542074
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "level": 4.0,
+        "name": "Salling Toilet",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-14028884057",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-14303445158",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1954592,
+          56.0393729
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "babyChange": false,
+        "disposal": "flush",
+        "genderCategory": "unisex",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-14303445158",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-2964713298",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2323204,
+          56.1769925
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "babyChange": false,
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-2964713298",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-5183675327",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.187664,
+          56.2308575
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "customers",
+        "disposal": "flush",
+        "drinkingWater": true,
+        "genderCategory": "male",
+        "toiletPosition": "seated",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-5183675327",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-8857847367",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2310107,
+          56.1766297
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "babyChange": false,
+        "disposal": "flush",
+        "genderCategory": "unisex",
+        "isAccessibleForFree": true,
+        "toiletPosition": "seated",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-8857847367",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-8857847368",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2315833,
+          56.1771683
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "babyChange": false,
+        "disposal": "flush",
+        "genderCategory": "unisex",
+        "isAccessibleForFree": true,
+        "toiletPosition": "seated",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-8857847368",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-7940763401",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1881711,
+          56.1719169
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "customers",
+        "disposal": "flush",
+        "isAccessibleForFree": true,
+        "level": 1.0,
+        "toiletPosition": "seated",
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-7940763401",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-9552028668",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.0101355,
+          56.1868381
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-9552028668",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-7940746467",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1882509,
+          56.1720936
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "customers",
+        "disposal": "flush",
+        "isAccessibleForFree": true,
+        "level": 1.0,
+        "toiletPosition": "seated",
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-7940746467",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-502674110",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1358406,
+          56.0907335
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-502674110",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-8000273161",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2078592,
+          56.1455154
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "genderCategory": "unisex",
+        "handwashing": true,
+        "isAccessibleForFree": true,
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-8000273161",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-1585069119",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1985546,
+          56.1363168
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-1585069119",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-632467142",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.204958,
+          56.1508394
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-632467142",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-2882057821",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2186075,
+          56.1621901
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "customers",
+        "disposal": "flush",
+        "drinkingWater": true,
+        "toiletPosition": [
+          "seated",
+          "urinal"
+        ],
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-2882057821",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-14032015243",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.13341,
+          56.1629154
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "disposal": "flush",
+        "level": 0.0,
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-14032015243",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-5159908243",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1876732,
+          56.2308766
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "customers",
+        "disposal": "flush",
+        "drinkingWater": true,
+        "genderCategory": "female",
+        "toiletPosition": "seated",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-5159908243",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-828550297",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.282144051831377,
+            56.20273596538676
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessType": "public",
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Åkrogs Strandvej 46"
+        },
+        "name": "Åkrogen ved bussens endestation (Inderst)",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-828550297",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-12"
+        ],
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 09:34:48.163"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-8857847366",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2313232,
+          56.1761613
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "babyChange": true,
+        "disposal": "flush",
+        "genderCategory": "unisex",
+        "toiletPosition": "seated",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-8857847366",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-9221370247",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2095023,
+          56.1512731
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "babyChange": true,
+        "disposal": "flush",
+        "drinkingWater": true,
+        "genderCategory": "unisex",
+        "isAccessibleForFree": true,
+        "level": 0.0,
+        "toiletPosition": "seated",
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-9221370247",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-8507784557",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1972001,
+          56.136001
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "customers",
+        "disposal": "flush",
+        "genderCategory": [
+          "female",
+          "male"
+        ],
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-8507784557",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-1529752190",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.0046339,
+          56.1797664
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "no",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-1529752190",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-8155365697",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.199748937270614,
+            56.15563504099069
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Urinal",
+        "accessType": "public",
+        "babyChange": false,
+        "genderCategory": "male",
+        "isAccessibleForFree": true,
+        "toiletPosition": "urinal",
+        "wheelchairAccessible": "no",
+        "address": {
+          "streetAddress": "Møllegade 1"
+        },
+        "name": "Mølleparken",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-8155365697",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-24"
+        ],
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 08:23:38.86"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-14032015240",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1330078,
+          56.1640262
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "disposal": "flush",
+        "level": 0.0,
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-14032015240",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-451848197",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.185550065028899,
+            56.16296703724959
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessNote": "SMS-låst",
+        "accessType": "public",
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Eugen Warmings Vej 12"
+        },
+        "name": "Botanisk Have - Amfiscenen",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-451848197",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-17"
+        ],
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 09:23:01.99"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-14032015241",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1332439,
+          56.1628983
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "disposal": "flush",
+        "level": 0.0,
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-14032015241",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-8022793488",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.3084586,
+          56.2628685
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-8022793488",
+        "additionalInformation": {
+          "operator": "Skødstrup kirke"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-14032015242",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1333099,
+          56.1629054
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "disposal": "flush",
+        "level": 0.0,
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-14032015242",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-775787396",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.17226121005318,
+            56.22692581772626
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Primitiv skovtoilet",
+        "accessType": "public",
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "no",
+        "address": {
+          "streetAddress": "Elevvej 23"
+        },
+        "name": "Ved shelterplads i Lisbjerg ny skov",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-775787396",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-15"
+        ],
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-03 09:21:20.3"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-7940746477",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.205078,
+          56.1500731
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "babyChange": true,
+        "chargeAmount": 5.0,
+        "chargeCurrency": "DKK",
+        "disposal": "flush",
+        "handwashing": true,
+        "isAccessibleForFree": false,
+        "level": 0.0,
+        "paymentMethod": "card",
+        "toiletPosition": "seated",
+        "wheelchairAccessible": "no",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-7940746477",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-9505697557",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.056015723989276,
+            56.17798715402592
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Primitiv skovtoilet",
+        "accessType": "public",
+        "name": "True skov",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-9505697557",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-39"
+        ],
+        "additionalInformation": {
+          "registeredAt": "2022-06-03 09:46:16.447",
+          "season": "Hele året",
+          "updatedAt": "2022-06-03 09:46:16.447"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-14030448676",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2142297,
+          56.1535448
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "disposal": "flush",
+        "isAccessibleForFree": true,
+        "level": 2.0,
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-14030448676",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-3823274797",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.088293979090139,
+            56.14753301580484
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessType": "public",
+        "disposal": "flush",
+        "genderCategory": "unisex",
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Byleddet 2"
+        },
+        "name": "Årslev Engsø",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-3823274797",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-23"
+        ],
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 08:20:15.76"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-1573825104",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1984721,
+          56.144778
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "isAccessibleForFree": true,
+        "openingHours": [
+          "Mo-Tu,Th-Fr,Su off",
+          "We,Sa 10:00-15:00"
+        ],
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-1573825104",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-2407212947",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1164793,
+          56.1689631
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-2407212947",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-828209184",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.20729695672183,
+            56.13932097413219
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessType": "public",
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Strandvejen 19"
+        },
+        "name": "Tangkrogen",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-828209184",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-18"
+        ],
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 09:22:11.667"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-14026515524",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2057041,
+          56.1669294
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "disposal": "flush",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-14026515524",
+        "additionalInformation": {
+          "level": "1;2"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-9038674926",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.215098969954854,
+            56.16765000909126
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessNote": "SMS-låst efter 16:30",
+        "genderCategory": "unisex",
+        "isAccessibleForFree": true,
+        "openingHours": "08:00-20:00",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Kirkegårdsvej 26"
+        },
+        "name": "Toilet i Nordre Kapel",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-9038674926",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-26"
+        ],
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 07:30:53.64"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-672198752",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.0657209,
+          56.1786363
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "babyChange": true,
+        "isAccessibleForFree": false,
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-672198752",
+        "additionalInformation": {
+          "charge": "5 DKR; 1€",
+          "operator": "loovio"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-9290361845",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2182282,
+          56.1579043
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "isAccessibleForFree": true,
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-9290361845",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-14032068362",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1333631,
+          56.1633981
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "disposal": "flush",
+        "level": 0.0,
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-14032068362",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-6796418393",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2130279,
+          56.1566135
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-6796418393",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-258580024",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.0666623,
+          56.1756616
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "babyChange": true,
+        "disposal": "flush",
+        "drinkingWater": true,
+        "genderCategory": [
+          "female",
+          "male"
+        ],
+        "handwashing": true,
+        "isAccessibleForFree": true,
+        "toiletPosition": [
+          "seated",
+          "urinal"
+        ],
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-258580024",
+        "additionalInformation": {
+          "indoor": "yes"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-4977629090",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1928906,
+          56.1591853
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "customers",
+        "babyChange": true,
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-4977629090",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-1875802785",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2103595,
+          56.2679864
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-1875802785",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-6787978086",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.220038946863175,
+            56.12039203967187
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessType": "public",
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Ørneredevej 6"
+        },
+        "name": "Dyrehaven (Krudthuset)",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-6787978086",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-28"
+        ],
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 08:22:11.123"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-way-661096587",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.213873033206704,
+            56.127922010531066
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessType": "public",
+        "genderCategory": "unisex",
+        "isAccessibleForFree": false,
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Strandvejen 23"
+        },
+        "name": "Toilet ved Hotel Marselis",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-way-661096587",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-14"
+        ],
+        "additionalInformation": {
+          "operator": "Aarhus Kommune",
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 09:19:37.253"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-way-908883896",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2096536,
+          56.1563831
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-way-908883896",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-way-460930770",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.244873956664401,
+            56.08855697765228
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessType": "public",
+        "disposal": "flush",
+        "isAccessibleForFree": true,
+        "openingHours": "Apr 01-Oct 01",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Moesgård Strand, Strandskovvej 10"
+        },
+        "name": "Moesgård Strand,",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-way-460930770",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-6"
+        ],
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 09:08:01.647"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-way-908883895",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.209711261200916,
+            56.1563432274227
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessType": "public",
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Kannikegade 1B"
+        },
+        "name": "Bispetorv",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-way-908883895",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-34"
+        ],
+        "additionalInformation": {
+          "registeredAt": "2022-06-02 08:04:46.983",
+          "season": "Hele året",
+          "updatedAt": "2022-06-03 09:09:19.25"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-way-628781148",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.207490980226245,
+            56.14583600676325
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessNote": "SMS-låst",
+        "genderCategory": [
+          "female",
+          "male"
+        ],
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Heibergsgade 31"
+        },
+        "name": "Skanseparken",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-way-628781148",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-25"
+        ],
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 08:18:48.347"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-way-437029014",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.203148979811036,
+            56.130237980429285
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessType": "public",
+        "babyChange": true,
+        "disposal": "flush",
+        "isAccessibleForFree": true,
+        "staffed": false,
+        "toiletPosition": "seated",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Carl Nielsens Vej 15"
+        },
+        "name": "Mindeparken v. Carl Nielsens Vej",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-way-437029014",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-19"
+        ],
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 09:21:46.057"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-way-967856929",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1416389,
+          56.1423743
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "babyChange": true,
+        "disposal": "flush",
+        "handDrying": "electricHandDryer",
+        "handwashing": true,
+        "isAccessibleForFree": true,
+        "soap": true,
+        "toiletPosition": "seated",
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-way-967856929",
+        "additionalInformation": {
+          "otherTags": {
+            "hot_water": "no"
+          },
+          "paperSupplied": "yes"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-other-29",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.230934999071142,
+            56.176566990746274
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessNote": "SMS-låst",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Salonvejen 1"
+        },
+        "name": "Den Permanente",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-29",
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 08:09:52.223"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-way-876271030",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.223768975912007,
+            56.12090198097168
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessType": "public",
+        "babyChange": true,
+        "disposal": "flush",
+        "genderCategory": "unisex",
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Ballehage, Ørneredevej 7A"
+        },
+        "name": "Ballehage",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-way-876271030",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-7"
+        ],
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-03 09:20:37.56"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-way-431942820",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.270009981983943,
+            56.038465031581744
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessType": "public",
+        "babyChange": false,
+        "disposal": "flush",
+        "genderCategory": "unisex",
+        "handwashing": true,
+        "isAccessibleForFree": true,
+        "openingHours": "24/7",
+        "staffed": false,
+        "toiletPosition": "seated",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Ajstrup Strand, Nord"
+        },
+        "name": "Ajstrup Strand Nord",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-way-431942820",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-3"
+        ],
+        "additionalInformation": {
+          "indoor": "yes",
+          "paperSupplied": "yes",
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Vinterlukket",
+          "seasonal": "summer",
+          "updatedAt": "2022-06-02 08:52:04.933"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-other-27",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.178624956538984,
+            56.15994704060083
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessNote": "SMS-låst efter 16:30",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Viborgvej 47A"
+        },
+        "name": "Toilet i Vestre Store Kapel",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-27",
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 07:29:35.49"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-way-158692874",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2248663,
+          56.1666259
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "babyChange": true,
+        "disposal": "flush",
+        "genderCategory": [
+          "female",
+          "male"
+        ],
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-way-158692874",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-way-435868744",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.01771843850948,
+            56.127745089014766
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Primitivt skovtoilet",
+        "accessType": "public",
+        "babyChange": false,
+        "disposal": "bucket",
+        "drinkingWater": false,
+        "genderCategory": "unisex",
+        "handwashing": true,
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "limited",
+        "address": {
+          "streetAddress": "Harlevholmvej"
+        },
+        "name": "Åbo skov",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-way-435868744",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-35"
+        ],
+        "additionalInformation": {
+          "operator": "Aarhus Kommune",
+          "paperSupplied": "yes",
+          "registeredAt": "2022-06-02 08:13:24.75",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 08:15:58.633"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-way-534502322",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1886853,
+          56.230628
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "customers",
+        "disposal": "bucket",
+        "genderCategory": "unisex",
+        "toiletPosition": "seated",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-way-534502322",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-other-36",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.244975847952736,
+            56.08855369170787
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Toilet",
+        "accessType": "public",
+        "address": {
+          "streetAddress": "Moesgård Strand, Strandskovvej 10"
+        },
+        "name": "Moesgård Strand, H/D",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-36",
+        "additionalInformation": {
+          "registeredAt": "2022-06-02 09:09:01.063",
+          "season": "Vinterlukket",
+          "updatedAt": "2022-06-02 09:11:00.097"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-way-1243203270",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1648241,
+          56.1413087
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "genderCategory": "unisex",
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-way-1243203270",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-other-22",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.193700939918465,
+            56.15837701355931
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessNote": "Natlåst",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Vesterbrogade 38A"
+        },
+        "name": "Botanisk have, ved Den Gamle By",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-22",
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Vinterlukket",
+          "updatedAt": "2022-06-02 09:27:33.503"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-node-9694319436",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.0412014,
+          56.170988
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-node-9694319436",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-way-612937139",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.247612942965947,
+            56.19093796368643
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessType": "public",
+        "babyChange": true,
+        "drinkingWater": true,
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Fortevej 113"
+        },
+        "name": "Bellevue Strand",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-way-612937139",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-13"
+        ],
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Vinterlukket",
+          "updatedAt": "2022-06-02 10:11:50.433"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-way-589576648",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1902337,
+          56.1595607
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "customers",
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "no",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-way-589576648",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-way-158685994",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.22311,
+          56.1655863
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "customers",
+        "isAccessibleForFree": false,
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-way-158685994",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-way-284250815",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.227043952362308,
+            56.11301798777636
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessType": "public",
+        "disposal": "flush",
+        "drinkingWater": true,
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Ørneredevej 23"
+        },
+        "name": "Peder Sabroes Minde/Hørhaven",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-way-284250815",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-5"
+        ],
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 09:14:16.867"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-way-443998827",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.9951434,
+          56.2018077
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-way-443998827",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-way-427768811",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1402485,
+          56.1458081
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "babyChange": true,
+        "isAccessibleForFree": true,
+        "openingHours": "Mo-Fr 08:00-15:45, Sa-Su 10:00-12:45",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-way-427768811",
+        "additionalInformation": {
+          "indoor": "yes"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-way-517221598",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.211286047930429,
+            56.12879797834433
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessType": "public",
+        "disposal": "flush",
+        "handwashing": true,
+        "isAccessibleForFree": true,
+        "menstrualProducts": false,
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Oddervej 8"
+        },
+        "name": "Mindeparken v. Oddervej",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-way-517221598",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-20"
+        ],
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 09:20:16.32"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-way-540068344",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2246539,
+          56.1678881
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "customers",
+        "genderCategory": [
+          "female",
+          "male"
+        ],
+        "isAccessibleForFree": false,
+        "shower": true,
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-way-540068344",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-other-16",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.220117024907715,
+            56.213267960500716
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Primitiv skovtoilet",
+        "accessType": "public",
+        "address": {
+          "streetAddress": "Viengevej 7A"
+        },
+        "name": "Ved shelterplads Egå Engsø",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-16",
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 09:44:57.793"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-way-540068352",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2203605,
+          56.1663188
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "disposal": "flush",
+        "genderCategory": "unisex",
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-way-540068352",
+        "additionalInformation": {
+          "otherTags": {
+            "toilets": "yes"
+          }
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-other-9",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.265295941112514,
+            56.028692009395705
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Indlejet toiletkabine",
+        "accessType": "public",
+        "toiletType": "portable",
+        "address": {
+          "streetAddress": "Strandbovej"
+        },
+        "name": "Strandbovej, Norsminde Strand",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-9",
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Vinterlukket",
+          "updatedAt": "2022-06-03 09:20:23.43"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-way-431942819",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.269387941087576,
+            56.03628502406172
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Toilet",
+        "accessType": "public",
+        "babyChange": false,
+        "disposal": "flush",
+        "genderCategory": "unisex",
+        "handwashing": true,
+        "isAccessibleForFree": true,
+        "staffed": false,
+        "toiletPosition": "seated",
+        "wheelchairAccessible": "no",
+        "address": {
+          "streetAddress": "Ajstrup Strand, Syd"
+        },
+        "name": "Ajstrup Strand Syd",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-way-431942819",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-4"
+        ],
+        "additionalInformation": {
+          "indoor": "yes",
+          "paperSupplied": "yes",
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Vinterlukket",
+          "seasonal": "summer",
+          "updatedAt": "2022-06-03 09:05:06.797"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-way-987943845",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.2518158,
+          56.150979
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "disposal": "flush",
+        "genderCategory": "unisex",
+        "isAccessibleForFree": true,
+        "toiletPosition": "seated",
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-way-987943845",
+        "additionalInformation": {
+          "operator": "Molslinien A/S"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-other-8",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.257314127444856,
+            56.062578393853315
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Indlejet toiletkabine",
+        "accessType": "public",
+        "toiletType": "portable",
+        "address": {
+          "streetAddress": "Fløjstrup strand"
+        },
+        "name": "Fløjstrup Strand",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-8",
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Vinterlukket",
+          "updatedAt": "2023-06-26 09:20:19.093"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-other-30",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.205668331669154,
+            56.158694489436094
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Toilet og urinal",
+        "accessType": "public",
+        "toiletPosition": [
+          "seated",
+          "urinal"
+        ],
+        "address": {
+          "streetAddress": "Klostergade 52"
+        },
+        "name": "Klostertorvet",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-30",
+        "additionalInformation": {
+          "registeredAt": "2018-10-18 09:26:28.457",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 07:55:46.637"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-way-1175735490",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1317251,
+          56.118725
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-way-1175735490",
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-way-561076496",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.28292697581113,
+            56.20449996573801
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessType": "public",
+        "drinkingWater": true,
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Åkrogs Strandvej 65"
+        },
+        "name": "Åkrogen Nord (Yderst)",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-way-561076496",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-11"
+        ],
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Vinterlukket",
+          "updatedAt": "2022-06-02 09:46:02.443"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-way-175621960",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.236808047161853,
+            56.101226991176155
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessType": "public",
+        "disposal": "flush",
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Ørneredevej 55"
+        },
+        "name": "Ørnereden",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-way-175621960",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-1"
+        ],
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 09:12:08.087"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-way-737037079",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.186925768055787,
+            56.069893325632655
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Primitivt skovtoilet",
+        "accessType": "public",
+        "disposal": "pitLatrine",
+        "genderCategory": "unisex",
+        "isAccessibleForFree": true,
+        "address": {
+          "streetAddress": "Hovstien 4B"
+        },
+        "name": "Vilhelmsborg",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-way-737037079",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-38"
+        ],
+        "additionalInformation": {
+          "registeredAt": "2022-06-03 09:18:10.53",
+          "season": "Hele året",
+          "updatedAt": "2022-06-03 09:42:34.08"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-way-976749407",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.205892065004573,
+            56.16532698954444
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessType": "public",
+        "disposal": "flush",
+        "genderCategory": "unisex",
+        "isAccessibleForFree": true,
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Vennelyst Boulevard 7"
+        },
+        "name": "Vennelystparken",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-way-976749407",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-21"
+        ],
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 09:24:37.76"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-way-1185596864",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1880298,
+          56.1715717
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "babyChange": true,
+        "disposal": "flush",
+        "genderCategory": "male",
+        "isAccessibleForFree": true,
+        "level": 0.0,
+        "wheelchairAccessible": "yes",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-way-1185596864",
+        "additionalInformation": {
+          "indoor": "room",
+          "otherTags": {
+            "changing_table:fee": "no"
+          }
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-way-427768806",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.1406976,
+          56.1457643
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "accessType": "public",
+        "isAccessibleForFree": true,
+        "openingHours": "Mo-Fr 08:00-15:45, Sa-Su 10:00-12:45",
+        "seeAlso": "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-way-427768806",
+        "additionalInformation": {
+          "indoor": "yes"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:test:merged-public-toilets-aarhus-toilet-osm-way-149563661",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.247361951759691,
+            56.08682800150632
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessType": "public",
+        "isAccessibleForFree": true,
+        "openingHours": [
+          "open",
+          "Oct 02-Apr 30 off"
+        ],
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Moesgård Strand, Strandskovvej 30"
+        },
+        "name": "Moesgård Strand",
+        "seeAlso": [
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-way-149563661",
+          "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-10"
+        ],
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Vinterlukket",
+          "updatedAt": "2022-06-02 08:55:39.82"
+        },
+        "sourceId": "test:merged-public-toilets"
+      }
+    }
+  ]
+}
