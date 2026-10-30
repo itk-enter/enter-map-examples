@@ -9,13 +9,14 @@ they exist to show what the same page costs on three different stacks.
 | `index.html`      | List of the Leaflet examples                                |
 | `baenke.html`     | Benches from OpenStreetMap, source `test:osm-bench`         |
 | `toiletter.html`  | Toilets from three sources on one map: `test:osm-public-toilet`, `test:mtm_spatialmaps-toilet-city`, `test:mtm_spatialmaps-toilet-other` |
+| `toiletter-samlet.html` | Toilets from Enter's merged source `test:merged-public-toilets`, each toilet once |
 | `septima.html`    | Handicapparkering and hundeskove on Septima Widget, styled to the prototype |
 | `parkering.html`  | Handicapparkering alone, with "find nærmeste"               |
 | `plain.html`      | Same content on widget configuration only                    |
 | `leaflet.html`    | Same content on Leaflet and OpenStreetMap                    |
 
 All of them start at Dokk1. The front page links only the Leaflet examples of
-Enter sources (`baenke.html`, `toiletter.html`); new examples are added there
+Enter sources (`baenke.html`, `toiletter.html`, `toiletter-samlet.html`); new examples are added there
 the same way. The last four pages compared the builds for handicapparkering
 and hundeskove. They are still published at their own address, linked from
 nowhere, and the comparison is in `docs/variants.md`.
@@ -81,6 +82,16 @@ staging instance (<https://enter.srvitkstgweb02.itkdev.dk/>), taken 29 October
 | `test:osm-public-toilet`            | PublicToilet | 163    |
 | `test:mtm_spatialmaps-toilet-city`  | PublicToilet | 16     |
 | `test:mtm_spatialmaps-toilet-other` | PublicToilet | 37     |
+| `test:merged-public-toilets`        | PublicToilet | 174    |
+
+`test:merged-public-toilets` was added 30 October 2026. It is Enter's merge of
+the toilet sources, each toilet stated once: the 216 toilets above come to
+174, of which 41 were merged from more than one source. `seeAlso` holds the
+ids of the entities a toilet was merged from, a string for one and an array
+for several, and `toiletter-samlet.html` names the sources from their prefix.
+FindToilet is an input too, but its test source is empty on staging. The
+source without the `test:` prefix, `merged-public-toilets`, has no entities
+there.
 
 Enter lists its sources in `/sources.json`. The script looks each one up there
 for its data model and JSON-LD context, then asks the broker for
@@ -176,6 +187,7 @@ Everything else is in the configuration.
 | `public/js/a11y-fixes.js`            | One patch for widget markup, see below                            |
 | `public/js/leaflet-app.js`           | The Leaflet build: map, list, detail, search                      |
 | `public/js/maps/*.js`                | What each Leaflet page shows: sources, markers, row and detail text |
+| `public/js/maps/public-toilet.js`    | Row and detail text for the PublicToilet model, shared by the toilet pages |
 
 ### List and map
 

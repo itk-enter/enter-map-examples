@@ -7,20 +7,15 @@ All notable changes to this project are documented here, following
 
 ### Added
 
+- `toiletter-samlet.html`: Enter's merged toilet source,
+  `test:merged-public-toilets`, with each toilet once and the sources it was
+  merged from in the detail view. Third on the front page.
 - `baenke.html` and `toiletter.html`: Leaflet examples of sources on Enter,
   benches from `test:osm-bench`, and toilets from `test:osm-public-toilet`,
   `test:mtm_spatialmaps-toilet-city` and `test:mtm_spatialmaps-toilet-other` on
   one map with a checkbox and colour per source.
 - `bin/fetch-sources.sh` (`task data:fetch-sources`), which snapshots Enter
   sources by `sourceId` from the `/ngsi-ld` API.
-
-### Changed
-
-- The front page lists only the Leaflet examples of Enter sources. The four
-  builds of handicapparkering and hundeskove are still published, unlinked.
-- `leaflet-app.js` takes its sources from a file in `js/maps/` per page, and
-  handles `MultiPoint` geometry and places without an address.
-
 - Demo pages showing Enter's accessibility data as a list and a map that stay in
   sync, built on Septima Widget and styled with aarhus.dk design tokens:
   `septima.html` for parking and dog forests, `parkering.html` for parking alone.
@@ -53,6 +48,12 @@ All notable changes to this project are documented here, following
 
 ### Changed
 
+- The front page lists only the Leaflet examples of Enter sources. The four
+  builds of handicapparkering and hundeskove are still published, unlinked.
+- `leaflet-app.js` takes its sources from a file in `js/maps/` per page, and
+  handles `MultiPoint` geometry and places without an address.
+- The PublicToilet text is in `js/maps/public-toilet.js`, shared by both
+  toilet pages.
 - The Septima routing key is out of the repository. `task route:key` writes it
   from `.env` into the git-ignored `public/config/key.json`; without it the
   `route` control is left out rather than rendered dead.
