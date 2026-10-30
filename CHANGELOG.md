@@ -8,9 +8,9 @@ All notable changes to this project are documented here, following
 ### Added
 
 - `aarhus-dk-baenke-sidebar.html` and `aarhus-dk-baenke-fuld.html`: the bench
-  map in an iframe on a mock aarhus.dk article page styled with aarhus.dk's
-  design tokens, in the text column next to the sidebar, and at full width
-  without it; `baenke-embed.html` is
+  map embedded with an iframe on a mock aarhus.dk article page styled with
+  aarhus.dk's design tokens: the frame in the text column next to the
+  sidebar, and at full width without it; `baenke-embed.html` is
   the framed page, without heading or intro.
 - `baenke.html` and `toiletter.html`: Leaflet examples of sources on Enter,
   benches from `test:osm-bench`, and toilets from `test:osm-public-toilet`,

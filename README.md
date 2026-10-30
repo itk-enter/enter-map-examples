@@ -9,7 +9,7 @@ they exist to show what the same page costs on three different stacks.
 | `index.html`      | List of the Leaflet examples                                |
 | `baenke.html`     | Benches from OpenStreetMap, source `test:osm-bench`         |
 | `aarhus-dk-baenke-sidebar.html` | `baenke-embed.html` in an iframe in the text column of a mock aarhus.dk article, next to the sidebar |
-| `aarhus-dk-baenke-fuld.html` | The same article without the sidebar, the map full container width |
+| `aarhus-dk-baenke-fuld.html` | The same article and iframe without the sidebar, the frame full container width |
 | `baenke-embed.html` | The bench map with no heading or intro, filling its frame    |
 | `toiletter.html`  | Toilets from three sources on one map: `test:osm-public-toilet`, `test:mtm_spatialmaps-toilet-city`, `test:mtm_spatialmaps-toilet-other` |
 | `septima.html`    | Handicapparkering and hundeskove on Septima Widget, styled to the prototype |
@@ -25,18 +25,21 @@ nowhere, and the comparison is in `docs/variants.md`.
 
 ### Embedding in aarhus.dk
 
-Two pages show how a map sits on aarhus.dk: an article page with the site's
-header, breadcrumb, text column and footer, and the map in an `<iframe>`. The
+Two pages show how the map sits on aarhus.dk when it is embedded with an
+`<iframe>`, the way an editor would add it to an article: the site's header,
+breadcrumb, text column and footer around `baenke-embed.html` in a frame. The
 columns follow aarhus.dk's grid: text in `col-lg-7 offset-xl-1`, sidebar in
-`col-lg-4 offset-lg-1 col-xl-3`.
+`col-lg-4 offset-lg-1 col-xl-3`. The pages differ only in how wide the frame
+gets:
 
-- `aarhus-dk-baenke-sidebar.html` has the sidebar, so the map stays in the text
-  column. That is the safe assumption: the article wrapper on aarhus.dk is not
-  known to allow full-width content. The sidebar holds a placeholder for the
-  contact box, with no contact details.
-- `aarhus-dk-baenke-fuld.html` has no sidebar, and the map runs the width of
-  the container, as the map on the parking page does. The page is a mock-up and says so
-in a banner at the top. Its stylesheet, `css/aarhus-dk.css`, carries the
+- `aarhus-dk-baenke-sidebar.html` has the sidebar, so the frame stays in the
+  text column. That is the safe assumption: the article wrapper on aarhus.dk
+  is not known to allow full-width content. The sidebar holds a placeholder for
+  the contact box, with no contact details.
+- `aarhus-dk-baenke-fuld.html` has no sidebar, and the frame runs the width of
+  the container.
+
+Both are mock-ups and say so in a banner at the top. Its stylesheet, `css/aarhus-dk.css`, carries the
 design tokens from aarhus.dk's `identity-aarhus.css` (Arial, text `#333`,
 links `#3661d8`, footer `#333`), copied rather than linked so the demo does not
 change with the live site. The two logos in `public/img/` are Aarhus Kommune's,
