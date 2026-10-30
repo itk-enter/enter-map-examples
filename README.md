@@ -8,7 +8,8 @@ they exist to show what the same page costs on three different stacks.
 | ----------------- | ----------------------------------------------------------- |
 | `index.html`      | List of the Leaflet examples                                |
 | `baenke.html`     | Benches from OpenStreetMap, source `test:osm-bench`         |
-| `aarhus-dk-baenke.html` | `baenke-embed.html` in an iframe on a mock aarhus.dk article page |
+| `aarhus-dk-baenke-sidebar.html` | `baenke-embed.html` in an iframe in the text column of a mock aarhus.dk article, next to the sidebar |
+| `aarhus-dk-baenke-fuld.html` | The same article without the sidebar, the map full container width |
 | `baenke-embed.html` | The bench map with no heading or intro, filling its frame    |
 | `toiletter.html`  | Toilets from three sources on one map: `test:osm-public-toilet`, `test:mtm_spatialmaps-toilet-city`, `test:mtm_spatialmaps-toilet-other` |
 | `septima.html`    | Handicapparkering and hundeskove on Septima Widget, styled to the prototype |
@@ -24,13 +25,17 @@ nowhere, and the comparison is in `docs/variants.md`.
 
 ### Embedding in aarhus.dk
 
-`aarhus-dk-baenke.html` shows how a map sits on aarhus.dk: an article page
-with the site's header, breadcrumb, text column, sidebar and footer, and the
-map in an `<iframe>` in the text column. The columns follow aarhus.dk's grid:
-text in `col-lg-7 offset-xl-1`, sidebar in `col-lg-4 offset-lg-1 col-xl-3`.
-The map does not break out to full width, because the article wrapper on
-aarhus.dk is not known to allow it. The sidebar holds a placeholder for the
-contact box, with no contact details. The page is a mock-up and says so
+Two pages show how a map sits on aarhus.dk: an article page with the site's
+header, breadcrumb, text column and footer, and the map in an `<iframe>`. The
+columns follow aarhus.dk's grid: text in `col-lg-7 offset-xl-1`, sidebar in
+`col-lg-4 offset-lg-1 col-xl-3`.
+
+- `aarhus-dk-baenke-sidebar.html` has the sidebar, so the map stays in the text
+  column. That is the safe assumption: the article wrapper on aarhus.dk is not
+  known to allow full-width content. The sidebar holds a placeholder for the
+  contact box, with no contact details.
+- `aarhus-dk-baenke-fuld.html` has no sidebar, and the map runs the width of
+  the container, as the map on the parking page does. The page is a mock-up and says so
 in a banner at the top. Its stylesheet, `css/aarhus-dk.css`, carries the
 design tokens from aarhus.dk's `identity-aarhus.css` (Arial, text `#333`,
 links `#3661d8`, footer `#333`), copied rather than linked so the demo does not
@@ -39,9 +44,10 @@ from the same site.
 
 The framed page, `baenke-embed.html`, is `baenke.html` without the heading and
 intro (the heading stays for screen readers) and with `css/embed.css`, which
-makes the map fill the frame. The host page sets the frame's height. The text
-column is about 800px at most, under the Leaflet build's 820px breakpoint, so
-in the frame the map and list are always stacked and the frame scrolls.
+makes the map fill the frame. The host page sets the frame's height. In the
+text column the frame is about 800px wide at most, under the Leaflet build's
+820px breakpoint, so the map and list are stacked and the frame scrolls. At
+full width they sit side by side, as on the stand-alone page.
 
 ### Adding a Leaflet example
 
