@@ -21,7 +21,7 @@
         <p class="page-intro__link"><a href="./index.html">Oversigt</a></p>
         <h1>Leaflet og OpenStreetMap</h1>
         <p class="page-intro__text">
-          Samme data og samme opbygning som forsiden, men liste, detaljevisning
+          Samme data og samme opbygning som Septima-udgaverne, men liste, detaljevisning
           og kort er skrevet her. Ingen widget, ingen licens, ingen API-nøgle:
           adressesøgningen kommer fra Klimadatastyrelsens Adressevælger, og
           afstande regnes i browseren.
@@ -57,18 +57,9 @@
             </p>
           </div>
 
+          <!-- One checkbox per source, added from js/maps/. -->
           <fieldset class="panel__kategorier">
             <legend>Vis på kortet</legend>
-            <label>
-              <input type="checkbox" value="handicapparkering" checked />
-              <span class="kategori-ikon kategori-ikon--parkering" aria-hidden="true"></span>
-              Handicapparkering
-            </label>
-            <label>
-              <input type="checkbox" value="hundeskov" checked />
-              <span class="kategori-ikon kategori-ikon--hundeskov" aria-hidden="true"></span>
-              Hundeskove
-            </label>
           </fieldset>
 
           <div class="zoomgate" hidden>
@@ -116,6 +107,7 @@
       integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
       crossorigin=""
     ></script>
+    <script src="./js/maps/tilgaengelighed.js"></script>
     <script src="./js/leaflet-app.js"></script>
   </body>
 </html>

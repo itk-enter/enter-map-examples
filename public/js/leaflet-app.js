@@ -1,8 +1,11 @@
-/* Tilgængelighed i byen — Leaflet build.
+/* Leaflet build.
  *
  * The list, the detail view and the interaction between them are written here
- * rather than configured, which is the point of this variant. Data is the same
- * snapshot the widget builds use.
+ * rather than configured, which is the point of this variant. What the page
+ * shows comes from `window.ENTER_MAP`, set by a file in js/maps/ loaded before
+ * this one: one entry per data source, each with its snapshot, its marker and
+ * a `describe` that turns a feature's properties into the text of a row and a
+ * detail view.
  *
  * External services: OpenStreetMap tiles and address search from Adressevælger
  * (Klimadatastyrelsen). Neither needs a key. Distances are computed in the
@@ -11,10 +14,8 @@
 (function () {
   "use strict";
 
-  const DATA = [
-    { kind: "handicapparkering", label: "Handicapparkering", url: "./data/handicapparkering.geojson" },
-    { kind: "hundeskov", label: "Hundeskov", url: "./data/hundeskov.geojson" },
-  ];
+  const CONFIG = window.ENTER_MAP;
+  const SOURCES = CONFIG.sources;
 
   const AARHUS = { lat: 56.15355, lon: 10.21432 }; // Dokk1
   const NEAREST_COUNT = 5;
@@ -24,15 +25,11 @@
   const GATE_ZOOM = 15;
   const GATE_STEPS = 4;
 
-  const WHEELCHAIR =
-    '<path d="M12 4a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm-1 5.5h2l.6 3H17v2h-3.9l-.4-2H11a4.5 4.5 0 1 0 4.4 5.5h2A6.5 6.5 0 1 1 11 9.5Z"/>';
-  const TREE = '<path d="M12 2 5 12h3l-3 5h5v5h4v-5h5l-3-5h3L12 2Z"/>';
-
   const dom = {
     search: document.getElementById("soeg"),
     suggestions: document.getElementById("forslag"),
     searchError: document.getElementById("soeg-fejl"),
-    categories: document.querySelectorAll(".panel__kategorier input"),
+    categories: document.querySelector(".panel__kategorier"),
     list: document.querySelector(".liste"),
     listBox: document.querySelector(".panel__liste"),
     empty: document.querySelector(".liste__tom"),
@@ -48,7 +45,7 @@
     places: [],
     visible: [],
     query: "",
-    categories: { handicapparkering: true, hundeskov: true },
+    categories: {},
     origin: null,
     selected: null,
     gated: false,
@@ -74,7 +71,7 @@
 
   /* Zoom gate ------------------------------------------------------------ */
 
-  /* Zoomed out, 437 places are a carpet of pins and a list nobody can use, so
+  /* Zoomed out, hundreds of places are a carpet of pins and a list nobody can use, so
    * the map holds the data back and the panel says how to get to it. */
   function updateGate() {
     const steps = GATE_ZOOM - map.getZoom();
@@ -106,8 +103,8 @@
   });
 
   function markerIcon(place, selected) {
-    const glyph = place.kind === "handicapparkering" ? WHEELCHAIR : TREE;
-    const fill = selected ? "#12285e" : place.kind === "handicapparkering" ? "#3661d8" : "#277646";
+    const glyph = place.source.glyph;
+    const fill = selected ? "#12285e" : place.source.colour;
     const size = selected ? 38 : 30;
 
     return L.divIcon({
@@ -128,7 +125,13 @@
       return { lat: geometry.coordinates[1], lon: geometry.coordinates[0] };
     }
 
-    const rings = geometry.type === "Polygon" ? geometry.coordinates : geometry.coordinates.flat();
+    // The MTM toilets arrive as MultiPoint with a single point.
+    const rings =
+      geometry.type === "MultiPoint"
+        ? [geometry.coordinates]
+        : geometry.type === "Polygon"
+          ? geometry.coordinates
+          : geometry.coordinates.flat();
     const points = rings.flat();
     const sum = points.reduce(
       function (acc, point) {
@@ -140,57 +143,19 @@
     return { lat: sum.lat / points.length, lon: sum.lon / points.length };
   }
 
+  /* `describe` gives the text: title, address, city, fact and facts, and for
+   * parking the precomputed neighbour. The rest is the same for every source. */
   function toPlace(feature, source, index) {
-    const props = feature.properties || {};
     const point = centroid(feature.geometry);
 
-    if (source.kind === "handicapparkering") {
-      const address = [props.vejnavn, props.husnnr].filter(Boolean).join(" ").trim();
-      const spots = Number(props.invalidepladser || 0);
-
-      return {
-        id: source.kind + "-" + index,
-        kind: source.kind,
-        title: source.label,
-        address: address || "Adresse ikke registreret",
-        city: "8000 Aarhus",
-        fact: spots ? spots + (spots === 1 ? " plads" : " pladser") : "Antal pladser ikke registreret",
-        facts: [
-          { label: "Pladsforhold", value: props.bemrk || "Ikke registreret endnu" },
-          { label: "Betaling", value: "Ikke registreret endnu" },
-          { label: "Belægning", value: "Ikke registreret endnu" },
-          { label: "Ladestander", value: "Ikke registreret endnu" },
-          { label: "Køretøjstype", value: "Ikke registreret endnu" },
-          { label: "Vurdering", value: "Ikke registreret endnu" },
-        ],
-        geometry: feature.geometry,
-        lat: point.lat,
-        lon: point.lon,
-        key: props.mi_prinx,
-        // Precomputed by bin/nearest.py: the distance is between two features,
-        // so it cannot come from the feature's own properties in the source.
-        neighbour:
-          props.nabo_prinx === undefined || props.nabo_prinx === null
-            ? null
-            : { key: props.nabo_prinx, metres: props.nabo_afstand_m },
-      };
-    }
-
-    return {
+    return Object.assign(source.describe(feature.properties || {}), {
       id: source.kind + "-" + index,
       kind: source.kind,
-      title: source.label,
-      address: props.navn || "Navn ikke registreret",
-      city: "Aarhus Kommune",
-      fact: props.hegnet || "Hegning ikke registreret",
-      facts: [
-        { label: "Hegning", value: props.hegnet || "Ikke registreret endnu" },
-        { label: "Ejer", value: props.ejer || "Ikke registreret endnu" },
-      ],
+      source: source,
       geometry: feature.geometry,
       lat: point.lat,
       lon: point.lon,
-    };
+    });
   }
 
   /* Distance ------------------------------------------------------------- */
@@ -275,7 +240,7 @@
       return true;
     }
 
-    const haystack = (place.title + " " + place.address + " " + place.fact).toLowerCase();
+    const haystack = (place.title + " " + place.address + " " + place.fact + " " + place.source.label).toLowerCase();
 
     return haystack.indexOf(state.query.toLowerCase()) !== -1;
   }
@@ -320,11 +285,18 @@
 
     const distance = place.distance !== undefined ? "<span class=\"resultat__afstand\">" + formatDistance(place.distance) + "</span>" : "";
 
+    // With several sources of the same thing, the row says which one it is.
+    const source = CONFIG.showSource
+      ? '<span class="resultat__kilde"><span class="kategori-ikon" style="--kategori-farve: ' +
+        place.source.colour + '" aria-hidden="true"></span>' + escapeHtml(place.source.label) + "</span>"
+      : "";
+
     button.innerHTML =
       '<span class="resultat__tekst">' +
       '<span class="resultat__titel">' + escapeHtml(place.title) + "</span>" +
-      '<span class="resultat__adresse">' + escapeHtml(place.address) + "<br />" + escapeHtml(place.city) + "</span>" +
+      '<span class="resultat__adresse">' + addressLines(place) + "</span>" +
       '<span class="resultat__fakta">' + escapeHtml(place.fact) + "</span>" +
+      source +
       "</span>" +
       distance +
       '<span class="thumb" aria-hidden="true"></span>';
@@ -338,16 +310,24 @@
     return item;
   }
 
+  /* Benches have no address, so either line can be empty. */
+  function addressLines(place) {
+    return [place.address, place.city]
+      .filter(Boolean)
+      .map(escapeHtml)
+      .join("<br />");
+  }
+
   function renderMarkers() {
     markerLayer.clearLayers();
 
     state.visible.forEach(function (place) {
-      if (place.geometry.type !== "Point") {
+      if (place.geometry.type === "Polygon" || place.geometry.type === "MultiPolygon") {
         L.geoJSON(place.geometry, {
           style: {
-            color: "#277646",
+            color: place.source.colour,
             weight: 2,
-            fillColor: "#277646",
+            fillColor: place.source.colour,
             fillOpacity: state.selected === place.id ? 0.45 : 0.25,
           },
         })
@@ -392,9 +372,10 @@
   }
 
   /* Distance to the nearest other place of the same kind, and a way to open
-   * it. Parking only: two dog forests being 2 km apart says nothing useful. */
+   * it. Only where `describe` gives a neighbour, which is parking: two dog
+   * forests being 2 km apart says nothing useful. */
   function neighbourLine(place) {
-    if (place.kind !== "handicapparkering") {
+    if (place.neighbour === undefined) {
       return "";
     }
 
@@ -435,15 +416,17 @@
       '<button type="button" class="detalje__luk" aria-label="Luk">&times;</button>' +
       '<div class="detalje__body">' +
       '<h3 class="detalje__title" tabindex="-1">' + escapeHtml(place.title) + "</h3>" +
-      '<div class="detalje__address"><p>' + escapeHtml(place.address) + "<br />" + escapeHtml(place.city) + "</p>" +
+      '<div class="detalje__address"><p>' + addressLines(place) + "</p>" +
       '<a class="detalje__route" href="' + route + '" target="_blank" rel="noopener">Vis rute</a></div>' +
       '<p class="detalje__spots">' + escapeHtml(place.fact) + "</p>" +
       neighbourLine(place) +
       place.facts
         .map(function (fact) {
-          return (
-            '<div class="detalje__section"><h4>' + escapeHtml(fact.label) + "</h4><p>" + escapeHtml(fact.value) + "</p></div>"
-          );
+          const value = fact.href
+            ? '<a href="' + escapeHtml(fact.href) + '" target="_blank" rel="noopener">' + escapeHtml(fact.value) + "</a>"
+            : escapeHtml(fact.value);
+
+          return '<div class="detalje__section"><h4>' + escapeHtml(fact.label) + "</h4><p>" + value + "</p></div>";
         })
         .join("") +
       "</div></div>";
@@ -704,11 +687,27 @@
     dom.searchError.hidden = !failed;
   }
 
-  dom.categories.forEach(function (input) {
+  /* One checkbox per source, so the sources can be compared on the map. */
+  SOURCES.forEach(function (source) {
+    const label = document.createElement("label");
+    const input = document.createElement("input");
+    const swatch = document.createElement("span");
+
+    input.type = "checkbox";
+    input.value = source.kind;
+    input.checked = true;
     input.addEventListener("change", function () {
-      state.categories[input.value] = input.checked;
+      state.categories[source.kind] = input.checked;
       render();
     });
+
+    swatch.className = "kategori-ikon";
+    swatch.style.setProperty("--kategori-farve", source.colour);
+    swatch.setAttribute("aria-hidden", "true");
+
+    label.append(input, swatch, source.label);
+    dom.categories.appendChild(label);
+    state.categories[source.kind] = true;
   });
 
   /* Boot ------------------------------------------------------------------- */
@@ -720,7 +719,7 @@
   }
 
   Promise.all(
-    DATA.map(function (source) {
+    SOURCES.map(function (source) {
       return fetch(source.url)
         .then(function (response) {
           return response.json();
