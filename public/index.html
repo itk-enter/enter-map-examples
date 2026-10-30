@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tilgængelighed i byen — korteksempler</title>
+    <title>Enter på kort — eksempler</title>
     <link rel="stylesheet" href="./css/page.css" />
     <link rel="stylesheet" href="./css/oversigt.css" />
   </head>
@@ -12,12 +12,13 @@
 
     <main class="oversigt">
       <header class="oversigt__intro">
-        <h1>Tilgængelighed i byen</h1>
+        <h1>Enter på kort</h1>
         <p class="oversigt__manchet">
-          Handicapparkering og hundeskove fra Enter, vist som en liste og et
-          kort der følges ad. Samme indhold bygget på tre måder;
-          parkeringssiden er en variant af den tilpassede widget. Data er et
-          øjebliksbillede, ikke en direkte forbindelse til Enter.
+          Data fra Enter vist som en liste og et kort der følges ad, bygget på
+          Leaflet og OpenStreetMap. Hvert eksempel viser én type data, og
+          hvor Enter har flere kilder til det samme, vises de side om side.
+          Data er et øjebliksbillede fra Enters testmiljø, ikke en direkte
+          forbindelse.
         </p>
       </header>
 
@@ -25,43 +26,20 @@
 
       <ul class="udgaver">
         <li class="udgave">
-          <h3><a href="./septima.html">Septima Widget, tilpasset prototypen</a></h3>
+          <h3><a href="./baenke.html">Bænke</a></h3>
           <p class="udgave__hvad">
-            Begge kategorier med kategorivælger og detaljevisning hen over
-            listen, stylet som prototypen.
+            Bænke fra OpenStreetMap, med ryglæn, armlæn og materiale.
           </p>
         </li>
 
         <li class="udgave">
-          <h3><a href="./parkering.html">Septima Widget, kun parkering</a></h3>
+          <h3><a href="./toiletter.html">Toiletter</a></h3>
           <p class="udgave__hvad">
-            Handicapparkering alene, med afstand til nærmeste anden plads.
-          </p>
-        </li>
-
-        <li class="udgave">
-          <h3><a href="./plain.html">Ren Septima Widget</a></h3>
-          <p class="udgave__hvad">
-            Samme indhold på widgetens egen konfiguration: intet eget
-            stylesheet og ingen JavaScript.
-          </p>
-        </li>
-
-        <li class="udgave">
-          <h3><a href="./leaflet.html">Leaflet og OpenStreetMap</a></h3>
-          <p class="udgave__hvad">
-            Liste, detaljevisning og kort skrevet her, med adressesøgning og
-            find nærmeste.
+            Offentlige toiletter fra OpenStreetMap og Aarhus Kommunes registre
+            over bytoiletter og andre toiletter, samlet på ét kort.
           </p>
         </li>
       </ul>
-
-      <p class="oversigt__dok">
-        Sammenligningen af udgaverne — målinger, tilgængelighedstjek og hvad
-        hver af dem koster — står i
-        <a href="https://github.com/itk-enter/enter-map-examples/blob/main/docs/variants.md">docs/variants.md</a>
-        på GitHub (på engelsk).
-      </p>
     </main>
   </body>
 </html>

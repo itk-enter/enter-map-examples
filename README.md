@@ -4,15 +4,30 @@ Accessibility data from [Enter] shown as a list and a map that stay in sync.
 The pages stand in for the embeddable map Aarhus Kommune wants on aarhus.dk, and
 they exist to show what the same page costs on three different stacks.
 
-| Page             | Shows                                                       |
-| ---------------- | ----------------------------------------------------------- |
-| `index.html`     | List of the examples                                        |
-| `septima.html`   | Handicapparkering and hundeskove on Septima Widget, styled to the prototype |
-| `parkering.html` | Handicapparkering alone, with "find nærmeste"               |
-| `plain.html`     | Same content on widget configuration only                    |
-| `leaflet.html`   | Same content on Leaflet and OpenStreetMap                    |
+| Page              | Shows                                                       |
+| ----------------- | ----------------------------------------------------------- |
+| `index.html`      | List of the Leaflet examples                                |
+| `baenke.html`     | Benches from OpenStreetMap, source `test:osm-bench`         |
+| `toiletter.html`  | Toilets from three sources on one map: `test:osm-public-toilet`, `test:mtm_spatialmaps-toilet-city`, `test:mtm_spatialmaps-toilet-other` |
+| `septima.html`    | Handicapparkering and hundeskove on Septima Widget, styled to the prototype |
+| `parkering.html`  | Handicapparkering alone, with "find nærmeste"               |
+| `plain.html`      | Same content on widget configuration only                    |
+| `leaflet.html`    | Same content on Leaflet and OpenStreetMap                    |
 
-All of them start at Dokk1.
+All of them start at Dokk1. The front page links only the Leaflet examples of
+Enter sources (`baenke.html`, `toiletter.html`); new examples are added there
+the same way. The last four pages compared the builds for handicapparkering
+and hundeskove. They are still published at their own address, linked from
+nowhere, and the comparison is in `docs/variants.md`.
+
+### Adding a Leaflet example
+
+A Leaflet page is `leaflet.html` with its own intro and one file in
+`public/js/maps/` that sets `window.ENTER_MAP`. That file lists the sources: the
+snapshot to load, a label and colour for the checkbox and the marker, the marker
+glyph, and `describe`, which turns a feature's properties into the row and the
+detail view. With `showSource: true` each row also says which source it came
+from, for pages that put several sources of the same thing side by side.
 
 ## Running it
 
@@ -25,9 +40,13 @@ build step, a package manager or an Enter instance. The site is served under
 the same path as on GitHub Pages, and anything outside it answers 404, so a
 path that would break once published breaks locally too.
 
-Two optional things need `.env` (copy `.env.example`):
+Three optional things need `.env` or `.env.local` (copy `.env.example`):
 
-- `task data:fetch` refreshes the data from Enter. Needs credentials.
+- `task data:fetch-sources` refreshes the bench and toilet data from Enter's
+  sources. Needs credentials.
+- `task data:fetch` refreshes the parking and dog forest data. Needs
+  credentials, and the old `/data/ngsi-ld` path, which the staging instance no
+  longer serves.
 - `task route:key` turns on "find nærmeste" on `parkering.html`. Needs a Septima
   routing key.
 
@@ -49,6 +68,31 @@ Published, the pages run without the routing key: `key.json` is git-ignored, so
 minutes, so a deploy can take that long to show.
 
 ## The data
+
+### Benches and toilets
+
+`public/data/test-*.geojson` are a one-off dump of four sources on the Enter
+staging instance (<https://enter.srvitkstgweb02.itkdev.dk/>), taken 29 October
+2026 with `bin/fetch-sources.sh`:
+
+| Source                              | Model        | Places |
+| ----------------------------------- | ------------ | ------ |
+| `test:osm-bench`                    | Bench        | 2281   |
+| `test:osm-public-toilet`            | PublicToilet | 163    |
+| `test:mtm_spatialmaps-toilet-city`  | PublicToilet | 16     |
+| `test:mtm_spatialmaps-toilet-other` | PublicToilet | 37     |
+
+Enter lists its sources in `/sources.json`. The script looks each one up there
+for its data model and JSON-LD context, then asks the broker for
+`/ngsi-ld/v1/entities?q=sourceId=="<id>"` as GeoJSON in simplified
+(key-values) form, a page of 1000 at a time. A file is named after the source
+with `:` turned into `-`. The whole site, the broker included, is behind basic
+auth, which is why the pages read a snapshot rather than Enter.
+
+The MTM toilets arrive as `MultiPoint` with one point each; OpenStreetMap
+toilets rarely have a name or an address, and benches never have an address.
+
+### Handicapparkering and hundeskove
 
 `public/data/handicapparkering.geojson` (414 places) and
 `public/data/hundeskov.geojson` (23 places) are a one-off dump from the Enter
@@ -130,7 +174,8 @@ Everything else is in the configuration.
 | `public/css/enter-widget.css`        | Aarhus design tokens mapped onto the widget's `--sw-*` variables  |
 | `public/js/widget-host.js`           | Creates the widget; routing key, zoom gate, nearest other place   |
 | `public/js/a11y-fixes.js`            | One patch for widget markup, see below                            |
-| `public/js/leaflet-app.js`           | The whole Leaflet build                                           |
+| `public/js/leaflet-app.js`           | The Leaflet build: map, list, detail, search                      |
+| `public/js/maps/*.js`                | What each Leaflet page shows: sources, markers, row and detail text |
 
 ### List and map
 
