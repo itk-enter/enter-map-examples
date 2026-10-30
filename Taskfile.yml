@@ -14,5 +14,9 @@ tasks:
     cmd: bin/route-key.sh
 
   data:fetch:
-    desc: Refresh the data snapshot from the Enter instance configured in .env
+    desc: Refresh the parking and dog forest snapshot from the Enter instance configured in .env
     cmd: bin/fetch-data.sh
+
+  data:fetch-sources:
+    desc: Refresh the bench and toilet snapshot from the Enter sources in ENTER_SOURCES
+    cmd: bin/fetch-sources.sh

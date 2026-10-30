@@ -1,0 +1,1069 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-2",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.265895942633305,
+            56.05324400629912
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Primitivt skovtoilet",
+        "accessType": "public",
+        "address": {
+          "streetAddress": "Ørnevænget"
+        },
+        "name": "Mariendal Strand",
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 08:28:48.76"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-10",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.247361951759691,
+            56.08682800150632
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessType": "public",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Moesgård Strand, Strandskovvej 30"
+        },
+        "name": "Moesgård Strand",
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Vinterlukket",
+          "updatedAt": "2022-06-02 08:55:39.82"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-1",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.236808047161853,
+            56.101226991176155
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessType": "public",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Ørneredevej 55"
+        },
+        "name": "Ørnereden",
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 09:12:08.087"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-7",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.223768975912007,
+            56.12090198097168
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessType": "public",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Ballehage, Ørneredevej 7A"
+        },
+        "name": "Ballehage",
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-03 09:20:37.56"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-8",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.257314127444856,
+            56.062578393853315
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Indlejet toiletkabine",
+        "accessType": "public",
+        "toiletType": "portable",
+        "address": {
+          "streetAddress": "Fløjstrup strand"
+        },
+        "name": "Fløjstrup Strand",
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Vinterlukket",
+          "updatedAt": "2023-06-26 09:20:19.093"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-9",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.265295941112514,
+            56.028692009395705
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Indlejet toiletkabine",
+        "accessType": "public",
+        "toiletType": "portable",
+        "address": {
+          "streetAddress": "Strandbovej"
+        },
+        "name": "Strandbovej, Norsminde Strand",
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Vinterlukket",
+          "updatedAt": "2022-06-03 09:20:23.43"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-3",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.270009981983943,
+            56.038465031581744
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessType": "public",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Ajstrup Strand, Nord"
+        },
+        "name": "Ajstrup Strand Nord",
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Vinterlukket",
+          "updatedAt": "2022-06-02 08:52:04.933"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-4",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.269387941087576,
+            56.03628502406172
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Toilet",
+        "accessType": "public",
+        "address": {
+          "streetAddress": "Ajstrup Strand, Syd"
+        },
+        "name": "Ajstrup Strand Syd",
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Vinterlukket",
+          "updatedAt": "2022-06-03 09:05:06.797"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-5",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.227043952362308,
+            56.11301798777636
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessType": "public",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Ørneredevej 23"
+        },
+        "name": "Peder Sabroes Minde/Hørhaven",
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 09:14:16.867"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-6",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.244873956664401,
+            56.08855697765228
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessType": "public",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Moesgård Strand, Strandskovvej 10"
+        },
+        "name": "Moesgård Strand,",
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 09:08:01.647"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-22",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.193700939918465,
+            56.15837701355931
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessNote": "Natlåst",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Vesterbrogade 38A"
+        },
+        "name": "Botanisk have, ved Den Gamle By",
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Vinterlukket",
+          "updatedAt": "2022-06-02 09:27:33.503"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-21",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.205892065004573,
+            56.16532698954444
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessType": "public",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Vennelyst Boulevard 7"
+        },
+        "name": "Vennelystparken",
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 09:24:37.76"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-20",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.211286047930429,
+            56.12879797834433
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessType": "public",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Oddervej 8"
+        },
+        "name": "Mindeparken v. Oddervej",
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 09:20:16.32"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-40",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.211735164268967,
+            56.138730321805795
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Multi Handicaptoilet",
+        "accessNote": "Adgang kræver visitation (Via DHF)",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Marselisborg Havnevej"
+        },
+        "name": "Tangkrogen",
+        "additionalInformation": {
+          "registeredAt": "2022-06-03 09:53:00.383",
+          "season": "Hele året",
+          "updatedAt": "2022-06-03 09:56:42.597"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-29",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.230934999071142,
+            56.176566990746274
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessNote": "SMS-låst",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Salonvejen 1"
+        },
+        "name": "Den Permanente",
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 08:09:52.223"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-28",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.220038946863175,
+            56.12039203967187
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessType": "public",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Ørneredevej 6"
+        },
+        "name": "Dyrehaven (Krudthuset)",
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 08:22:11.123"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-27",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.178624956538984,
+            56.15994704060083
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessNote": "SMS-låst efter 16:30",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Viborgvej 47A"
+        },
+        "name": "Toilet i Vestre Store Kapel",
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 07:29:35.49"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-15",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.17226121005318,
+            56.22692581772626
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Primitiv skovtoilet",
+        "accessType": "public",
+        "address": {
+          "streetAddress": "Elevvej 23"
+        },
+        "name": "Ved shelterplads i Lisbjerg ny skov",
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-03 09:21:20.3"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-19",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.203148979811036,
+            56.130237980429285
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessType": "public",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Carl Nielsens Vej 15"
+        },
+        "name": "Mindeparken v. Carl Nielsens Vej",
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 09:21:46.057"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-36",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.244975847952736,
+            56.08855369170787
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Toilet",
+        "accessType": "public",
+        "address": {
+          "streetAddress": "Moesgård Strand, Strandskovvej 10"
+        },
+        "name": "Moesgård Strand, H/D",
+        "additionalInformation": {
+          "registeredAt": "2022-06-02 09:09:01.063",
+          "season": "Vinterlukket",
+          "updatedAt": "2022-06-02 09:11:00.097"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-13",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.247612942965947,
+            56.19093796368643
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessType": "public",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Fortevej 113"
+        },
+        "name": "Bellevue Strand",
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Vinterlukket",
+          "updatedAt": "2022-06-02 10:11:50.433"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-35",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.01771843850948,
+            56.127745089014766
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Primitivt skovtoilet",
+        "accessType": "public",
+        "address": {
+          "streetAddress": "Harlevholmvej"
+        },
+        "name": "Åbo skov",
+        "additionalInformation": {
+          "registeredAt": "2022-06-02 08:13:24.75",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 08:15:58.633"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-12",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.282144051831377,
+            56.20273596538676
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessType": "public",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Åkrogs Strandvej 46"
+        },
+        "name": "Åkrogen ved bussens endestation (Inderst)",
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 09:34:48.163"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-34",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.209711261200916,
+            56.1563432274227
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessType": "public",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Kannikegade 1B"
+        },
+        "name": "Bispetorv",
+        "additionalInformation": {
+          "registeredAt": "2022-06-02 08:04:46.983",
+          "season": "Hele året",
+          "updatedAt": "2022-06-03 09:09:19.25"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-11",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.28292697581113,
+            56.20449996573801
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessType": "public",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Åkrogs Strandvej 65"
+        },
+        "name": "Åkrogen Nord (Yderst)",
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Vinterlukket",
+          "updatedAt": "2022-06-02 09:46:02.443"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-33",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.198770973589422,
+            56.144949241973336
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Toilet",
+        "accessType": "public",
+        "address": {
+          "streetAddress": "Ingerslevs Boulevard"
+        },
+        "name": "Ingerslev",
+        "additionalInformation": {
+          "registeredAt": "2022-06-02 07:38:27.7",
+          "season": "Åbent torvedage, markeder",
+          "updatedAt": "2022-06-02 08:07:54.9"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-30",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.205668331669154,
+            56.158694489436094
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Toilet og urinal",
+        "accessType": "public",
+        "toiletPosition": [
+          "seated",
+          "urinal"
+        ],
+        "address": {
+          "streetAddress": "Klostergade 52"
+        },
+        "name": "Klostertorvet",
+        "additionalInformation": {
+          "registeredAt": "2018-10-18 09:26:28.457",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 07:55:46.637"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-14",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.213873033206704,
+            56.127922010531066
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessType": "public",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Strandvejen 23"
+        },
+        "name": "Toilet ved Hotel Marselis",
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 09:19:37.253"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-18",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.20729695672183,
+            56.13932097413219
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessType": "public",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Strandvejen 19"
+        },
+        "name": "Tangkrogen",
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 09:22:11.667"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-17",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.185550065028899,
+            56.16296703724959
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessNote": "SMS-låst",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Eugen Warmings Vej 12"
+        },
+        "name": "Botanisk Have - Amfiscenen",
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 09:23:01.99"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-39",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.056015723989276,
+            56.17798715402592
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Primitiv skovtoilet",
+        "accessType": "public",
+        "name": "True skov",
+        "additionalInformation": {
+          "registeredAt": "2022-06-03 09:46:16.447",
+          "season": "Hele året",
+          "updatedAt": "2022-06-03 09:46:16.447"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-16",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.220117024907715,
+            56.213267960500716
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Primitiv skovtoilet",
+        "accessType": "public",
+        "address": {
+          "streetAddress": "Viengevej 7A"
+        },
+        "name": "Ved shelterplads Egå Engsø",
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 09:44:57.793"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-38",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.186925768055787,
+            56.069893325632655
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Primitivt skovtoilet",
+        "accessType": "public",
+        "address": {
+          "streetAddress": "Hovstien 4B"
+        },
+        "name": "Vilhelmsborg",
+        "additionalInformation": {
+          "registeredAt": "2022-06-03 09:18:10.53",
+          "season": "Hele året",
+          "updatedAt": "2022-06-03 09:42:34.08"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-26",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.215098969954854,
+            56.16765000909126
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessNote": "SMS-låst efter 16:30",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Kirkegårdsvej 26"
+        },
+        "name": "Toilet i Nordre Kapel",
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 07:30:53.64"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-25",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.207490980226245,
+            56.14583600676325
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessNote": "SMS-låst",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Heibergsgade 31"
+        },
+        "name": "Skanseparken",
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 08:18:48.347"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-24",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.199748937270614,
+            56.15563504099069
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Urinal",
+        "accessType": "public",
+        "toiletPosition": "urinal",
+        "address": {
+          "streetAddress": "Møllegade 1"
+        },
+        "name": "Mølleparken",
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 08:23:38.86"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-23",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.088293979090139,
+            56.14753301580484
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "description": "Handicaptoilet",
+        "accessType": "public",
+        "wheelchairAccessible": "yes",
+        "address": {
+          "streetAddress": "Byleddet 2"
+        },
+        "name": "Årslev Engsø",
+        "additionalInformation": {
+          "registeredAt": "2018-10-01 13:11:49.08",
+          "season": "Hele året",
+          "updatedAt": "2022-06-02 08:20:15.76"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-other"
+      }
+    }
+  ]
+}

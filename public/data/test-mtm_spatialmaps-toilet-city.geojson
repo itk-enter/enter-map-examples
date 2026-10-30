@@ -1,0 +1,450 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-city-23",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.213266951391805,
+            56.153275675849564
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "address": {
+          "addressLocality": "Aarhus",
+          "streetAddress": "Hack Kampmanns Plads 2"
+        },
+        "name": "Den nye havneplads v. Toldboden",
+        "additionalInformation": {
+          "registeredAt": "2022-06-17 10:56:16.8",
+          "updatedAt": "2022-10-10 11:10:20.17",
+          "status": "Aktiv"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-city"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-city-11",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.198774350775414,
+          56.14495064131971
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "address": {
+          "addressLocality": "Århus C",
+          "postalCode": "8000",
+          "streetAddress": "Ingerslevs Boulevard 2G"
+        },
+        "name": "Ingerslevs Plads",
+        "additionalInformation": {
+          "jcdNumber": "AAR0012SA",
+          "registeredAt": "2018-10-01 13:12:00.333",
+          "updatedAt": "2018-12-03 11:47:37.817",
+          "status": "Aktiv"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-city"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-city-14",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.199320291532757,
+          56.158243825923556
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "address": {
+          "addressLocality": "Århus C",
+          "postalCode": "8000",
+          "streetAddress": "Vesterbro Torv 13A"
+        },
+        "name": "Vesterbro Torv 13A",
+        "additionalInformation": {
+          "jcdNumber": "AAR0015SA",
+          "registeredAt": "2018-10-01 13:12:00.333",
+          "updatedAt": "2018-12-03 11:47:37.93",
+          "status": "Aktiv"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-city"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-city-25",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.13604414905273,
+            56.096235255174875
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "address": {
+          "addressLocality": "Tranbjerg",
+          "streetAddress": "Tranbjerg Stationsvej 2B"
+        },
+        "name": "Ved stationen",
+        "additionalInformation": {
+          "registeredAt": "2022-06-17 11:19:55.1",
+          "updatedAt": "2022-06-17 11:19:55.1",
+          "status": "Aktiv"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-city"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-city-13",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.21957108990398,
+            56.17726863790624
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "address": {
+          "addressLocality": "Århus N",
+          "postalCode": "8200",
+          "streetAddress": "Grenåvej 120"
+        },
+        "name": "Marienlund",
+        "additionalInformation": {
+          "jcdNumber": "AAR0014SA",
+          "registeredAt": "2018-10-01 13:12:00.333",
+          "updatedAt": "2022-06-17 11:59:16.97",
+          "status": "Aktiv"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-city"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-city-10",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.20728969153797,
+          56.139516799221184
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "address": {
+          "addressLocality": "Århus C",
+          "postalCode": "8000",
+          "streetAddress": "Strandvejen 17"
+        },
+        "name": "Fintenborg Plads",
+        "additionalInformation": {
+          "jcdNumber": "AAR0011SA",
+          "placement": "Tangkrogen",
+          "registeredAt": "2018-10-01 13:12:00.333",
+          "updatedAt": "2018-12-03 11:47:37.783",
+          "status": "Aktiv"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-city"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-city-21",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.164011374170004,
+            56.21218429940243
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "address": {
+          "addressLocality": "Lisbjerg",
+          "streetAddress": "Klokhøjen 30A"
+        },
+        "name": "Lisbjerg/Skejby station",
+        "additionalInformation": {
+          "registeredAt": "2022-06-17 10:25:14.85",
+          "updatedAt": "2022-06-17 10:30:23.48",
+          "status": "Aktiv"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-city"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-city-5",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.213067008583105,
+            56.15666655876932
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "address": {
+          "addressLocality": "Århus C",
+          "postalCode": "8000",
+          "streetAddress": "Skolebakken 6H"
+        },
+        "name": "v/Skolebakken v/Havnens P-Plads",
+        "additionalInformation": {
+          "jcdNumber": "AAR0006SA",
+          "registeredAt": "2018-10-01 13:12:00.333",
+          "updatedAt": "2022-06-17 13:32:24.01",
+          "status": "Aktiv"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-city"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-city-6",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.20674224857685,
+            56.15540061589463
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "address": {
+          "addressLocality": "Århus C",
+          "postalCode": "8000",
+          "streetAddress": "Telefontorvet 5"
+        },
+        "name": "Telefontorvet 5",
+        "additionalInformation": {
+          "jcdNumber": "AAR0007SA",
+          "registeredAt": "2018-10-01 13:12:00.333",
+          "updatedAt": "2022-06-17 10:38:50.307",
+          "status": "Aktiv"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-city"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-city-7",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.200051289824236,
+          56.15129741023839
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "address": {
+          "addressLocality": "Århus C",
+          "postalCode": "8000",
+          "streetAddress": "Frederiks Alle 20A"
+        },
+        "name": "v/Føtex",
+        "additionalInformation": {
+          "jcdNumber": "AAR0008SA",
+          "registeredAt": "2018-10-01 13:12:00.333",
+          "updatedAt": "2018-12-03 11:47:37.69",
+          "status": "Aktiv"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-city"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-city-16",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.169308322621069,
+            56.155640299729384
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "address": {
+          "addressLocality": "Århus C",
+          "postalCode": "8000",
+          "streetAddress": "Vølundsvej 1B"
+        },
+        "name": "Åbyhøj Torv",
+        "additionalInformation": {
+          "jcdNumber": "AAR0017SA",
+          "registeredAt": "2018-10-01 13:12:00.333",
+          "updatedAt": "2022-06-17 12:08:34.003",
+          "status": "Aktiv"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-city"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-city-9",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.19964796000854,
+            56.15563567067499
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "address": {
+          "addressLocality": "Århus C",
+          "postalCode": "8000",
+          "streetAddress": "Vester Alle 14E"
+        },
+        "name": "v/Mølleparken",
+        "additionalInformation": {
+          "jcdNumber": "AAR0010SA",
+          "registeredAt": "2018-10-01 13:12:00.333",
+          "updatedAt": "2022-06-17 13:48:04.49",
+          "status": "Aktiv"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-city"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-city-15",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.190118851942975,
+            56.14375470289197
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "address": {
+          "addressLocality": "Århus C",
+          "postalCode": "8000",
+          "streetAddress": "Harald Jensens Plads 8"
+        },
+        "name": "Harald Jensens Plads 8",
+        "additionalInformation": {
+          "jcdNumber": "AAR0016SA",
+          "registeredAt": "2018-10-01 13:12:00.333",
+          "updatedAt": "2022-06-17 12:04:42.987",
+          "status": "Aktiv"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-city"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-city-18",
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [
+          [
+            10.235527385689892,
+            56.231182202700666
+          ]
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "address": {
+          "addressLocality": "Lystrup",
+          "streetAddress": "Lystrup Stationvej 15A"
+        },
+        "name": "Lystrup Stationvej 15A",
+        "additionalInformation": {
+          "registeredAt": "2022-06-17 10:07:48.807",
+          "updatedAt": "2022-06-17 10:28:11.847",
+          "status": "Aktiv"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-city"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-city-17",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.206070772435375,
+          56.15649594953135
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "address": {
+          "addressLocality": "Århus C",
+          "postalCode": "8000",
+          "streetAddress": "Åboulevarden 43A"
+        },
+        "name": "Åboulevarden 43A",
+        "additionalInformation": {
+          "jcdNumber": "AAR0018SA",
+          "registeredAt": "2018-10-01 13:12:00.333",
+          "updatedAt": "2018-12-03 11:47:38.027",
+          "status": "Aktiv"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-city"
+      }
+    },
+    {
+      "id": "urn:ngsi-ld:PublicToilet:aarhus-toilet-city-3",
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.20497284143227,
+          56.150893318903954
+        ]
+      },
+      "properties": {
+        "type": "PublicToilet",
+        "address": {
+          "addressLocality": "Århus C",
+          "postalCode": "8000",
+          "streetAddress": "Banegårdspladsen 4A"
+        },
+        "name": "Banegårdspladsen 4A",
+        "additionalInformation": {
+          "jcdNumber": "AAR0004SA",
+          "registeredAt": "2018-10-01 13:12:00.333",
+          "updatedAt": "2018-12-03 11:47:37.597",
+          "status": "Aktiv"
+        },
+        "sourceId": "test:mtm_spatialmaps-toilet-city"
+      }
+    }
+  ]
+}
