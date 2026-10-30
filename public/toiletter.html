@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Toiletter i Aarhus — Leaflet</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="./css/page.css" />
+    <link rel="stylesheet" href="./css/leaflet-app.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#steder">Spring til liste og kort</a>
+
+    <main>
+      <div class="page-intro">
+        <p class="page-intro__link"><a href="./index.html">Oversigt</a></p>
+        <h1>Toiletter</h1>
+        <p class="page-intro__text">
+          Offentlige toiletter fra tre kilder i Enter: OpenStreetMap og Aarhus
+          Kommunes to registre over bytoiletter og andre toiletter. Hver kilde
+          har sin farve, så du kan se hvor de overlapper og hvor de afviger.
+          Data er et øjebliksbillede fra Enters testmiljø.
+        </p>
+
+        <!-- Announces the zoom gate. The card in the panel is hidden when the
+             places are on the map, and a hidden live region says nothing. -->
+        <p id="kort-status" class="visually-hidden" role="status"></p>
+      </div>
+
+      <div class="kort" id="steder">
+        <div class="panel">
+          <div class="panel__search">
+            <label class="visually-hidden" for="soeg">Søg efter sted eller adresse</label>
+            <input
+              id="soeg"
+              type="search"
+              class="soeg"
+              placeholder="Søg efter sted eller adresse"
+              autocomplete="off"
+              role="combobox"
+              aria-expanded="false"
+              aria-controls="forslag"
+              aria-describedby="soeg-hjaelp"
+            />
+            <p id="soeg-hjaelp" class="visually-hidden">
+              Skriv for at søge i listen. Vælg en adresse for at se de nærmeste
+              steder.
+            </p>
+            <ul id="forslag" class="forslag" role="listbox" aria-label="Forslag" hidden></ul>
+            <p id="soeg-fejl" class="soeg__fejl" role="status" hidden>
+              Adressesøgningen svarer ikke lige nu. Du kan stadig søge i listen.
+            </p>
+          </div>
+
+          <!-- One checkbox per source, added from js/maps/. -->
+          <fieldset class="panel__kategorier">
+            <legend>Vis på kortet</legend>
+          </fieldset>
+
+          <div class="zoomgate" hidden>
+            <h2 class="zoomgate__title">Se tilgængelige steder på kortet</h2>
+            <p class="zoomgate__text">
+              Skriv en adresse for at søge på et sted, eller zoom ind for at se
+              stederne på kortet.
+            </p>
+            <p class="zoomgate__label" id="zoomgate-label">Zoom ind for at se steder</p>
+            <div
+              class="zoomgate__bar"
+              role="progressbar"
+              aria-labelledby="zoomgate-label"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="0"
+            >
+              <span class="zoomgate__fill"></span>
+            </div>
+          </div>
+
+          <div class="panel__liste">
+            <div class="panel__hoved">
+              <h2 id="liste-overskrift" class="panel__overskrift">Resultater</h2>
+              <p class="panel__antal">
+                <span id="resultatantal">…</span> i kortudsnittet
+              </p>
+            </div>
+            <ul class="liste" aria-labelledby="liste-overskrift"></ul>
+            <p class="liste__tom" hidden>
+              Ingen steder i dette kortudsnit. Flyt kortet, zoom ud eller søg
+              bredere.
+            </p>
+          </div>
+
+          <div class="detalje-host" hidden></div>
+        </div>
+
+        <div class="kort__map" id="map"></div>
+      </div>
+    </main>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="./js/maps/toiletter.js"></script>
+    <script src="./js/leaflet-app.js"></script>
+  </body>
+</html>

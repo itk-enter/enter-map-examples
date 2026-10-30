@@ -162,18 +162,13 @@
   accent-color: var(--aak-color-primary);
 }
 
+/* The colour is the source's marker colour, set from js/maps/. */
 .kategori-ikon {
+  flex: none;
   width: 18px;
   height: 18px;
   border-radius: 3px;
-}
-
-.kategori-ikon--parkering {
-  background: var(--aak-color-primary);
-}
-
-.kategori-ikon--hundeskov {
-  background: #277646;
+  background: var(--kategori-farve, var(--aak-color-primary));
 }
 
 /* List -------------------------------------------------------------------- */
@@ -272,6 +267,20 @@
 .resultat__fakta {
   display: block;
   margin-top: 8px;
+}
+
+.resultat__kilde {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--aak-color-muted);
+}
+
+.resultat__kilde .kategori-ikon {
+  width: 12px;
+  height: 12px;
 }
 
 .resultat__afstand {
