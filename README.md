@@ -40,7 +40,8 @@ gets:
 - `aarhus-dk-baenke-fuld.html` has no sidebar, and the frame runs the width of
   the container.
 
-Both are mock-ups and say so in a banner at the top. Its stylesheet, `css/aarhus-dk.css`, carries the
+Both are mock-ups and say so in a banner at the top. Their stylesheet,
+`css/aarhus-dk.css`, carries the
 design tokens from aarhus.dk's `identity-aarhus.css` (Arial, text `#333`,
 links `#3661d8`, footer `#333`), copied rather than linked so the demo does not
 change with the live site. The two logos in `public/img/` are Aarhus Kommune's,
