@@ -51,43 +51,56 @@
           </ol>
         </nav>
 
-        <div class="article">
-          <h1>Bænke i byen</h1>
-          <p class="article__manchet">
-            Find en bænk i nærheden. Kortet viser bænke i Aarhus Kommune, og du
-            kan se om en bænk har ryglæn og armlæn, hvad den er lavet af, og hvor
-            mange den har plads til.
-          </p>
-
-          <h2>Sådan bruger du kortet</h2>
-          <p>
-            Skriv en adresse i søgefeltet for at se de nærmeste bænke, eller zoom
-            ind på kortet. Vælg en bænk i listen eller på kortet for at se mere om
-            den.
-          </p>
+        <!-- Hero: title and manchet in the article column, as on aarhus.dk. -->
+        <div class="grid">
+          <div class="grid__article">
+            <h1>Bænke i byen</h1>
+            <p class="manchet">
+              Find en bænk i nærheden. Kortet viser bænke i Aarhus Kommune, og du
+              kan se om en bænk har ryglæn og armlæn, hvad den er lavet af, og
+              hvor mange den har plads til.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <!-- The map runs the width of the container, as the map on the parking
-           page does, rather than the narrow text column. -->
-      <div class="container">
-        <div class="map-frame">
-          <iframe
-            src="./baenke-embed.html"
-            title="Kort over bænke i Aarhus Kommune"
-            loading="lazy"
-          ></iframe>
-        </div>
-      </div>
+        <!-- The article wrapper: the text column and the sidebar next to it.
+             The map stays inside the text column, since the article wrapper on
+             aarhus.dk is not known to allow full-width content. -->
+        <div class="grid">
+          <div class="grid__article">
+            <h2>Sådan bruger du kortet</h2>
+            <p>
+              Skriv en adresse i søgefeltet for at se de nærmeste bænke, eller
+              zoom ind på kortet. Vælg en bænk i listen eller på kortet for at se
+              mere om den.
+            </p>
 
-      <div class="container">
-        <div class="article">
-          <h2>Om data</h2>
-          <p>
-            Bænkene kommer fra OpenStreetMap via Enter, Aarhus Kommunes platform
-            for åbne data. Oplysningerne er indtastet af frivillige og kan være
-            ufuldstændige.
-          </p>
+            <div class="map-frame">
+              <iframe
+                src="./baenke-embed.html"
+                title="Kort over bænke i Aarhus Kommune"
+                loading="lazy"
+              ></iframe>
+            </div>
+
+            <h2>Om data</h2>
+            <p>
+              Bænkene kommer fra OpenStreetMap via Enter, Aarhus Kommunes
+              platform for åbne data. Oplysningerne er indtastet af frivillige og
+              kan være ufuldstændige.
+            </p>
+          </div>
+
+          <!-- Stands in for the contact box aarhus.dk puts here. Left without
+               real contact details: which department answers for benches is
+               not decided by this demo. -->
+          <aside class="grid__sidebar" aria-label="Kontakt">
+            <div class="side-box">
+              <span class="tag">Afdeling</span>
+              <h3>Kontakt</h3>
+              <p>Her står kontaktoplysninger for den afdeling, der har ansvaret for bænkene.</p>
+            </div>
+          </aside>
         </div>
       </div>
     </main>

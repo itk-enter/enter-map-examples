@@ -25,8 +25,12 @@ nowhere, and the comparison is in `docs/variants.md`.
 ### Embedding in aarhus.dk
 
 `aarhus-dk-baenke.html` shows how a map sits on aarhus.dk: an article page
-with the site's header, breadcrumb, text column and footer, and the map in an
-`<iframe>` the width of the page container. The page is a mock-up and says so
+with the site's header, breadcrumb, text column, sidebar and footer, and the
+map in an `<iframe>` in the text column. The columns follow aarhus.dk's grid:
+text in `col-lg-7 offset-xl-1`, sidebar in `col-lg-4 offset-lg-1 col-xl-3`.
+The map does not break out to full width, because the article wrapper on
+aarhus.dk is not known to allow it. The sidebar holds a placeholder for the
+contact box, with no contact details. The page is a mock-up and says so
 in a banner at the top. Its stylesheet, `css/aarhus-dk.css`, carries the
 design tokens from aarhus.dk's `identity-aarhus.css` (Arial, text `#333`,
 links `#3661d8`, footer `#333`), copied rather than linked so the demo does not
@@ -35,8 +39,9 @@ from the same site.
 
 The framed page, `baenke-embed.html`, is `baenke.html` without the heading and
 intro (the heading stays for screen readers) and with `css/embed.css`, which
-makes the map fill the frame. The host page sets the frame's height. Below
-820px the map and list stack inside the frame and the frame scrolls.
+makes the map fill the frame. The host page sets the frame's height. The text
+column is about 800px at most, under the Leaflet build's 820px breakpoint, so
+in the frame the map and list are always stacked and the frame scrolls.
 
 ### Adding a Leaflet example
 

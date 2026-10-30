@@ -151,17 +151,70 @@ a:focus-visible {
   color: var(--color-grey-dark);
 }
 
-/* The text column of an aarhus.dk article: seven of twelve columns, set in by
- * one from the left on wide screens. */
-.article {
-  max-width: 800px;
-  margin-left: calc((100% - 2 * var(--gutter)) / 12);
+/* The article grid of aarhus.dk, on twelve columns: the text column is
+ * col-lg-7 offset-xl-1, the sidebar col-lg-4 offset-lg-1 col-xl-3. Below lg
+ * both run full width, sidebar last. */
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  column-gap: 25px;
 }
 
-@media (max-width: 1199px) {
-  .article {
-    margin-left: 0;
+@media (min-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
   }
+
+  .grid__article {
+    grid-column: 1 / span 7;
+  }
+
+  .grid__sidebar {
+    grid-column: 9 / span 4;
+  }
+}
+
+@media (min-width: 1200px) {
+  .grid__article {
+    grid-column: 2 / span 7;
+  }
+
+  .grid__sidebar {
+    grid-column: 10 / span 3;
+  }
+}
+
+.grid__article p {
+  font-size: 18px;
+}
+
+.grid__article .manchet {
+  font-size: 20px;
+}
+
+/* The contact box in the sidebar. */
+.side-box {
+  margin-top: 40px;
+  padding: 24px;
+  border-top: 4px solid var(--color-primary);
+  background: var(--color-grey-light);
+}
+
+.side-box h3 {
+  margin: 8px 0;
+  font-size: 18px;
+}
+
+.side-box p {
+  margin: 0;
+}
+
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 14px;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
 }
 
 h1,
@@ -178,14 +231,6 @@ h1 {
 h2 {
   margin: 40px 0 12px;
   font-size: 26px;
-}
-
-.article p {
-  font-size: 18px;
-}
-
-.article .article__manchet {
-  font-size: 20px;
 }
 
 @media (max-width: 820px) {

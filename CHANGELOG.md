@@ -7,8 +7,9 @@ All notable changes to this project are documented here, following
 
 ### Added
 
-- `aarhus-dk-baenke.html`: the bench map in an iframe on a mock aarhus.dk
-  article page, styled with aarhus.dk's design tokens; `baenke-embed.html` is
+- `aarhus-dk-baenke.html`: the bench map in an iframe in the text column of a
+  mock aarhus.dk article page with a sidebar, styled with aarhus.dk's design
+  tokens; `baenke-embed.html` is
   the framed page, without heading or intro.
 - `baenke.html` and `toiletter.html`: Leaflet examples of sources on Enter,
   benches from `test:osm-bench`, and toilets from `test:osm-public-toilet`,
