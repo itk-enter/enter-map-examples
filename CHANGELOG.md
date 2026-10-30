@@ -16,14 +16,6 @@ All notable changes to this project are documented here, following
   one map with a checkbox and colour per source.
 - `bin/fetch-sources.sh` (`task data:fetch-sources`), which snapshots Enter
   sources by `sourceId` from the `/ngsi-ld` API.
-
-### Changed
-
-- The front page lists only the Leaflet examples of Enter sources. The four
-  builds of handicapparkering and hundeskove are still published, unlinked.
-- `leaflet-app.js` takes its sources from a file in `js/maps/` per page, and
-  handles `MultiPoint` geometry and places without an address.
-
 - Demo pages showing Enter's accessibility data as a list and a map that stay in
   sync, built on Septima Widget and styled with aarhus.dk design tokens:
   `septima.html` for parking and dog forests, `parkering.html` for parking alone.
@@ -56,6 +48,12 @@ All notable changes to this project are documented here, following
 
 ### Changed
 
+- The front page lists only the Leaflet examples of Enter sources. The four
+  builds of handicapparkering and hundeskove are still published, unlinked.
+- `leaflet-app.js` takes its sources from a file in `js/maps/` per page, and
+  handles `MultiPoint` geometry and places without an address.
+- The PublicToilet text is in `js/maps/public-toilet.js`, shared by both
+  toilet pages.
 - The Septima routing key is out of the repository. `task route:key` writes it
   from `.env` into the git-ignored `public/config/key.json`; without it the
   `route` control is left out rather than rendered dead.
