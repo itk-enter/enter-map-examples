@@ -1,9 +1,11 @@
 # Three ways to build the same page
 
 The repository carries three builds of the same content, so the choice of stack
-can be made from something other than impressions. Same data, same city, same
-two categories. This page is the comparison; the site itself only lists the
-examples.
+can be made from something other than impressions. Same city, same two
+categories, and the same data until November 2026, when `leaflet.html` moved
+its parking to Enter's merged source, one marker per bay; the widget builds
+still count bays per site. This page is the comparison; the site itself only
+lists the examples.
 
 | Page | Stack |
 | --- | --- |

@@ -29,8 +29,8 @@ set +a
 
 : "${ENTER_BASE_URL:?not set in .env}"
 : "${ENTER_BASIC_AUTH:?not set in .env}"
-# The sources the bench and toilet pages show.
-ENTER_SOURCES=${ENTER_SOURCES:-osm-bench,osm-public-toilet,mtm_spatialmaps-toilet-city,mtm_spatialmaps-toilet-other,merged-public-toilets}
+# The sources the bench, toilet and Leaflet parking pages show.
+ENTER_SOURCES=${ENTER_SOURCES:-osm-bench,osm-public-toilet,mtm_spatialmaps-toilet-city,mtm_spatialmaps-toilet-other,merged-public-toilets,merged-handicap-parking-spots}
 
 PAGE_SIZE=1000
 
