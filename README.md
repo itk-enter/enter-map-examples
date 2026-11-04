@@ -16,7 +16,7 @@ they exist to show what the same page costs on three different stacks.
 | `septima.html`    | Handicapparkering and hundeskove on Septima Widget, styled to the prototype |
 | `parkering.html`  | Handicapparkering alone, with "find nærmeste"               |
 | `plain.html`      | Same content on widget configuration only                    |
-| `leaflet.html`    | Same content on Leaflet and OpenStreetMap                    |
+| `leaflet.html`    | Same layout on Leaflet and OpenStreetMap; parking from `merged-handicap-parking-spots`, one marker per bay |
 
 All of them start at Dokk1. The front page links only the Leaflet examples of
 Enter sources (`baenke.html`, `toiletter.html`, `toiletter-samlet.html`); new examples are added there
@@ -137,6 +137,22 @@ auth, which is why the pages read a snapshot rather than Enter.
 
 The MTM toilets arrive as `MultiPoint` with one point each; OpenStreetMap
 toilets rarely have a name or an address, and benches never have an address.
+
+### Handicapparkering on leaflet.html
+
+`leaflet.html` reads `public/data/merged-handicap-parking-spots.geojson`, taken
+with the same script on 4 November 2026: 1251 `ParkingSpot`s, Enter's merge of
+Aarhus Kommune's register (MTM) and OpenStreetMap. It is one entity per bay,
+not per site, so a site with six bays shows six markers, and there is no bay
+count. Where MTM only knows a site and its count, Enter generates the bays
+(`additionalInformation.generated`), all on the site's point. 510 bays are
+OpenStreetMap polygons, and the 726 that come from OpenStreetMap alone have no
+name or address. `seeAlso` holds the ids a bay was merged from; ids with
+`-osm-` are OpenStreetMap.
+
+The page leaves out the distance to the nearest other bay: it is mostly the
+next bay in the same row. The widget builds still read the September snapshot
+below.
 
 ### Handicapparkering and hundeskove
 

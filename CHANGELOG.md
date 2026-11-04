@@ -10,6 +10,10 @@ All notable changes to this project are documented here, following
 - Bench and toilet data refreshed from Enter staging on 5 November 2026. The
   sources dropped their `test:` prefix, and the files in `public/data/` with
   it: `osm-bench.geojson`, `merged-public-toilets.geojson` and so on.
+- `leaflet.html` shows handicap parking from Enter's
+  `merged-handicap-parking-spots` source, one marker per bay, with surface,
+  fee and the sources each bay was merged from. The widget builds keep the
+  September snapshot.
 
 ### Added
 
