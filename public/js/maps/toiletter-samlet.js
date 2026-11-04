@@ -1,4 +1,4 @@
-/* Toilets for toiletter-samlet.html: the test:merged-public-toilets source in
+/* Toilets for toiletter-samlet.html: the merged-public-toilets source in
  * Enter, where each toilet is stated once, merged from the toilet sources
  * toiletter.html shows side by side. `seeAlso` holds the ids of the entities a
  * toilet was merged from, and their prefix tells which source each came from. */
@@ -42,7 +42,7 @@
       {
         kind: "merged-public-toilets",
         label: "Offentlige toiletter (samlet)",
-        url: "./data/test-merged-public-toilets.geojson",
+        url: "./data/merged-public-toilets.geojson",
         colour: "#6b3fa0",
         glyph: window.PUBLIC_TOILET.glyph,
         describe: window.PUBLIC_TOILET.describer(mergedFrom),

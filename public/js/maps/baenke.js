@@ -1,4 +1,4 @@
-/* Benches for baenke.html, from the test:osm-bench source in Enter: the
+/* Benches for baenke.html, from the osm-bench source in Enter: the
  * Bench data model, harvested from OpenStreetMap. OSM benches carry no
  * address, so the row describes the bench instead. */
 
@@ -57,7 +57,7 @@
       {
         kind: "osm-bench",
         label: "Bænke (OpenStreetMap)",
-        url: "./data/test-osm-bench.geojson",
+        url: "./data/osm-bench.geojson",
         colour: "#7a4a1e",
         glyph: '<path d="M4 8h16v3H4zM3 12h18v2H3zM5 14h2v5H5zm12 0h2v5h-2z"/>',
         describe: describe,
