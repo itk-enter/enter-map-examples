@@ -73,5 +73,37 @@ window.PUBLIC_TOILET = (function () {
     };
   }
 
-  return { glyph: GLYPH, describer: describer };
+  /* For merged-public-toilets: which inputs a toilet was merged from. */
+  const INPUTS = [
+    { prefix: "urn:ngsi-ld:PublicToilet:aarhus-toilet-osm-", label: "OpenStreetMap" },
+    { prefix: "urn:ngsi-ld:PublicToilet:aarhus-toilet-city-", label: "Bytoiletter (MTM)" },
+    { prefix: "urn:ngsi-ld:PublicToilet:aarhus-toilet-other-", label: "Andre toiletter (MTM)" },
+    { prefix: "urn:ngsi-ld:PublicToilet:aarhus-toilet-findtoilet-", label: "FindToilet" },
+  ];
+
+  /* "Samlet fra Bytoiletter (MTM) og OpenStreetMap", or the one source. A
+   * single merged-from id arrives as a string, several as an array. */
+  function mergedFrom(props) {
+    const ids = [].concat(props.seeAlso || []);
+    const labels = [];
+
+    ids.forEach(function (id) {
+      const input = INPUTS.find(function (candidate) {
+        return id.indexOf(candidate.prefix) === 0;
+      });
+      const label = input ? input.label : "Ukendt kilde";
+
+      if (labels.indexOf(label) === -1) {
+        labels.push(label);
+      }
+    });
+
+    if (labels.length < 2) {
+      return labels[0] || "Ikke oplyst";
+    }
+
+    return "Samlet fra " + labels.slice(0, -1).join(", ") + " og " + labels[labels.length - 1];
+  }
+
+  return { glyph: GLYPH, describer: describer, mergedFrom: mergedFrom };
 })();

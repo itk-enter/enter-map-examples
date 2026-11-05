@@ -13,6 +13,7 @@ they exist to show what the same page costs on three different stacks.
 | `baenke-embed.html` | The bench map with no heading or intro, filling its frame    |
 | `toiletter.html`  | Toilets from three sources on one map: `osm-public-toilet`, `mtm_spatialmaps-toilet-city`, `mtm_spatialmaps-toilet-other` |
 | `toiletter-samlet.html` | Toilets from Enter's merged source `merged-public-toilets`, each toilet once |
+| `faciliteter.html` | Merged handicap parking (`merged-handicap-parking-spots`), merged toilets (`merged-public-toilets`) and benches (`osm-bench`) on one map |
 | `septima.html`    | Handicapparkering and hundeskove on Septima Widget, styled to the prototype |
 | `parkering.html`  | Handicapparkering alone, with "find nærmeste"               |
 | `plain.html`      | Same content on widget configuration only                    |
@@ -61,7 +62,9 @@ A Leaflet page is `leaflet.html` with its own intro and one file in
 snapshot to load, a label and colour for the checkbox and the marker, the marker
 glyph, and `describe`, which turns a feature's properties into the row and the
 detail view. With `showSource: true` each row also says which source it came
-from, for pages that put several sources of the same thing side by side.
+from, for pages that put several sources side by side. The text for a data
+model shared by several pages lives in its own file — `parking-spot.js`,
+`public-toilet.js`, `bench.js` — loaded before the page's file.
 
 ## Running it
 

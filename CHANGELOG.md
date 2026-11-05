@@ -17,6 +17,10 @@ All notable changes to this project are documented here, following
 
 ### Added
 
+- `faciliteter.html`: Enter's merged handicap parking and merged toilets,
+  and the benches, on one map with a checkbox each, linked from the front
+  page. The row and detail text per data model moves to `parking-spot.js`,
+  `public-toilet.js` and `bench.js`, shared by the pages.
 - `aarhus-dk-baenke-sidebar.html` and `aarhus-dk-baenke-fuld.html`: the bench
   map embedded with an iframe on a mock aarhus.dk article page styled with
   aarhus.dk's design tokens: the frame in the text column next to the
