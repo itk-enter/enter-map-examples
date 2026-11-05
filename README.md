@@ -11,7 +11,7 @@ they exist to show what the same page costs on three different stacks.
 | `aarhus-dk-baenke-sidebar.html` | `baenke-embed.html` in an iframe in the text column of a mock aarhus.dk article, next to the sidebar |
 | `aarhus-dk-baenke-fuld.html` | The same article and iframe without the sidebar, the frame full container width |
 | `baenke-embed.html` | The bench map with no heading or intro, filling its frame    |
-| `toiletter.html`  | Toilets from four sources on one map: `osm-public-toilet`, `mtm_spatialmaps-toilet-city`, `mtm_spatialmaps-toilet-other`, `findtoilet-public-toilet` |
+| `toiletter.html`  | Toilets from three sources on one map: `osm-public-toilet`, `mtm_spatialmaps-toilet-city`, `mtm_spatialmaps-toilet-other` |
 | `toiletter-samlet.html` | Toilets from Enter's merged source `merged-public-toilets`, each toilet once |
 | `septima.html`    | Handicapparkering and hundeskove on Septima Widget, styled to the prototype |
 | `parkering.html`  | Handicapparkering alone, with "find nærmeste"               |
@@ -104,9 +104,9 @@ minutes, so a deploy can take that long to show.
 
 ### Benches and toilets
 
-The bench and toilet files in `public/data/` are a one-off dump of six sources
+The bench and toilet files in `public/data/` are a one-off dump of five sources
 on the Enter staging instance (<https://enter.srvitkstgweb02.itkdev.dk/>),
-taken 4 November 2026 with `bin/fetch-sources.sh`:
+taken 5 November 2026 with `bin/fetch-sources.sh`:
 
 | Source                         | Model        | Places |
 | ------------------------------ | ------------ | ------ |
@@ -114,17 +114,18 @@ taken 4 November 2026 with `bin/fetch-sources.sh`:
 | `osm-public-toilet`            | PublicToilet | 163    |
 | `mtm_spatialmaps-toilet-city`  | PublicToilet | 16     |
 | `mtm_spatialmaps-toilet-other` | PublicToilet | 37     |
-| `findtoilet-public-toilet`     | PublicToilet | 52     |
-| `merged-public-toilets`        | PublicToilet | 178    |
+| `merged-public-toilets`        | PublicToilet | 174    |
 
 `merged-public-toilets` is Enter's merge of the toilet sources, each toilet
-stated once: the 268 toilets above come to 178, of which 52 were merged from
+stated once: the 216 toilets above come to 174, of which 41 were merged from
 more than one source. `seeAlso` holds the ids of the entities a toilet was
 merged from, a string for one and an array for several, and
 `toiletter-samlet.html` names the sources from their prefix.
 
 Until November 2026 the sources carried a `test:` prefix; those are now empty
-on staging, apart from an old `test:merged-public-toilets` without FindToilet.
+on staging, apart from an old `test:merged-public-toilets`. Staging lists a
+FindToilet source, `findtoilet-public-toilet`, but it is empty and no longer
+part of the merge.
 
 Enter lists its sources in `/sources.json`. The script looks each one up there
 for its data model and JSON-LD context, then asks the broker for

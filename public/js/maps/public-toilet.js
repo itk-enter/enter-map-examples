@@ -19,11 +19,7 @@ window.PUBLIC_TOILET = (function () {
     permissive: "Tilladt for alle",
   };
 
-  // FindToilet states its opening hours as free text in
-  // additionalInformation rather than as `openingHours`.
-  function openingHours(props) {
-    const value = props.openingHours || (props.additionalInformation || {}).openingHours;
-
+  function openingHours(value) {
     return Array.isArray(value) ? value.join("; ") : value;
   }
 
@@ -49,7 +45,7 @@ window.PUBLIC_TOILET = (function () {
         { label: "Adgang", value: ACCESS[props.accessType] || props.accessType },
         { label: "Adgangsforhold", value: props.accessNote },
         { label: "Pris", value: price(props) },
-        { label: "Åbningstider", value: openingHours(props) },
+        { label: "Åbningstider", value: openingHours(props.openingHours) },
         { label: "Sæson", value: extra.season },
         {
           label: "Puslebord",

@@ -7,11 +7,9 @@ All notable changes to this project are documented here, following
 
 ### Changed
 
-- Bench and toilet data refreshed from Enter staging on 4 November 2026. The
+- Bench and toilet data refreshed from Enter staging on 5 November 2026. The
   sources dropped their `test:` prefix, and the files in `public/data/` with
   it: `osm-bench.geojson`, `merged-public-toilets.geojson` and so on.
-- `toiletter.html` shows FindToilet as a fourth source, and the toilet detail
-  falls back to FindToilet's opening hours in `additionalInformation`.
 
 ### Added
 
