@@ -5,6 +5,12 @@ All notable changes to this project are documented here, following
 
 ## [Unreleased]
 
+### Changed
+
+- Bench and toilet data refreshed from Enter staging on 5 November 2026. The
+  sources dropped their `test:` prefix, and the files in `public/data/` with
+  it: `osm-bench.geojson`, `merged-public-toilets.geojson` and so on.
+
 ### Added
 
 - `aarhus-dk-baenke-sidebar.html` and `aarhus-dk-baenke-fuld.html`: the bench

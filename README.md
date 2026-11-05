@@ -7,12 +7,12 @@ they exist to show what the same page costs on three different stacks.
 | Page              | Shows                                                       |
 | ----------------- | ----------------------------------------------------------- |
 | `index.html`      | List of the Leaflet examples                                |
-| `baenke.html`     | Benches from OpenStreetMap, source `test:osm-bench`         |
+| `baenke.html`     | Benches from OpenStreetMap, source `osm-bench`              |
 | `aarhus-dk-baenke-sidebar.html` | `baenke-embed.html` in an iframe in the text column of a mock aarhus.dk article, next to the sidebar |
 | `aarhus-dk-baenke-fuld.html` | The same article and iframe without the sidebar, the frame full container width |
 | `baenke-embed.html` | The bench map with no heading or intro, filling its frame    |
-| `toiletter.html`  | Toilets from three sources on one map: `test:osm-public-toilet`, `test:mtm_spatialmaps-toilet-city`, `test:mtm_spatialmaps-toilet-other` |
-| `toiletter-samlet.html` | Toilets from Enter's merged source `test:merged-public-toilets`, each toilet once |
+| `toiletter.html`  | Toilets from three sources on one map: `osm-public-toilet`, `mtm_spatialmaps-toilet-city`, `mtm_spatialmaps-toilet-other` |
+| `toiletter-samlet.html` | Toilets from Enter's merged source `merged-public-toilets`, each toilet once |
 | `septima.html`    | Handicapparkering and hundeskove on Septima Widget, styled to the prototype |
 | `parkering.html`  | Handicapparkering alone, with "find nærmeste"               |
 | `plain.html`      | Same content on widget configuration only                    |
@@ -105,26 +105,28 @@ minutes, so a deploy can take that long to show.
 
 ### Benches and toilets
 
-`public/data/test-*.geojson` are a one-off dump of four sources on the Enter
-staging instance (<https://enter.srvitkstgweb02.itkdev.dk/>), taken 29 October
-2026 with `bin/fetch-sources.sh`:
+The bench and toilet files in `public/data/` are a one-off dump of five sources
+on the Enter staging instance (<https://enter.srvitkstgweb02.itkdev.dk/>),
+taken 5 November 2026 with `bin/fetch-sources.sh`:
 
-| Source                              | Model        | Places |
-| ----------------------------------- | ------------ | ------ |
-| `test:osm-bench`                    | Bench        | 2281   |
-| `test:osm-public-toilet`            | PublicToilet | 163    |
-| `test:mtm_spatialmaps-toilet-city`  | PublicToilet | 16     |
-| `test:mtm_spatialmaps-toilet-other` | PublicToilet | 37     |
-| `test:merged-public-toilets`        | PublicToilet | 174    |
+| Source                         | Model        | Places |
+| ------------------------------ | ------------ | ------ |
+| `osm-bench`                    | Bench        | 2287   |
+| `osm-public-toilet`            | PublicToilet | 163    |
+| `mtm_spatialmaps-toilet-city`  | PublicToilet | 16     |
+| `mtm_spatialmaps-toilet-other` | PublicToilet | 37     |
+| `merged-public-toilets`        | PublicToilet | 174    |
 
-`test:merged-public-toilets` was added 30 October 2026. It is Enter's merge of
-the toilet sources, each toilet stated once: the 216 toilets above come to
-174, of which 41 were merged from more than one source. `seeAlso` holds the
-ids of the entities a toilet was merged from, a string for one and an array
-for several, and `toiletter-samlet.html` names the sources from their prefix.
-FindToilet is an input too, but its test source is empty on staging. The
-source without the `test:` prefix, `merged-public-toilets`, has no entities
-there.
+`merged-public-toilets` is Enter's merge of the toilet sources, each toilet
+stated once: the 216 toilets above come to 174, of which 41 were merged from
+more than one source. `seeAlso` holds the ids of the entities a toilet was
+merged from, a string for one and an array for several, and
+`toiletter-samlet.html` names the sources from their prefix.
+
+Until November 2026 the sources carried a `test:` prefix; those are now empty
+on staging, apart from an old `test:merged-public-toilets`. Staging lists a
+FindToilet source, `findtoilet-public-toilet`, but it is empty and no longer
+part of the merge.
 
 Enter lists its sources in `/sources.json`. The script looks each one up there
 for its data model and JSON-LD context, then asks the broker for

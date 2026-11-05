@@ -11,7 +11,7 @@
     return {
       kind: kind,
       label: label,
-      url: "./data/test-" + kind + ".geojson",
+      url: "./data/" + kind + ".geojson",
       colour: colour,
       glyph: window.PUBLIC_TOILET.glyph,
       describe: window.PUBLIC_TOILET.describer(label),
