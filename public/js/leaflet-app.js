@@ -285,7 +285,7 @@
 
     const distance = place.distance !== undefined ? "<span class=\"resultat__afstand\">" + formatDistance(place.distance) + "</span>" : "";
 
-    // With several sources of the same thing, the row says which one it is.
+    // With several sources or several kinds of place, the row says which.
     const source = CONFIG.showSource
       ? '<span class="resultat__kilde"><span class="kategori-ikon" style="--kategori-farve: ' +
         place.source.colour + '" aria-hidden="true"></span>' + escapeHtml(place.source.label) + "</span>"

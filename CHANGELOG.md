@@ -10,9 +10,17 @@ All notable changes to this project are documented here, following
 - Bench and toilet data refreshed from Enter staging on 5 November 2026. The
   sources dropped their `test:` prefix, and the files in `public/data/` with
   it: `osm-bench.geojson`, `merged-public-toilets.geojson` and so on.
+- `leaflet.html` shows handicap parking from Enter's
+  `merged-handicap-parking-spots` source, one marker per bay, with surface,
+  fee and the sources each bay was merged from. The widget builds keep the
+  September snapshot.
 
 ### Added
 
+- `faciliteter.html`: Enter's merged handicap parking and merged toilets,
+  and the benches, on one map with a checkbox each, linked from the front
+  page. The row and detail text per data model moves to `parking-spot.js`,
+  `public-toilet.js` and `bench.js`, shared by the pages.
 - `aarhus-dk-baenke-sidebar.html` and `aarhus-dk-baenke-fuld.html`: the bench
   map embedded with an iframe on a mock aarhus.dk article page styled with
   aarhus.dk's design tokens: the frame in the text column next to the

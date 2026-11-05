@@ -1,41 +1,18 @@
-/* Handicapparkering and hundeskove for leaflet.html: the snapshot the widget
- * builds use, in the fields the old staging instance published. */
+/* Handicapparkering and hundeskove for leaflet.html. Parking is Enter's
+ * merged-handicap-parking-spots source, one marker per bay (see
+ * parking-spot.js). The widget builds still read the September snapshot of the
+ * old staging instance, which counted bays per site. Dog forests are that
+ * snapshot too. */
 
 window.ENTER_MAP = {
   sources: [
     {
       kind: "handicapparkering",
       label: "Handicapparkering",
-      url: "./data/handicapparkering.geojson",
+      url: "./data/merged-handicap-parking-spots.geojson",
       colour: "#3661d8",
-      glyph:
-        '<path d="M12 4a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm-1 5.5h2l.6 3H17v2h-3.9l-.4-2H11a4.5 4.5 0 1 0 4.4 5.5h2A6.5 6.5 0 1 1 11 9.5Z"/>',
-      describe: function (props) {
-        const address = [props.vejnavn, props.husnnr].filter(Boolean).join(" ").trim();
-        const spots = Number(props.invalidepladser || 0);
-
-        return {
-          title: "Handicapparkering",
-          address: address || "Adresse ikke registreret",
-          city: "8000 Aarhus",
-          fact: spots ? spots + (spots === 1 ? " plads" : " pladser") : "Antal pladser ikke registreret",
-          facts: [
-            { label: "Pladsforhold", value: props.bemrk || "Ikke registreret endnu" },
-            { label: "Betaling", value: "Ikke registreret endnu" },
-            { label: "Belægning", value: "Ikke registreret endnu" },
-            { label: "Ladestander", value: "Ikke registreret endnu" },
-            { label: "Køretøjstype", value: "Ikke registreret endnu" },
-            { label: "Vurdering", value: "Ikke registreret endnu" },
-          ],
-          key: props.mi_prinx,
-          // Precomputed by bin/nearest.py: the distance is between two features,
-          // so it cannot come from the feature's own properties in the source.
-          neighbour:
-            props.nabo_prinx === undefined || props.nabo_prinx === null
-              ? null
-              : { key: props.nabo_prinx, metres: props.nabo_afstand_m },
-        };
-      },
+      glyph: window.PARKING_SPOT.glyph,
+      describe: window.PARKING_SPOT.describe,
     },
     {
       kind: "hundeskov",
