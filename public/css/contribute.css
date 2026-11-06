@@ -1,0 +1,1069 @@
+/* Citizen contributions on the Leaflet build: the action in the detail, the
+ * credits under contributed values, and the steps of the flow, which render
+ * into the same overlay as the detail. Tokens from leaflet-app.css. */
+
+/* Page --------------------------------------------------------------------- */
+
+.page-intro__demo {
+  max-width: 60ch;
+  margin: 0 0 12px;
+  padding: 8px 12px;
+  font-size: 15px;
+  background: var(--aak-color-surface);
+  border: 1px solid var(--aak-color-border);
+  border-radius: 4px;
+}
+
+.ikon {
+  flex: none;
+}
+
+/* Buttons ----------------------------------------------------------------- */
+
+.knap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 16px;
+  font: inherit;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 120ms ease-out, border-color 120ms ease-out;
+}
+
+.knap:focus-visible {
+  outline: none;
+  box-shadow: var(--aak-shadow-focus);
+}
+
+.knap--primaer {
+  color: #fff;
+  background: var(--aak-color-primary);
+}
+
+.knap--primaer:hover {
+  background: #2a50b8;
+}
+
+.knap--sekundaer {
+  color: var(--aak-color-text);
+  background: #fff;
+  border-color: var(--aak-color-border);
+}
+
+.knap--sekundaer:hover {
+  border-color: var(--aak-color-muted);
+}
+
+/* Outlined in the accent: an action that is offered, not the main one. */
+.knap--kontur {
+  color: var(--aak-color-primary);
+  background: #fff;
+  border-color: var(--aak-color-primary);
+}
+
+.knap--kontur:hover {
+  background: #eef2fc;
+}
+
+.knap:disabled {
+  color: var(--aak-color-muted);
+  background: var(--aak-color-surface);
+  border-color: var(--aak-color-border);
+  cursor: not-allowed;
+}
+
+.knap--bred {
+  width: 100%;
+}
+
+.knap--lille {
+  min-height: 36px;
+  padding: 0 12px;
+  font-size: 14px;
+}
+
+.knap--lille .ikon {
+  width: 16px;
+  height: 16px;
+}
+
+/* A button that reads as a link, for actions inside running text. */
+.link-knap {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+  font: inherit;
+  color: var(--aak-color-link);
+  text-decoration: underline;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.link-knap:focus-visible {
+  outline: 2px solid var(--aak-color-primary);
+  outline-offset: 2px;
+}
+
+/* In the detail ----------------------------------------------------------- */
+
+.bidrag-handling {
+  margin: 0 0 18px;
+  padding: 0 0 18px;
+  border-bottom: 1px solid var(--aak-color-border);
+}
+
+.bidrag-handling__tekst {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: var(--aak-color-muted);
+}
+
+.bidrag-kredit,
+.bidrag-afventer {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin: 4px 0 0;
+  font-size: 14px;
+}
+
+.bidrag-kredit {
+  color: var(--aak-color-muted);
+}
+
+.bidrag-afventer {
+  color: var(--aak-color-warning);
+}
+
+.bidrag-kredit .ikon,
+.bidrag-afventer .ikon {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+}
+
+/* A contributed photo fills the photo slot of the detail. */
+.detalje__foto {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Notes: demo, warning, error. One line icon, then the text. */
+.bidrag-besked {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 16px 0;
+  padding: 10px 12px;
+  font-size: 14px;
+  background: var(--aak-color-surface);
+  border: 1px solid var(--aak-color-border);
+  border-radius: 4px;
+}
+
+.bidrag-besked .ikon {
+  margin-top: 1px;
+}
+
+.bidrag-besked--advarsel {
+  border-left: 3px solid var(--aak-color-warning);
+}
+
+.bidrag-besked--advarsel .ikon {
+  color: var(--aak-color-warning);
+}
+
+.bidrag-besked--fejl {
+  border-left: 3px solid var(--aak-color-danger);
+}
+
+.bidrag-besked--fejl .ikon {
+  color: var(--aak-color-danger);
+}
+
+/* The steps --------------------------------------------------------------- */
+
+.bidrag__top {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 56px;
+  padding: 0 12px 0 16px;
+  background: #fff;
+  border-bottom: 1px solid var(--aak-color-border);
+}
+
+.bidrag__tilbage {
+  min-height: 44px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.bidrag__tilbage:hover {
+  text-decoration: underline;
+}
+
+.bidrag__luk {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--aak-color-text);
+  background: #fff;
+  border: 1px solid var(--aak-color-border);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.bidrag__luk:focus-visible {
+  outline: none;
+  box-shadow: var(--aak-shadow-focus);
+}
+
+.bidrag__body {
+  padding: 20px;
+}
+
+/* No specificity, so the classes below set their own spacing. */
+:where(.bidrag__body) > p {
+  margin: 0 0 12px;
+}
+
+.bidrag__titel {
+  margin: 0 0 12px;
+  font-size: 20px;
+}
+
+.bidrag__titel:focus {
+  outline: none;
+}
+
+.bidrag__sted {
+  margin: 0 0 12px;
+}
+
+.bidrag-bruger {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin: 0 0 20px;
+  font-size: 14px;
+  color: var(--aak-color-muted);
+}
+
+.bidrag-bruger .ikon {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+}
+
+.bidrag-login {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* The chooser: everything that can be added or corrected, one row each. */
+.valgliste {
+  margin: 24px 0 0;
+}
+
+.valgliste h4 {
+  margin: 0 0 6px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--aak-color-muted);
+}
+
+.valgliste ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--aak-color-border);
+}
+
+.valgliste li {
+  border-bottom: 1px solid var(--aak-color-border);
+}
+
+.valgliste__raekke {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 4px;
+  font: inherit;
+  text-align: left;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.valgliste__raekke:hover {
+  background: var(--aak-color-surface);
+}
+
+.valgliste__raekke:focus-visible {
+  outline: none;
+  box-shadow: inset var(--aak-shadow-focus);
+}
+
+.valgliste__tekst {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.valgliste__vaerdi {
+  font-size: 14px;
+  color: var(--aak-color-muted);
+}
+
+.valgliste__valgt {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--aak-color-primary);
+}
+
+.valgliste__tekst .bidrag-afventer {
+  margin: 0;
+}
+
+.valgliste__handling {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 2px;
+  font-size: 14px;
+  color: var(--aak-color-link);
+}
+
+.valgliste__handling .ikon {
+  width: 16px;
+  height: 16px;
+}
+
+/* A draft already started: the way back to it, above the list. */
+.valgliste__forslag {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 12px;
+  margin: 16px 0 0;
+  padding: 10px 12px;
+  background: var(--aak-color-surface);
+  border: 1px solid var(--aak-color-border);
+  border-radius: 4px;
+}
+
+.valgliste__forslag p {
+  margin: 0;
+}
+
+/* Fields ------------------------------------------------------------------ */
+
+.felt {
+  margin: 20px 0 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.felt > label,
+.felt > legend,
+.felt__input + label {
+  display: block;
+  margin: 0 0 6px;
+  padding: 0;
+  font-weight: 600;
+}
+
+.felt input[type="text"],
+.felt select,
+.felt textarea {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 44px;
+  padding: 0 12px;
+  font: inherit;
+  color: var(--aak-color-text);
+  background: #fff;
+  border: 1px solid var(--aak-color-muted);
+  border-radius: 4px;
+}
+
+.felt textarea {
+  padding: 10px 12px;
+  resize: vertical;
+}
+
+.felt input:focus-visible,
+.felt select:focus-visible,
+.felt textarea:focus-visible,
+.timer input:focus-visible {
+  outline: none;
+  border-color: var(--aak-color-primary);
+  box-shadow: var(--aak-shadow-focus);
+}
+
+.felt [aria-invalid="true"] {
+  border-color: var(--aak-color-danger);
+}
+
+.felt__input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.felt--smal input {
+  max-width: 120px;
+}
+
+.felt__enhed {
+  color: var(--aak-color-muted);
+}
+
+.felt__hjaelp {
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: var(--aak-color-muted);
+}
+
+.felt__fejl {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: var(--aak-color-danger);
+}
+
+.felt__fejl .ikon {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+}
+
+.felt--adresse {
+  position: relative;
+}
+
+/* The suggestion list is placed for the map search; here it hangs under the
+ * field. */
+.felt--adresse .forslag {
+  left: 0;
+  right: 0;
+  top: 76px;
+}
+
+/* Choices: each option a target the size of a finger, the chosen one marked
+ * with the accent. */
+.valg__muligheder {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.valg__muligheder--stablet {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.valg__mulighed {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 14px 0 12px;
+  border: 1px solid var(--aak-color-border);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.valg__mulighed:hover {
+  border-color: var(--aak-color-muted);
+}
+
+.valg__mulighed:has(input:checked) {
+  background: #eef2fc;
+  border-color: var(--aak-color-primary);
+}
+
+.valg__mulighed:has(input:focus-visible) {
+  box-shadow: var(--aak-shadow-focus);
+}
+
+.valg__mulighed input,
+.afkryds input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--aak-color-primary);
+}
+
+.valg__ryd {
+  margin-left: 4px;
+  font-size: 14px;
+}
+
+.valg[aria-invalid="true"] .valg__mulighed {
+  border-color: var(--aak-color-danger);
+}
+
+.afkryds {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.afkryds input {
+  flex: none;
+  margin-top: 3px;
+}
+
+/* `.felt > label` above makes labels blocks; a checkbox keeps its row. */
+.felt > .afkryds {
+  display: flex;
+  font-weight: 400;
+}
+
+/* The form: one block per picked thing, each with a way out again. */
+.punkt {
+  margin: 16px 0 0;
+  padding: 16px 0 0;
+  border-top: 1px solid var(--aak-color-border);
+}
+
+.punkt > .felt:first-child,
+.punkt > .fotos:first-child {
+  margin-top: 0;
+}
+
+.punkt__forkert {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.punkt__fjern {
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.ret__vaerdi {
+  margin: 0;
+}
+
+.ret__label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--aak-color-muted);
+}
+
+.bidrag-mere {
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+.bidrag-mere .ikon {
+  width: 16px;
+  height: 16px;
+}
+
+.bidrag-tom {
+  color: var(--aak-color-muted);
+}
+
+/* Opening hours: a row per day. */
+.timer__dag {
+  margin: 12px 0 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.timer__dag legend {
+  padding: 0;
+  margin: 0 0 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.valg__muligheder--smal .valg__mulighed {
+  min-height: 40px;
+  padding: 0 10px 0 8px;
+  font-size: 14px;
+}
+
+.timer__tider {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.timer__tider input {
+  min-height: 40px;
+  padding: 0 8px;
+  font: inherit;
+  border: 1px solid var(--aak-color-muted);
+  border-radius: 4px;
+}
+
+.timer__kopier {
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+/* Photos ------------------------------------------------------------------ */
+
+.fotos {
+  margin: 24px 0 0;
+}
+
+.fotos h4 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.fotos__regler {
+  margin: 0 0 12px;
+  padding: 12px 14px;
+  font-size: 14px;
+  border: 1px solid var(--aak-color-border);
+  border-left: 3px solid var(--aak-color-primary);
+  border-radius: 4px;
+}
+
+.fotos__regler p {
+  margin: 0;
+}
+
+.fotos__regler ul {
+  margin: 6px 0 8px;
+  padding-left: 20px;
+}
+
+.fotos__liste {
+  margin: 0 0 12px;
+  padding: 0;
+  list-style: none;
+}
+
+.foto {
+  display: flex;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--aak-color-border);
+}
+
+.foto img {
+  flex: none;
+  width: 96px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.foto__tekst {
+  display: grid;
+  gap: 6px;
+  justify-items: start;
+  font-size: 14px;
+}
+
+/* Send -------------------------------------------------------------------- */
+
+.bidrag-privat {
+  margin: 20px 0 0;
+  font-size: 14px;
+  color: var(--aak-color-muted);
+}
+
+.bidrag-send {
+  margin: 24px 0 0;
+  padding: 16px 0 0;
+  border-top: 1px solid var(--aak-color-border);
+}
+
+.bidrag-send--raekke {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Preview ----------------------------------------------------------------- */
+
+.forhaand {
+  margin: 16px 0 0;
+  padding: 16px;
+  border: 1px solid var(--aak-color-border);
+  border-radius: 4px;
+}
+
+.forhaand__fotos {
+  display: flex;
+  gap: 8px;
+  margin: 0 0 12px;
+}
+
+.forhaand__fotos img {
+  width: 96px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.forhaand__titel {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.forhaand__adresse {
+  margin: 0 0 12px;
+  font-weight: 600;
+}
+
+.forhaand__foer {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: var(--aak-color-muted);
+}
+
+.forhaand__citat {
+  margin: 0;
+  padding-left: 12px;
+  white-space: pre-wrap;
+  border-left: 3px solid var(--aak-color-border);
+}
+
+/* A changed value: a rule in the accent and a badge saying what changed. */
+.is-aendret {
+  padding-left: 10px;
+  border-left: 3px solid var(--aak-color-primary);
+}
+
+.maerke {
+  display: inline-block;
+  margin: 0 0 4px;
+  padding: 1px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--aak-color-primary);
+  background: #eef2fc;
+  border-radius: 999px;
+}
+
+p.is-aendret .maerke,
+.forhaand__titel .maerke,
+.forhaand__adresse .maerke {
+  margin-right: 8px;
+  vertical-align: 2px;
+}
+
+/* Receipt and own contributions ------------------------------------------- */
+
+.kvittering__ikon {
+  display: inline-flex;
+  margin-bottom: 8px;
+  color: var(--aak-color-success);
+}
+
+.kvittering__ikon .ikon {
+  width: 32px;
+  height: 32px;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+}
+
+.status .ikon {
+  width: 14px;
+  height: 14px;
+}
+
+.status--pending,
+.status--partial {
+  color: var(--aak-color-warning);
+}
+
+.status--approved {
+  color: var(--aak-color-success);
+}
+
+.status--rejected {
+  color: var(--aak-color-danger);
+}
+
+.mine {
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mine__bidrag {
+  padding: 14px 0;
+  border-top: 1px solid var(--aak-color-border);
+}
+
+.mine__hoved {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.mine__sted {
+  font-weight: 600;
+}
+
+.mine__meta {
+  margin: 4px 0 8px;
+  font-size: 14px;
+  color: var(--aak-color-muted);
+}
+
+.mine__punkter {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+}
+
+.mine__punkt-status {
+  font-weight: 600;
+  color: var(--aak-color-warning);
+}
+
+.mine__punkt-status--approved {
+  color: var(--aak-color-success);
+}
+
+.mine__punkt-status--rejected {
+  color: var(--aak-color-danger);
+}
+
+.mine__grund {
+  display: block;
+  color: var(--aak-color-muted);
+}
+
+/* Ratings ----------------------------------------------------------------- *
+ * Stars in the text colour rather than gold: the accent and the status
+ * colours already have their jobs. */
+
+.vurdering h4 {
+  margin: 0 0 4px;
+  font-size: 15px;
+}
+
+.vurdering__snit {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  margin: 0;
+}
+
+.vurdering__antal,
+.vurdering__ingen,
+.vurdering__flere {
+  color: var(--aak-color-muted);
+}
+
+.vurdering__ingen,
+.vurdering__flere {
+  margin: 0;
+  font-size: 14px;
+}
+
+.vurdering__kommentarer {
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.vurdering__kommentarer li {
+  padding: 10px 0;
+  border-top: 1px solid var(--aak-color-border);
+}
+
+.vurdering__tekst {
+  margin: 4px 0 0;
+  white-space: pre-wrap;
+}
+
+.vurdering__giv {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--aak-color-border);
+}
+
+.vurdering__giv .knap {
+  margin-top: 10px;
+}
+
+/* Read-only stars. */
+.stjerner-vis {
+  display: inline-flex;
+  gap: 1px;
+  color: var(--aak-color-muted);
+}
+
+.stjerner-vis .ikon {
+  width: 16px;
+  height: 16px;
+}
+
+.stjerner-vis__stjerne.is-fuld {
+  color: var(--aak-color-text);
+}
+
+.stjerner-vis__stjerne.is-fuld .ikon {
+  fill: currentColor;
+}
+
+/* A half star: the outline, with a filled star over its left half. */
+.stjerner-vis__stjerne {
+  position: relative;
+  display: inline-flex;
+}
+
+.stjerner-vis__halv {
+  position: absolute;
+  inset: 0 50% 0 0;
+  overflow: hidden;
+  color: var(--aak-color-text);
+}
+
+.stjerner-vis__halv .ikon {
+  fill: currentColor;
+}
+
+/* Stars to choose from: a radio group, each star a label. The chosen star and
+ * those before it are filled; hovering fills up to the star under the
+ * pointer. */
+.stjerner-felt {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.stjerner-felt legend {
+  margin: 0 0 4px;
+  padding: 0;
+  font-weight: 600;
+}
+
+.stjerner {
+  display: flex;
+  gap: 0;
+}
+
+/* 33px a star, three quarters of the earlier 44px: still above the 24px
+ * minimum target size (WCAG 2.2, 2.5.8), with no gap between the stars to
+ * miss. */
+.stjerne {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 33px;
+  height: 33px;
+  color: var(--aak-color-muted);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.stjerne .ikon {
+  width: 22px;
+  height: 22px;
+}
+
+.stjerne:has(input:focus-visible) {
+  box-shadow: var(--aak-shadow-focus);
+}
+
+.stjerner:has(.stjerne:nth-child(1) input:checked) .stjerne:nth-child(-n + 1),
+.stjerner:has(.stjerne:nth-child(2) input:checked) .stjerne:nth-child(-n + 2),
+.stjerner:has(.stjerne:nth-child(3) input:checked) .stjerne:nth-child(-n + 3),
+.stjerner:has(.stjerne:nth-child(4) input:checked) .stjerne:nth-child(-n + 4),
+.stjerner:has(.stjerne:nth-child(5) input:checked) .stjerne:nth-child(-n + 5),
+.stjerner:has(.stjerne:nth-child(1):hover) .stjerne:nth-child(-n + 1),
+.stjerner:has(.stjerne:nth-child(2):hover) .stjerne:nth-child(-n + 2),
+.stjerner:has(.stjerne:nth-child(3):hover) .stjerne:nth-child(-n + 3),
+.stjerner:has(.stjerne:nth-child(4):hover) .stjerne:nth-child(-n + 4),
+.stjerner:has(.stjerne:nth-child(5):hover) .stjerne:nth-child(-n + 5) {
+  color: var(--aak-color-text);
+}
+
+.stjerner:has(.stjerne:nth-child(1) input:checked) .stjerne:nth-child(-n + 1) .ikon,
+.stjerner:has(.stjerne:nth-child(2) input:checked) .stjerne:nth-child(-n + 2) .ikon,
+.stjerner:has(.stjerne:nth-child(3) input:checked) .stjerne:nth-child(-n + 3) .ikon,
+.stjerner:has(.stjerne:nth-child(4) input:checked) .stjerne:nth-child(-n + 4) .ikon,
+.stjerner:has(.stjerne:nth-child(5) input:checked) .stjerne:nth-child(-n + 5) .ikon,
+.stjerner:has(.stjerne:nth-child(1):hover) .stjerne:nth-child(-n + 1) .ikon,
+.stjerner:has(.stjerne:nth-child(2):hover) .stjerne:nth-child(-n + 2) .ikon,
+.stjerner:has(.stjerne:nth-child(3):hover) .stjerne:nth-child(-n + 3) .ikon,
+.stjerner:has(.stjerne:nth-child(4):hover) .stjerne:nth-child(-n + 4) .ikon,
+.stjerner:has(.stjerne:nth-child(5):hover) .stjerne:nth-child(-n + 5) .ikon {
+  fill: currentColor;
+}
+
+.retningslinjer {
+  margin-top: 16px;
+}
+
+/* `display` above would otherwise win over the `hidden` attribute. */
+.knap[hidden] {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .knap {
+    transition: none;
+  }
+}

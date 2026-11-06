@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gennemgang af bidrag — Enter</title>
+    <link rel="stylesheet" href="./css/page.css" />
+    <link rel="stylesheet" href="./css/leaflet-app.css" />
+    <link rel="stylesheet" href="./css/gennemgang.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#bidrag">Spring til bidragene</a>
+
+    <main>
+      <div class="page-intro">
+        <p class="page-intro__link">
+          <a href="./index.html">Oversigt</a>
+          <span aria-hidden="true">·</span>
+          <a href="./bidrag.html">Kortet med bidrag</a>
+        </p>
+        <h1>Gennemgang af bidrag</h1>
+        <p class="page-intro__text">
+          Borgere kan udfylde manglende oplysninger, rette fejl, sende fotos og
+          melde et sted lukket. Her godkender eller afviser sagsbehandleren hver
+          del for sig. Det godkendte vises på kortet med borgerens navn, hvis
+          borgeren har sagt ja til det.
+        </p>
+
+        <div class="demo-notice" role="note" aria-labelledby="demo-notice-title">
+          <svg class="demo-notice__icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M12 16v-4" />
+            <path d="M12 8h.01" />
+          </svg>
+          <div class="demo-notice__body">
+            <p id="demo-notice-title" class="demo-notice__title">Demo af kommunens sagsbehandling</p>
+            <p class="demo-notice__text">
+              Siden står i stedet for kommunens sagsbehandlingssystem. I
+              virkeligheden kræver den login som medarbejder; her kan alle
+              åbne den. Bidragene ligger kun i denne browser og sendes ingen
+              steder hen.
+            </p>
+          </div>
+          <button type="button" class="button button--secondary demo-notice__reset" id="nulstil">
+            Nulstil demo
+          </button>
+        </div>
+      </div>
+
+      <div class="review" id="bidrag" tabindex="-1">
+        <section class="review-queue" aria-labelledby="koe-titel">
+          <h2 id="koe-titel" class="review-queue__title">Bidrag</h2>
+
+          <fieldset class="review-views">
+            <legend class="visually-hidden">Vis bidrag</legend>
+            <label class="review-views__option">
+              <input type="radio" name="visning" value="pending" checked />
+              <span>Afventer</span>
+              <span class="review-views__count" data-count="pending">0</span>
+            </label>
+            <label class="review-views__option">
+              <input type="radio" name="visning" value="done" />
+              <span>Behandlede</span>
+              <span class="review-views__count" data-count="done">0</span>
+            </label>
+          </fieldset>
+
+          <div id="koe" class="review-queue__list" aria-live="off">
+            <p class="review-empty">Henter bidrag …</p>
+          </div>
+        </section>
+
+        <section class="review-detail" aria-label="Valgt bidrag">
+          <p id="status" class="review-status" role="status"></p>
+          <div id="detalje">
+            <div class="review-empty review-empty--detail">
+              <p>Vælg et bidrag i listen for at se det og træffe en afgørelse.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <dialog id="nulstil-dialog" class="review-dialog" aria-labelledby="nulstil-titel" aria-describedby="nulstil-tekst">
+        <form method="dialog" class="review-dialog__body">
+          <h2 id="nulstil-titel" class="review-dialog__title">Nulstil demoen?</h2>
+          <p id="nulstil-tekst">
+            Alle bidrag i denne browser bliver slettet, også dem der er godkendt
+            og vises på kortet. Det kan ikke fortrydes.
+          </p>
+          <div class="review-dialog__actions">
+            <button type="submit" value="cancel" class="button button--secondary" autofocus>Annuller</button>
+            <button type="submit" value="confirm" class="button button--danger">Slet alle bidrag</button>
+          </div>
+        </form>
+      </dialog>
+    </main>
+
+    <script src="./js/maps/parking-spot.js"></script>
+    <script src="./js/maps/public-toilet.js"></script>
+    <script src="./js/maps/bench.js"></script>
+    <script src="./js/contributions.js"></script>
+    <script src="./js/gennemgang.js"></script>
+  </body>
+</html>

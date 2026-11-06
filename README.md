@@ -14,13 +14,16 @@ they exist to show what the same page costs on three different stacks.
 | `toiletter.html`  | Toilets from three sources on one map: `osm-public-toilet`, `mtm_spatialmaps-toilet-city`, `mtm_spatialmaps-toilet-other` |
 | `toiletter-samlet.html` | Toilets from Enter's merged source `merged-public-toilets`, each toilet once |
 | `faciliteter.html` | Merged handicap parking (`merged-handicap-parking-spots`), merged toilets (`merged-public-toilets`) and benches (`osm-bench`) on one map |
+| `bidrag.html`     | The places of `faciliteter.html` with "Tilføj eller ret oplysninger": a list of what can be added or corrected, a mock MitID login, photos and closure reports, see [Collecting information from citizens](#collecting-information-from-citizens) |
+| `bidrag-gennemgang.html` | Mock back office where the contributions are approved or rejected |
 | `septima.html`    | Handicapparkering and hundeskove on Septima Widget, styled to the prototype |
 | `parkering.html`  | Handicapparkering alone, with "find nærmeste"               |
 | `plain.html`      | Same content on widget configuration only                    |
 | `leaflet.html`    | Same layout on Leaflet and OpenStreetMap; parking from `merged-handicap-parking-spots`, one marker per bay |
 
-All of them start at Dokk1. The front page links only the Leaflet examples of
-Enter sources (`baenke.html`, `toiletter.html`, `toiletter-samlet.html`); new examples are added there
+All of them start at Dokk1. The front page links the Leaflet examples of
+Enter sources (`baenke.html`, `toiletter.html`, `toiletter-samlet.html`,
+`faciliteter.html`) and the contribution example; new examples are added there
 the same way. The last four pages compared the builds for handicapparkering
 and hundeskove. They are still published at their own address, linked from
 nowhere, and the comparison is in `docs/variants.md`.
@@ -64,7 +67,45 @@ glyph, and `describe`, which turns a feature's properties into the row and the
 detail view. With `showSource: true` each row also says which source it came
 from, for pages that put several sources side by side. The text for a data
 model shared by several pages lives in its own file — `parking-spot.js`,
-`public-toilet.js`, `bench.js` — loaded before the page's file.
+`public-toilet.js`, `bench.js` — loaded before the page's file. The same file
+lists the model's `fields`: what a citizen can add or correct on
+`bidrag.html`, with a type and, for a choice, its values.
+
+A page can extend the build with `plugins`, functions that get an `app` object
+before the data loads: `transform` to change a feature's properties before they
+are described, `rebuild` and `openDetail` to draw again, and an
+`enter-map:detail` event each time a place opens. `bidrag.html` is the only
+page that uses them.
+
+## Collecting information from citizens
+
+`bidrag.html` shows how citizens could fill the gaps in the data: most toilets
+have no opening hours, and almost no parking bay has a fee, surface or width.
+The place itself looks as on the other maps, with one button, "Tilføj eller
+ret oplysninger". The flow, inspired by Google Maps' "Suggest an edit":
+
+1. The button opens a list of what can be added or corrected on the place:
+   what is missing, what is registered with its value now, a photo, a closure
+   report or a message.
+2. Picking one asks for a MitID login (a mock) the first time, then opens it
+   in a form. "Tilføj eller ret mere" goes back to the list, so several things
+   go in one suggestion. Empty means "don't know".
+3. Photos come with visible rules: only the place, no faces, no licence
+   plates. Each photo needs a ticked confirmation.
+4. Choose whether your name is shown, see a preview of the place with your
+   changes marked, and send it to review.
+5. Follow it under "Mine bidrag". `bidrag-gennemgang.html` approves or rejects
+   each value and photo; approved ones are on the map, credited "Tilføjet af
+   Anne S." or "en borger", in every open tab.
+
+Every place also has a 5-star rating with an optional comment. Choosing stars
+leads to the MitID login and a form with the guidelines for comments; the
+stars and the comment are reviewed separately before they count and show, and
+each person's newest approved rating per place is the one that counts.
+
+It is a mock throughout: the login is not real, and contributions are kept in
+the browser's IndexedDB, not sent anywhere. [docs/bidrag.md](docs/bidrag.md)
+describes the data, the attribution and what production needs instead.
 
 ## Running it
 
@@ -239,9 +280,13 @@ Everything else is in the configuration.
 | `public/css/enter-widget.css`        | Aarhus design tokens mapped onto the widget's `--sw-*` variables  |
 | `public/js/widget-host.js`           | Creates the widget; routing key, zoom gate, nearest other place   |
 | `public/js/a11y-fixes.js`            | One patch for widget markup, see below                            |
-| `public/js/leaflet-app.js`           | The Leaflet build: map, list, detail, search                      |
+| `public/js/leaflet-app.js`           | The Leaflet build: map, list, detail, search, plugin interface     |
+| `public/js/adressevaelger.js`        | Address search on Adressevælger, shared by the map search and the contribution form |
 | `public/js/maps/*.js`                | What each Leaflet page shows: sources, markers, row and detail text |
 | `public/js/maps/public-toilet.js`    | Row and detail text for the PublicToilet model, shared by the toilet pages |
+| `public/js/contributions.js`         | Contribution store and helpers shared by `bidrag.html` and the review page |
+| `public/js/contribute.js`            | The contribution flow, a plugin for the Leaflet build              |
+| `public/js/gennemgang.js`            | The review page                                                   |
 
 ### List and map
 
