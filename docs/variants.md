@@ -141,7 +141,7 @@ strip it; the plain build cannot, so it now shows the critical violation twice.
 
 | | Styled widget | Plain widget | Leaflet |
 | --- | --- | --- | --- |
-| Lines we maintain | 1375 | 175 | 1352 |
+| Lines we maintain | 1375 | 175 | 1502 |
 | …of which fight another stylesheet | ~250 | 0 | 0 |
 | `!important` | 4 | 0 | 0 |
 | Patches for someone else's markup | 59 lines | 0 (and 3 axe violations left) | 0 |
@@ -155,12 +155,16 @@ strip it; the plain build cannot, so it now shows the critical violation twice.
 
 The line count covers every file a build needs that we wrote: page, widget
 configuration, templates, stylesheet and script, but not the shared page frame
-or the 115-line snapshot enrichment both builds read. The two builds are within
-two percent of each other, and the zoom gate and the nearest-place field
-cost them roughly the same. They are still not the same kind of line: about a
-fifth of the widget build (~250 of 1375 lines; 39 of the 79 rules in
-`enter-widget.css`) exists to defeat `widget.css`; in the Leaflet build every
-line styles or drives markup from this repository.
+or the 115-line snapshot enrichment both builds read. The Leaflet build is about
+nine percent larger. Most of the difference came in November 2026 with the
+contribution example (`bidrag.html`): the plugin interface in
+`leaflet-app.js` and the address search moved into `adressevaelger.js` so the
+contribution form can use it too. Before that the two builds were within two
+percent of each other, and the zoom gate and the nearest-place field cost them
+roughly the same. They are still not the same kind of line: about a fifth of
+the widget build (~250 of 1375 lines; 39 of the 79 rules in `enter-widget.css`)
+exists to defeat `widget.css`; in the Leaflet build every line styles or drives
+markup from this repository.
 
 The counts are `wc -l` over each build's files, run from `public/`:
 
@@ -168,7 +172,7 @@ The counts are `wc -l` over each build's files, run from `public/`:
 wc -l septima.html parkering.html config/tilgaengelighed.json config/parkering.json \
   templates/*.html css/enter-widget.css js/widget-host.js js/a11y-fixes.js
 wc -l plain.html config/plain.json
-wc -l leaflet.html css/leaflet-app.css js/leaflet-app.js
+wc -l leaflet.html css/leaflet-app.css js/leaflet-app.js js/adressevaelger.js
 ```
 
 ## Found along the way

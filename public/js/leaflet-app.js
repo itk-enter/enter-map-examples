@@ -7,9 +7,13 @@
  * a `describe` that turns a feature's properties into the text of a row and a
  * detail view.
  *
+ * A page can extend the build with `plugins`: functions that get the `app`
+ * object below before the data loads, and may return a promise the load waits
+ * for.
+ *
  * External services: OpenStreetMap tiles and address search from Adressevælger
- * (Klimadatastyrelsen). Neither needs a key. Distances are computed in the
- * browser. */
+ * (Klimadatastyrelsen, js/adressevaelger.js). Neither needs a key. Distances
+ * are computed in the browser. */
 
 (function () {
   "use strict";
@@ -144,18 +148,37 @@
   }
 
   /* `describe` gives the text: title, address, city, fact and facts, and for
-   * parking the precomputed neighbour. The rest is the same for every source. */
+   * parking the precomputed neighbour. The rest is the same for every source.
+   * The feature's own id is the entity's NGSI-LD id, which stays the same
+   * from one snapshot to the next. */
   function toPlace(feature, source, index) {
     const point = centroid(feature.geometry);
 
-    return Object.assign(source.describe(feature.properties || {}), {
-      id: source.kind + "-" + index,
+    return Object.assign(describePlace(feature, source), {
+      id: feature.id || source.kind + "-" + index,
       kind: source.kind,
       source: source,
+      feature: feature,
       geometry: feature.geometry,
       lat: point.lat,
       lon: point.lon,
     });
+  }
+
+  /* A plugin may change the properties before they are described, through
+   * `app.transform`. */
+  function describePlace(feature, source) {
+    const properties = app.transform(feature.properties || {}, feature, source);
+
+    return Object.assign(source.describe(properties), { properties: properties });
+  }
+
+  /* Describes every place again, after a plugin's transform has changed. */
+  function rebuild() {
+    state.places.forEach(function (place) {
+      Object.assign(place, describePlace(place.feature, place.source));
+    });
+    render();
   }
 
   /* Distance ------------------------------------------------------------- */
@@ -178,50 +201,6 @@
     return metres < 1000
       ? Math.round(metres / 10) * 10 + " m"
       : (metres / 1000).toFixed(1).replace(".", ",") + " km";
-  }
-
-  /* Coordinates ----------------------------------------------------------- */
-
-  /* Adressevælger returns access points in ETRS89 / UTM zone 32N (EPSG:25832),
-   * where DAWA returned WGS84. Inverse transverse Mercator on the GRS80
-   * ellipsoid, which is what Leaflet needs. */
-  function utm32ToWgs84(east, north) {
-    const a = 6378137;
-    const f = 1 / 298.257222101;
-    const k0 = 0.9996;
-    const e2 = f * (2 - f);
-    const ep2 = e2 / (1 - e2);
-    const x = east - 500000;
-    const m = north / k0;
-    const mu = m / (a * (1 - e2 / 4 - (3 * e2 * e2) / 64 - (5 * e2 * e2 * e2) / 256));
-    const e1 = (1 - Math.sqrt(1 - e2)) / (1 + Math.sqrt(1 - e2));
-    const phi =
-      mu +
-      (1.5 * e1 - (27 * Math.pow(e1, 3)) / 32) * Math.sin(2 * mu) +
-      ((21 * e1 * e1) / 16 - (55 * Math.pow(e1, 4)) / 32) * Math.sin(4 * mu) +
-      ((151 * Math.pow(e1, 3)) / 96) * Math.sin(6 * mu) +
-      ((1097 * Math.pow(e1, 4)) / 512) * Math.sin(8 * mu);
-    const sin = Math.sin(phi);
-    const cos = Math.cos(phi);
-    const tan = Math.tan(phi);
-    const c = ep2 * cos * cos;
-    const t = tan * tan;
-    const n = a / Math.sqrt(1 - e2 * sin * sin);
-    const r = (a * (1 - e2)) / Math.pow(1 - e2 * sin * sin, 1.5);
-    const d = x / (n * k0);
-    const lat =
-      phi -
-      ((n * tan) / r) *
-        ((d * d) / 2 -
-          ((5 + 3 * t + 10 * c - 4 * c * c - 9 * ep2) * Math.pow(d, 4)) / 24 +
-          ((61 + 90 * t + 298 * c + 45 * t * t - 252 * ep2 - 3 * c * c) * Math.pow(d, 6)) / 720);
-    const lon =
-      (d -
-        ((1 + 2 * t + c) * Math.pow(d, 3)) / 6 +
-        ((5 - 2 * c + 28 * t - 3 * c * c + 8 * ep2 + 24 * t * t) * Math.pow(d, 5)) / 120) /
-      cos;
-
-    return { lat: (lat * 180) / Math.PI, lon: 9 + (lon * 180) / Math.PI };
   }
 
   /* Rendering ------------------------------------------------------------- */
@@ -406,34 +385,31 @@
     }
   }
 
-  function openDetail(place) {
+  /* `focus: false` redraws an open detail without taking focus from where the
+   * user is, for a plugin whose data changed underneath it. */
+  function openDetail(place, options) {
     const route =
       "https://www.google.com/maps/dir/?api=1&destination=" + place.lat + "," + place.lon;
+    const attributes = place.attributes || {};
 
     dom.detail.innerHTML =
       '<div class="detalje">' +
       '<div class="detalje__photo"><span class="detalje__photo-note">Foto ikke tilgængeligt endnu</span></div>' +
       '<button type="button" class="detalje__luk" aria-label="Luk">&times;</button>' +
       '<div class="detalje__body">' +
-      '<h3 class="detalje__title" tabindex="-1">' + escapeHtml(place.title) + "</h3>" +
-      '<div class="detalje__address"><p>' + addressLines(place) + "</p>" +
+      '<h3 class="detalje__title" tabindex="-1"' + dataAttribute(attributes.title) + ">" + escapeHtml(place.title) + "</h3>" +
+      '<div class="detalje__address"' + dataAttribute(attributes.address) + "><p>" + addressLines(place) + "</p>" +
       '<a class="detalje__route" href="' + route + '" target="_blank" rel="noopener">Vis rute</a></div>' +
-      '<p class="detalje__spots">' + escapeHtml(place.fact) + "</p>" +
+      '<p class="detalje__spots"' + dataAttribute(attributes.fact) + ">" + escapeHtml(place.fact) + "</p>" +
       neighbourLine(place) +
-      place.facts
-        .map(function (fact) {
-          const value = fact.href
-            ? '<a href="' + escapeHtml(fact.href) + '" target="_blank" rel="noopener">' + escapeHtml(fact.value) + "</a>"
-            : escapeHtml(fact.value);
-
-          return '<div class="detalje__section"><h4>' + escapeHtml(fact.label) + "</h4><p>" + value + "</p></div>";
-        })
-        .join("") +
+      renderFacts(place.facts) +
       "</div></div>";
 
     dom.detail.hidden = false;
     document.body.classList.add("detalje-aaben");
-    dom.detail.querySelector(".detalje__title").focus();
+    if (!options || options.focus !== false) {
+      dom.detail.querySelector(".detalje__title").focus();
+    }
     dom.detail.querySelector(".detalje__luk").addEventListener("click", closeDetail);
 
     const neighbour = dom.detail.querySelector(".detalje__nabo-vis");
@@ -443,6 +419,30 @@
         showNeighbour(place);
       });
     }
+
+    dom.detail.dispatchEvent(new CustomEvent("enter-map:detail", { bubbles: true, detail: { place: place } }));
+  }
+
+  /* One section per fact with a value. A fact that names its `attribute`
+   * carries it, so a plugin can find the section. */
+  function renderFacts(facts) {
+    return facts
+      .filter(function (fact) {
+        return fact.value;
+      })
+      .map(function (fact) {
+        const value = fact.href
+          ? '<a href="' + escapeHtml(fact.href) + '" target="_blank" rel="noopener">' + escapeHtml(fact.value) + "</a>"
+          : escapeHtml(fact.value);
+
+        return '<div class="detalje__section"' + dataAttribute(fact.attribute) + "><h4>" + escapeHtml(fact.label) + "</h4><p>" + value + "</p></div>";
+      })
+      .join("");
+  }
+
+  /* The model attribute an element shows, for a plugin to find it by. */
+  function dataAttribute(attribute) {
+    return attribute ? ' data-attribute="' + escapeHtml(attribute) + '"' : "";
   }
 
   function closeDetail() {
@@ -463,222 +463,35 @@
     }
   });
 
-  /* Search ----------------------------------------------------------------- */
-
-  /* Adressevælger is Klimadatastyrelsen's replacement for DAWA, which closes on
-   * 1 October 2026. Two calls: a phonetic search that returns labels and ids,
-   * then a lookup on the chosen id for its access point. The token is not an
-   * API key — it is mandatory but unmanaged, and KDS asks everyone to send this
-   * value until user management arrives (expected late 2026). */
-  const ADRESSEVAELGER = "https://adressevaelger.dk";
-  const ADRESSE_TOKEN = "adressevaelger123";
-  const KOMMUNEKODE = "0751";
-  const SUGGESTION_COUNT = 5;
-
-  let suggestTimer = null;
-  let suggestRequest = 0;
-  let suggestions = [];
-  let activeSuggestion = -1;
-
+  /* The field filters the list as you type; choosing an address lists the
+   * nearest places to it instead. */
   dom.search.addEventListener("input", function () {
     state.query = dom.search.value.trim();
     state.origin = null;
     render();
-
-    window.clearTimeout(suggestTimer);
-    suggestTimer = window.setTimeout(suggestAddresses, 250);
   });
 
-  dom.search.addEventListener("keydown", function (event) {
-    if (event.key === "Escape") {
-      hideSuggestions();
-
-      return;
-    }
-
-    if (dom.suggestions.hidden) {
-      return;
-    }
-
-    if (event.key === "ArrowDown" || event.key === "ArrowUp") {
-      event.preventDefault();
-      moveActiveSuggestion(event.key === "ArrowDown" ? 1 : -1);
-    } else if (event.key === "Enter" && activeSuggestion !== -1) {
-      event.preventDefault();
-      chooseSuggestion(suggestions[activeSuggestion]);
-    }
+  window.ADRESSEVAELGER.combobox(dom.search, dom.suggestions, {
+    onChoose: useAddress,
+    onError: reportSearchError,
+    // A road put back in the field is not a filter on the list.
+    onNarrow: function () {
+      state.query = "";
+      render();
+    },
   });
-
-  async function suggestAddresses() {
-    const query = dom.search.value.trim();
-    const request = ++suggestRequest;
-
-    if (query.length < 3) {
-      hideSuggestions();
-
-      return;
-    }
-
-    try {
-      const response = await fetch(
-        ADRESSEVAELGER +
-          "/husnumre/soeg?kommunekode=" +
-          KOMMUNEKODE +
-          "&token=" +
-          ADRESSE_TOKEN +
-          "&tekst=" +
-          encodeURIComponent(query),
-      );
-
-      if (!response.ok) {
-        throw new Error("Adressevælger svarede " + response.status);
-      }
-
-      const payload = await response.json();
-
-      // A slower answer to an earlier keystroke must not replace a newer one.
-      if (request !== suggestRequest) {
-        return;
-      }
-
-      reportSearchError(false);
-      showSuggestions((payload.fund || []).slice(0, SUGGESTION_COUNT));
-    } catch (error) {
-      if (request === suggestRequest) {
-        // An address lookup that fails must not take the list with it.
-        hideSuggestions();
-        reportSearchError(true);
-      }
-    }
-  }
-
-  function showSuggestions(hits) {
-    if (!hits.length) {
-      hideSuggestions();
-
-      return;
-    }
-
-    suggestions = hits;
-    activeSuggestion = -1;
-    dom.suggestions.textContent = "";
-
-    hits.forEach(function (hit, index) {
-      const item = document.createElement("li");
-
-      item.className = "forslag__item";
-      item.id = "forslag-" + index;
-      item.setAttribute("role", "option");
-      item.setAttribute("aria-selected", "false");
-      item.textContent = hit.titel;
-
-      // Street-level hits carry no position: choosing one narrows the search
-      // instead of picking a place, so it says so.
-      if (!hasPosition(hit)) {
-        const note = document.createElement("span");
-
-        note.className = "forslag__note";
-        note.textContent = "Vælg for at søge videre på denne vej";
-        item.appendChild(note);
-      }
-
-      item.addEventListener("mousedown", function (event) {
-        // Keeps focus in the field, so the blur handler does not close the list
-        // before the click lands.
-        event.preventDefault();
-      });
-      item.addEventListener("click", function () {
-        chooseSuggestion(hit);
-      });
-      dom.suggestions.appendChild(item);
-    });
-
-    dom.suggestions.hidden = false;
-    dom.search.setAttribute("aria-expanded", "true");
-  }
-
-  function moveActiveSuggestion(step) {
-    const items = dom.suggestions.children;
-    const next = (activeSuggestion + step + items.length + 1) % (items.length + 1);
-
-    activeSuggestion = next === items.length ? -1 : next;
-
-    Array.prototype.forEach.call(items, function (item, index) {
-      const active = index === activeSuggestion;
-
-      item.classList.toggle("forslag__item--aktiv", active);
-      item.setAttribute("aria-selected", String(active));
-    });
-
-    if (activeSuggestion === -1) {
-      dom.search.removeAttribute("aria-activedescendant");
-    } else {
-      dom.search.setAttribute("aria-activedescendant", items[activeSuggestion].id);
-      items[activeSuggestion].scrollIntoView({ block: "nearest" });
-    }
-  }
-
-  function hideSuggestions() {
-    suggestions = [];
-    activeSuggestion = -1;
-    dom.suggestions.hidden = true;
-    dom.suggestions.textContent = "";
-    dom.search.setAttribute("aria-expanded", "false");
-    dom.search.removeAttribute("aria-activedescendant");
-  }
-
-  dom.search.addEventListener("blur", function () {
-    hideSuggestions();
-  });
-
-  function hasPosition(hit) {
-    return hit.type === "husnummer";
-  }
-
-  function chooseSuggestion(hit) {
-    if (hasPosition(hit)) {
-      useAddress(hit);
-
-      return;
-    }
-
-    // Named road or road-and-postcode: put it back in the field and search
-    // again, which is how Adressevælger expects a hit to be narrowed down.
-    dom.search.value = hit.titel + " ";
-    state.query = "";
-    hideSuggestions();
-    render();
-    suggestAddresses();
-  }
 
   async function useAddress(hit) {
     try {
-      const response = await fetch(
-        ADRESSEVAELGER + "/husnumre/" + encodeURIComponent(hit.id) + "?token=" + ADRESSE_TOKEN,
-      );
-
-      if (!response.ok) {
-        throw new Error("Adressevælger svarede " + response.status);
-      }
-
-      const payload = await response.json();
-      const point = payload.husnummer && payload.husnummer.adgangspunkt;
-
-      if (!point || !point.koordinater) {
-        throw new Error("Adressen har intet adgangspunkt");
-      }
-
-      const position = utm32ToWgs84(point.koordinater.x, point.koordinater.y);
+      const position = await window.ADRESSEVAELGER.position(hit);
 
       reportSearchError(false);
       state.origin = { lat: position.lat, lon: position.lon, label: hit.titel };
       state.query = "";
       dom.search.value = hit.titel;
-      hideSuggestions();
       map.setView([position.lat, position.lon], 16);
       render();
     } catch (error) {
-      hideSuggestions();
       reportSearchError(true);
     }
   }
@@ -710,13 +523,48 @@
     state.categories[source.kind] = true;
   });
 
-  /* Boot ------------------------------------------------------------------- */
+  /* App ------------------------------------------------------------------- */
 
   function escapeHtml(value) {
     return String(value).replace(/[&<>"']/g, function (character) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[character];
     });
   }
+
+  let resolveLoaded;
+
+  /* What a plugin gets. `transform(properties, feature, source)` returns the
+   * properties to describe; the default leaves them alone. */
+  const app = {
+    config: CONFIG,
+    detailHost: dom.detail,
+    transform: function (properties) {
+      return properties;
+    },
+    loaded: new Promise(function (resolve) {
+      resolveLoaded = resolve;
+    }),
+    place: function (id) {
+      return state.places.find(function (candidate) {
+        return candidate.id === id;
+      });
+    },
+    selected: function () {
+      return dom.detail.hidden ? null : app.place(state.selected);
+    },
+    select: select,
+    openDetail: openDetail,
+    closeDetail: closeDetail,
+    rebuild: rebuild,
+    renderFacts: renderFacts,
+    escapeHtml: escapeHtml,
+  };
+
+  /* Boot ------------------------------------------------------------------- */
+
+  const plugins = (CONFIG.plugins || []).map(function (plugin) {
+    return plugin(app);
+  });
 
   Promise.all(
     SOURCES.map(function (source) {
@@ -725,16 +573,25 @@
           return response.json();
         })
         .then(function (collection) {
-          return collection.features.map(function (feature, index) {
-            return toPlace(feature, source, index);
-          });
+          return collection.features;
         });
     }),
   )
     .then(function (sets) {
-      state.places = sets.flat();
+      // The plugins have had the time the data took.
+      return Promise.all(plugins).then(function () {
+        return sets;
+      });
+    })
+    .then(function (sets) {
+      state.places = sets.flatMap(function (features, setIndex) {
+        return features.map(function (feature, index) {
+          return toPlace(feature, SOURCES[setIndex], index);
+        });
+      });
       updateGate();
       render();
+      resolveLoaded();
     })
     .catch(function () {
       dom.heading.textContent = "Kunne ikke hente data";
