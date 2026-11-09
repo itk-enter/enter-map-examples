@@ -14,9 +14,21 @@ All notable changes to this project are documented here, following
   `merged-handicap-parking-spots` source, one marker per bay, with surface,
   fee and the sources each bay was merged from. The widget builds keep the
   September snapshot.
+- The address search on the Leaflet pages moved into `js/adressevaelger.js`,
+  and `leaflet-app.js` takes plugins, so a page can add to the detail view and
+  change the data before it is shown.
 
 ### Added
 
+- `bidrag.html` and `bidrag-gennemgang.html`: "Tilføj eller ret oplysninger"
+  on parking, toilets and benches opens a list of what can be added or
+  corrected; citizens log in (mock MitID), send values, photos under visible
+  rules or a closure report as one suggestion, and a mock back office approves
+  or rejects each part. Approved data shows on the map credited to the
+  contributor. Linked from the front page.
+- A 5-star rating with an optional comment on every place on `bidrag.html`,
+  given after a mock MitID login under visible guidelines and shown only once
+  approved; the place shows the average and the newest comments.
 - `faciliteter.html`: Enter's merged handicap parking and merged toilets,
   and the benches, on one map with a checkbox each, linked from the front
   page. The row and detail text per data model moves to `parking-spot.js`,

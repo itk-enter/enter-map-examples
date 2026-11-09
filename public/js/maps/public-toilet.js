@@ -35,33 +35,32 @@ window.PUBLIC_TOILET = (function () {
   }
 
   /* `sourceLabel` is what the detail says under "Kilde": a source's name, or
-   * a function of the properties for a source that merges others. */
+   * a function of the properties for a source that merges others. A fact
+   * without a value is left out by the page, since the sources differ in what
+   * they record. */
   function describer(sourceLabel) {
     return function (props) {
       const address = props.address || {};
       const extra = props.additionalInformation || {};
       const facts = [
         { label: "Beskrivelse", value: props.description },
-        { label: "Adgang", value: ACCESS[props.accessType] || props.accessType },
+        { label: "Adgang", value: ACCESS[props.accessType] || props.accessType, attribute: "accessType" },
         { label: "Adgangsforhold", value: props.accessNote },
-        { label: "Pris", value: price(props) },
-        { label: "Åbningstider", value: openingHours(props.openingHours) },
+        { label: "Pris", value: price(props), attribute: "isAccessibleForFree" },
+        { label: "Åbningstider", value: openingHours(props.openingHours), attribute: "openingHours" },
         { label: "Sæson", value: extra.season },
         {
           label: "Puslebord",
           value: props.babyChange === undefined ? "" : props.babyChange ? "Ja" : "Nej",
+          attribute: "babyChange",
         },
         { label: "Status", value: extra.status },
-      ].filter(function (fact) {
-        return fact.value;
-      });
-
-      // The sources differ in what they record, so the detail shows what this
-      // one has and says where it came from.
-      facts.push({
-        label: "Kilde",
-        value: typeof sourceLabel === "function" ? sourceLabel(props) : sourceLabel,
-      });
+        // The sources differ in what they record, so the detail says where
+        // this one came from: a merged toilet's from the ids in `seeAlso`.
+        typeof sourceLabel === "function"
+          ? { label: "Kilde", value: sourceLabel(props), attribute: "seeAlso" }
+          : { label: "Kilde", value: sourceLabel },
+      ];
 
       return {
         title: props.name || "Toilet",
@@ -69,9 +68,50 @@ window.PUBLIC_TOILET = (function () {
         city: [address.postalCode, address.addressLocality].filter(Boolean).join(" ") || "Aarhus Kommune",
         fact: WHEELCHAIR[props.wheelchairAccessible] || "Handicapadgang ikke registreret",
         facts: facts,
+        attributes: { title: "name", address: "address", fact: "wheelchairAccessible" },
       };
     };
   }
+
+  /* What a citizen can add or correct, for pages that collect contributions.
+   * `attribute` is the property in the PublicToilet model. */
+  const FIELDS = [
+    { attribute: "name", label: "Navn", type: "text", hint: "Fx Toiletterne ved Dokk1" },
+    { attribute: "address", label: "Adresse", type: "address" },
+    {
+      attribute: "wheelchairAccessible",
+      label: "Kørestolsadgang",
+      type: "choice",
+      options: [
+        { value: "yes", label: "Ja" },
+        { value: "limited", label: "Delvist" },
+        { value: "no", label: "Nej" },
+      ],
+    },
+    {
+      attribute: "accessType",
+      label: "Adgang",
+      type: "choice",
+      options: [
+        { value: "public", label: ACCESS.public },
+        { value: "customers", label: ACCESS.customers },
+        { value: "permissive", label: ACCESS.permissive },
+      ],
+    },
+    { attribute: "isAccessibleForFree", label: "Pris", type: "boolean", labels: { yes: "Gratis", no: "Betaling" } },
+    {
+      attribute: "chargeAmount",
+      label: "Beløb",
+      type: "number",
+      unit: "kr.",
+      min: 0,
+      max: 100,
+      step: 1,
+      when: { attribute: "isAccessibleForFree", value: false },
+    },
+    { attribute: "openingHours", label: "Åbningstider", type: "openingHours" },
+    { attribute: "babyChange", label: "Puslebord", type: "boolean" },
+  ];
 
   /* For merged-public-toilets: which inputs a toilet was merged from. */
   const INPUTS = [
@@ -105,5 +145,5 @@ window.PUBLIC_TOILET = (function () {
     return "Samlet fra " + labels.slice(0, -1).join(", ") + " og " + labels[labels.length - 1];
   }
 
-  return { glyph: GLYPH, describer: describer, mergedFrom: mergedFrom };
+  return { glyph: GLYPH, describer: describer, mergedFrom: mergedFrom, fields: FIELDS };
 })();
